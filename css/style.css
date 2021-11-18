@@ -13,6 +13,12 @@ section h2{
 	text-transform: uppercase;
 }
 
+hr{
+    padding:0px;
+    margin: 0px;
+    color:#000;
+}
+
 img{
     max-width: 100%;
     height: auto;
@@ -162,7 +168,7 @@ header a{
 }
 /*primary callout styles ends*/
 
-/*3Arifacts styles begin */
+/*Arifacts styles begin */
 .artifacts{
    background-image: url('../img/interlaced.png');
     /* background-color: #c6dfc6; */
@@ -230,7 +236,7 @@ header a{
   text-align: center;
   font-size: 1.25rem;
 }
-/*3Arifacts styles ends */
+/*Arifacts styles ends */
 
 /*navigation callout styles begins*/
 
@@ -264,6 +270,19 @@ background-color: rgb(78 70 70 / 85%);
 }
 /*recipe-guide callout styles ends*/
 
+/*videos*/
+.videos{
+background-color: #f2f2f2; 
+ }
+ .videos-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+ }
+/*videos*/
+
 /*testimonials callout styles begins*/
 .test-image{
     display: block;
@@ -277,6 +296,57 @@ padding-left:5px;
 }
 
 /*testimonials callout styles ends*/
+
+/*callout*/
+.callout{
+    background-color: #c6dfc6;
+}
+.callout-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+  }
+
+
+.callout h2{
+text-transform: unset;
+}
+
+.callout a{
+    border: 0.25mm solid #6c757dbf;
+    border-radius: 7px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    background-color: rgb(78 70 70 / 85%);
+    padding: 0.25em 1em;
+}
+
+.callout a:hover{
+	background-color: #1f2b38c2;
+    border-color: #464444;
+    color: #e6dccd;
+}
+  
+/*callout*/
+
+/*get-started*/
+
+.get-started{
+    background-color:snow;
+    /* background-image: url('../img/horizon.png'); */
+}
+.get-started-wrapper{
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-start;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+  }
+/*get-started*/
 
 /*footer styles begins */
 footer {
@@ -296,6 +366,37 @@ footer ul li {
     margin-left: 20px;
 }
 /*footer styles ends*/
+
+
+/*vred page*/
+.vred-wrapper{
+
+
+}
+.vred{
+text-decoration: none;
+}
+
+.index{
+    position:sticky;
+    top:0px;
+    overflow-y: scroll;
+    height:400px;
+    overflow-y: scroll;
+    height: 92vh;
+    overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
+    overflow-y: auto;
+    border-right:1px solid #ccc;
+    padding-top:10px;
+}
+
+.content{
+
+}
+
+/*vred page*/
 
 /* back to top*/
 #btn-back-to-top {
