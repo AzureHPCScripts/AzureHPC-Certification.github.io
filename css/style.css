@@ -86,7 +86,7 @@ header a{
     top: 4.5%;
     min-height: 400px;
     width: 50%;
-    background-position-x: right;
+    /* background-position-x: right; */
     background-position-y: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -101,7 +101,7 @@ header a{
 }
 
 .hero-wrapper{
-	max-width: 60%;
+	max-width: 65%;
     margin-right: 0px;
     margin-left: auto;
 }
@@ -252,7 +252,7 @@ header a{
 }
 
 .recipe-guide a{
-    font-size:smaller;
+    /* font-size:smaller; */
 	background-color: rgb(46 40 40 / 85%);
 	border-radius: 7px;
 	padding:8px;
@@ -482,6 +482,9 @@ border:unset;
     .w-20{
         width: 20% !important;
     }
+    .recipe-guide a {
+        font-size: 1em;
+    }
     }
 
 @media (min-width:1182px){
@@ -495,6 +498,9 @@ border:unset;
     .recipe-guide .aplns{
         min-width:290px !important;
       }
+      .recipe-guide a {
+        font-size: 0.8em;
+    }
 }
 
 
@@ -523,6 +529,13 @@ border:unset;
     .hero-lead {
         font-size: large;
     }
+    .hero-wrapper{
+        width:65%;
+    }
+
+    .recipe-guide a {
+        font-size: 0.5em;
+    }
 }
 
 @media (max-width: 576px) {  
@@ -533,6 +546,9 @@ border:unset;
     .hero-lead {
         font-size:medium;
     }
+    .recipe-guide a {
+        font-size: 0.44em;
+    }
 
 }
    
@@ -540,11 +556,23 @@ border:unset;
     .hero-links a{	
         font-size:x-small;
     }
+    .recipe-guide a {
+        font-size: 0.33em;
+    }
+ }
+
+ @media (max-width:376px) {  
+    .recipe-guide a {
+        font-size: 0.27em;
+    }
  }
 
  @media (max-width:320px) {  
     .hero-links a{	
         font-size:xx-small;
+    }
+    .recipe-guide a {
+        font-size: 0.2em;
     }
  }
 
