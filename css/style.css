@@ -389,21 +389,32 @@ footer ul li {
 /*footer styles ends*/
 
 
-/*vred page*/
-.vred-wrapper{
+
+/*rpt page*/
+.rpt-wrapper{
     color: #1b2427ba;
 }
 
-.vred{
+.rpt{
 text-decoration: none;
 }
 
-.vred h3{
+.index-scroll p{
+
+}
+
+.rpt h1{
     color:#737373;
     font-size: 2em;
     line-height: 1.3;
     margin: 0 0 0.5em;
     font-weight: 300;
+}
+
+.rpt .index p{
+    padding:0 0 0 0.2em;
+    margin-bottom: 0.25rem!important;
+    font-size: small;
 }
 
 .index{
@@ -412,7 +423,7 @@ text-decoration: none;
     overflow-y: scroll;
     height:400px;
     overflow-y: scroll;
-    height: 92vh;
+    height: 62vh;
     overflow-scrolling: touch;
     -webkit-overflow-scrolling: touch;
     overflow: hidden;
@@ -420,6 +431,23 @@ text-decoration: none;
     border-right:1px solid #ccc;
     padding-top:10px;
 }
+
+.index::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+.index::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+.index::-webkit-scrollbar-thumb {
+    background: #bbb; 
+    border-radius: 10px;
+  }
+  
+.index::-webkit-scrollbar-thumb:hover {
+    background: #888; 
+  }
 
 .index label{
     font-weight:500;
@@ -436,7 +464,26 @@ text-decoration: none;
 }
 
 .content{
-    border-right: 1px solid #ccc;
+   word-wrap: break-word;
+   word-break: break-all;
+}
+
+.content table{
+    width:100% !important;
+    margin-bottom: 2rem;
+}
+
+.content table tr:first-child{
+    background: #f2f2f2;
+}
+
+.content table tr{
+    border-width: 1px;
+    padding: 0px 4px;
+    margin-bottom: 1rem;
+    /* vertical-align: top; */
+    border-color: #dee2e6;
+    text-align: center;
 }
 
 .content h2{
@@ -457,13 +504,31 @@ text-decoration: none;
     overflow-y: scroll;
     height:400px;
     overflow-y: scroll;
-    height: 92vh;
+    height: 62vh;
     overflow-scrolling: touch;
     -webkit-overflow-scrolling: touch;
     overflow: hidden;
     overflow-y: auto;
     padding-top:10px;
+    border-left: 1px solid #ccc;    
 }
+
+.toc::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+.toc::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+.toc::-webkit-scrollbar-thumb {
+    background: #bbb; 
+    border-radius: 10px;
+  }
+  
+.toc::-webkit-scrollbar-thumb:hover {
+    background: #aaa; 
+  }
 
 .toc label{
     font-weight:500;
@@ -472,6 +537,12 @@ text-decoration: none;
 
 .toc a{
     color: #1b2427ba;
+}
+
+.toc p{
+    padding:0 0 0 0.2em;
+    margin-bottom: 0.25rem!important;
+    font-size: small;
 }
 
 .toc ul{
@@ -508,7 +579,8 @@ text-decoration: none;
     display:unset;
 }
 
-/*vred page*/
+/*rpt page*/
+
 
 /* back to top*/
 #btn-back-to-top {
@@ -607,9 +679,7 @@ border:unset;
 }
 
 @media (max-width:1181px){
-    .index{
-        display: none;
-    }
+
 }
 
 @media (max-width: 991px) {
@@ -619,9 +689,11 @@ border:unset;
       .recipe-guide a {
         font-size: 0.8em;
     }
-    .toc{
-        display:none;
+
+    .index{
+        /* display: none; */
     }
+
 }
 
 
@@ -657,7 +729,12 @@ border:unset;
     .recipe-guide a {
         font-size: 0.5em;
     }
+
+    .index{
+        display:none;
+    }
 }
+
 
 @media (max-width: 576px) {  
     .logo{
@@ -670,7 +747,13 @@ border:unset;
     .recipe-guide a {
         font-size: 0.44em;
     }
+    
+    .toc{
+        /* display:none; */
+    }
 
+
+}
 }
    
  @media (max-width:414px) {  
