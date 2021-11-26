@@ -471,6 +471,7 @@ text-decoration: none;
 .content table{
     width:100% !important;
     margin-bottom: 2rem;
+    word-break: break-word;
 }
 
 .content table tr:first-child{
