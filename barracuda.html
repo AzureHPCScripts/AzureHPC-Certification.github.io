@@ -1,0 +1,2368 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    
+    
+    <link rel="shortcut icon" href="img/icon.ico">
+    <link rel="Stylesheet" href="css/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <script src="https://kit.fontawesome.com/3d0a07deaa.js" crossorigin="anonymous"></script>
+
+    <title>Microsoft HPC Azure | HOME</title>
+    
+  </head>
+  <body>
+    <div id="wrapper" class="row g-0">
+      <header class="container-fluid">   
+        <div class="logo container-lg px-3 px-lg-0">
+         <a href="index.html">Microsoft <span>HPC Azure</span> </a><br>
+            <span>
+            <a href="#">
+              <img src="img/MicrosoftLogo_Small.png" alt="Microsoft Logo" />
+            </a>  
+          </span> 
+          <span>
+            <a href="#">
+              <img src="img/CapgeminiLogo_Small.png" alt="Capgemini Logo" />
+            </a>
+          </span>
+  
+        </div>
+      </header>
+
+    <main class="container-fluid">
+
+      <section class="container-lg px-3 px-lg-0 rpt-wrapper">        
+      <h3 class="text-center text-uppercase py-4">Azure HPC Recipe Document for CPFD Barracuda-VR</h3>
+    <div class="d-flex flex-row rpt">
+
+      <div class="col-2 px-1 px-sm-0 text-left index">
+        <label>Barracuda-VR Documentation</label>
+        <div class="index-scroll">
+   
+        <p><a href="#_Toc88471705">1 Introduction</a></p>
+        <p><a href="#_Toc88471706">2 Deploy Virtual Machine on Azure Cloud Platform</a></p>
+        <p><a href="#_Toc88471707">2.1 Azure Cloud Architecture for Application</a></p>
+        <p><a href="#_Toc88471708">2.2 Azure Virtual Machine (VM)</a></p>
+        <p><a href="#_Toc88471709">2.3 Create a Virtual Machine on Azure Platform</a></p>
+        <p><a href="#_Toc88471710">2.4 Connect to virtual machine</a></p>
+        <p><a href="#_Toc88471711">2.5 Install Nvidia Drivers</a></p>
+        <p><a href="#_Toc88471712">3 Install CPFD Barracuda-VR Application on Virtual Machine</a></p>
+        <p><a href="#_Toc88471713">3.1 Download product</a></p>
+        <p><a href="#_Toc88471714">3.2 Install Barracuda- VR application on Linux</a></p>
+        <p><a href="#_Toc88471715">4 Performance results of Barracuda- VR on Azure virtual machine</a></p>
+        <p><a href="#_Toc88471716">4.1 CPFD Barracuda-VR Overview</a></p>
+        <p><a href="#_Toc88471717">4.2 CPFD Barracuda-VR on Azure Platform</a></p>
+        <p><a href="#_Toc88471718">4.3 CPFD Barracuda-VR Performance Results</a></p>
+        <p><a href="#_Toc88471719">5 Azure Cost</a></p>
+        <p><a href="#_Toc88471720">6 Summary</a></p>
+
+    </div>
+      </div><!--index-->
+
+      <div class="col-8 col-md-8 px-3 content">
+        <h1><a name="_Toc81323166"></a><a name="_Toc81330548"></a><a name="_Toc81389013"></a><a name="_Toc81405758"></a><a name="_Toc85794185"></a><a name="_Toc85794512"></a><a name="_Toc85798816"></a><a name="_Toc88471705"></a><span lang="EN-IN">1     </span><span lang="EN-IN">Introduction</span></h1>
+        <p class="MsoNormal"><span lang="EN-IN">This document briefly explains the steps to install and run CPFD Barracuda-VR application on a Virtual Machine deployed in Azure Cloud Platform and presents the performance results.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">This recipe document covers the following topics: -</span></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Deploy &amp; connect a required virtual machine on Azure platform.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Install required NVIDIA drivers in virtual machine.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Install Application on virtual machine.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Install license manager for current application</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Performance results of current application on azure virtual machine</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Azure consumption</span></p>
+        <p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Summary</span></p>
+        <h1><a name="_Toc81323168"></a><a name="_Toc81330550"></a><a name="_Toc81389015"></a><a name="_Toc81405760"></a><a name="_Toc85794187"></a><a name="_Toc85794514"></a><a name="_Toc85798817"></a><a name="_Toc88471706"></a><span lang="EN-IN">2     </span><span lang="EN-IN">Deploy Virtual Machine on Azure Cloud Platform</span></h1>
+        <h2><a name="_Toc85798818"></a><a name="_Toc88471707"></a><span lang="EN-IN">2.1    </span><span lang="EN-IN">Azure Cloud Architecture for Application</span></h2>
+        <p class="MsoNormal"><span lang="EN-IN">The below Architecture explains the virtual machine running on an Azure Platform</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 31" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image003.png" alt="" width="604" height="477" /></span></p>
+        <span lang="EN-IN"><br clear="all" /> </span>
+        <p class="MsoNormal"></p>
+        <h2><a name="_Toc81323169"></a><a name="_Toc81330551"></a><a name="_Toc81389016"></a><a name="_Toc81405761"></a><a name="_Toc85794188"></a><a name="_Toc85794515"></a><a name="_Ref85797239"></a><a name="_Toc85798819"></a><a name="_Toc88471708"></a>2.2    Azure Virtual Machine (VM)</h2>
+        <p class="MsoNormal"><span lang="EN-IN">A VM is a virtualized instance of a computer that can perform almost all the same functions as a computer, including running applications and operating systems.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">An Azure VM gives the flexibility of virtualization without having to buy and maintain the physical hardware that runs it. However, the user still needs to maintain the VM by performing tasks, such as configuring, patching, and installing the software that runs on it.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">Things to be considered before deploying a VM,</span></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">The names of the application resources</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">The location where the resources are stored</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">The size of the VM</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">The operating system that the VM runs</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">The configuration of the VM</span></p>
+        <p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">The related resources that the VM needs</span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><span lang="EN-IN">There are different sizes and options available for the Azure virtual machines and </span><span lang="EN-IN">user can use to run apps</span><span lang="EN-IN"> and workloads. Depending on the workload user must choose the appropriate VM size. For complete list, check this </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes/"><span lang="EN-IN">https://docs.microsoft.com/en-us/azure/virtual-machines/sizes/</span></a><span lang="EN-IN">.</span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><span lang="EN-IN">To test the performance of CPFD Barracuda-VR on Azure Platform, </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/nda100-v4-series"><span lang="EN-IN">NDv4 A100</span></a><span class="MsoHyperlink"><span lang="EN-IN">,</span></span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/ncv3-series"><span lang="EN-IN"> NCv3-series</span></a><span lang="EN-IN">&amp; </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/nct4-v3-series"><span lang="EN-IN">NCas_T4-v3-series</span></a> <span lang="EN-IN">virtual machines are deployed.</span></p>
+        <p class="MsoNormal"></p>
+        <div>
+        <table class="MsoNormalTable" border="0" width="621" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td nowrap="nowrap" width="149">
+        <p class="MsoNormal"><strong>VM Name</strong></p>
+        </td>
+        <td width="79">
+        <p class="MsoNormal"><strong>vCPU</strong></p>
+        </td>
+        <td width="79">
+        <p class="MsoNormal"><strong>Memory (GiB)</strong></p>
+        </td>
+        <td width="79">
+        <p class="MsoNormal"><strong>SSD (GiB)</strong></p>
+        </td>
+        <td width="79">
+        <p class="MsoNormal"><strong>GPU</strong></p>
+        </td>
+        <td width="79">
+        <p class="MsoNormal"><strong>GPU Memory (GiB)</strong></p>
+        </td>
+        <td width="79">
+        <p class="MsoNormal"><strong>Max Data Disk</strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="149">
+        <p class="MsoNormal"><span lang="EN-IN">Standard_ND96asr_v4</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">96</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">921</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">1024</p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">8 A100</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">40</p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">32</p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="149">
+        <p class="MsoNormal"><span lang="EN-IN">Standard NC24s_v3</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">24</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">448</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">2048</p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">4 V100</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">16</p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">32</p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="149">
+        <p class="MsoNormal"><span lang="EN-IN">Standard NC64as_T4_v3</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">64</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">448</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">1024</p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal"><span lang="EN-IN">4 T4</span></p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">16</p>
+        </td>
+        <td nowrap="nowrap" width="79">
+        <p class="MsoNormal">32</p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">1.    </span><span lang="EN-IN">Standard_ND96asr_v4: This VMs is powered by </span><a href="https://www.nvidia.com/en-in/data-center/a100/"><span lang="EN-IN">NVIDIA Ampere A100 Tensor Core</span></a><span lang="EN-IN"> GPUs and 96 physical 2nd-generation AMD Epyc&trade; CPU cores (2.44GHz). The &ldquo;ND96asr_v4&rdquo; VM has 8 GPUs with 40 GB of memory each and supported by 96 AMD processor cores with a total memory of 921GB. Each GPU features NVLINK 3.0 connectivity for communication within the VM.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"></p>
+        <p class="MsoListParagraphCxSpLast"><span lang="EN-IN">2.   </span><span lang="EN-IN">Standard </span><span lang="EN-IN">NC24s_v3: This VM belongs to </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/ncv3-series"><span lang="EN-IN">Ncv3-series</span></a> <span lang="EN-IN">This VMs are powered by NVIDIA Tesla V100 GPUs. These GPUs can provide 1.5x the computational performance of the NCv2-series.</span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">3.    </span><span lang="EN-IN">Standard </span><span lang="EN-IN">NC64as_T4_v3: This VM Belongs to </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/nct4-v3-series"><span lang="EN-IN">NCasT4_v3-series</span></a><span lang="EN-IN">.These Series VMs are powered by </span><a href="https://www.nvidia.com/en-us/data-center/tesla-t4/"><span lang="EN-IN">Nvidia T4</span></a><span lang="EN-IN">GPUs and AMD EPYC 7V12(Rome) CPUs. The &ldquo;NC64as_T4_v3&rdquo; VM has 4 NVIDIA T4 GPUs with 16 GB of memory each, up to 64 non-multithreaded AMD processor cores with a total memory of 448GB. </span></p>
+        <p class="MsoNormal"></p>
+        <h2><a name="_Toc81323171"></a><a name="_Toc81330553"></a><a name="_Toc81389017"></a><a name="_Toc81405762"></a><a name="_Toc85794189"></a><a name="_Toc85794516"></a><a name="_Toc85798820"></a><a name="_Toc88471709"></a>2.3    Create a Virtual Machine on Azure Platform</h2>
+        <p class="MsoNormal"><strong>Sign into Azure</strong></p>
+        <p class="MsoNormal"><span lang="EN-IN">Sign into the Azure portal by using </span><a href="https://portal.azure.com/"><span lang="EN-IN">https://portal.azure.com/</span></a></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><a href="https://azure.microsoft.com/offers/ms-azr-0044p"><span lang="EN-IN">Free Trial subscriptions</span></a><span lang="EN-IN">are not eligible for limit or quota increases. </span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><span lang="EN-IN">After the successful sign in or sign up, one has to upgrade the Azure subscription to </span><a href="https://azure.microsoft.com/en-us/offers/ms-azr-0003p/"><span lang="EN-IN">Pay-As-You-Go</span></a><span lang="EN-IN"> to deploy a Virtual machine. For deployment, the user must have regional vCPU quota, which can be obtained by raising a request.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">The step-by-step procedure to increase the vCPU quota is given below,</span></p>
+        <p class="MsoNormal"><a href="https://docs.microsoft.com/en-us/azure/azure-portal/supportability/per-vm-quota-requests"><span lang="EN-IN">https://docs.microsoft.com/en-us/azure/azure-portal/supportability/per-vm-quota-requests</span></a><span class="MsoHyperlink"><span lang="EN-IN"><br clear="all" /> </span></span></p>
+        <p class="MsoNormal"><span lang="EN-IN">The step-by-step procedure to deploy Virtual machine is given below,</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">1.    </span><span lang="EN-IN">Type<strong>virtual machines</strong>in the marketplace search.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">2.    </span><span lang="EN-IN">Under<strong>Services</strong>, select<strong>Virtual machines</strong>.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">3.    </span><span lang="EN-IN">In the<strong>Virtual machines</strong>page, select<strong>Create</strong>Then<strong>Virtual machine</strong>.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">4.    </span><span lang="EN-IN">In the<strong>Basics</strong>tab, under<strong>Project details</strong>, make sure the correct subscription is selected and then choose to<strong>Create new</strong>resource group. Type<strong><em>Azure-PerformanceTest</em>(user choice) </strong>for the name.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 23" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image004.jpg" alt="" width="550" height="270" border="0" /></span></p>
+        <p class="MsoNormal"><span lang="EN-IN">5.    </span><span lang="EN-IN">Under</span><strong><span lang="EN-IN">Instance details</span></strong><span lang="EN-IN">, type</span><span lang="EN-IN">Azure-VM (user choice)</span><span lang="EN-IN">for the</span><strong><span lang="EN-IN">Virtual machine name</span></strong><span lang="EN-IN">and chooseWest Europe</span> <span lang="EN-IN">for </span><strong><span lang="EN-IN">Region</span></strong><span lang="EN-IN">. Choose</span><span lang="EN-IN">CentOS, Version 8.1 HPC-Gen2 </span><span lang="EN-IN">for the</span><strong><span lang="EN-IN">Image</span></strong><span lang="EN-IN">and</span><span lang="EN-IN">Standard_ND96asr_v4</span><span lang="EN-IN">for the</span><strong><span lang="EN-IN">Size </span></strong><span lang="EN-IN">(user choice).</span><span lang="EN-IN"> Leave the other defaults.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 1" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image005.jpg" alt="" width="550" height="222" border="0" /></span></p>
+        <p class="MsoNormal"><strong><span lang="EN-IN">Note: </span></strong></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot;     </span><strong><span lang="EN-IN">Region</span></strong><span lang="EN-IN"> must be decided based on where the Virtual machine is going to be deployed. To avoid the network latency, the region should be near to the location where the VM is to be deployed.</span></p>
+        <p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot;     </span><strong><span lang="EN-IN">Image </span></strong><span lang="EN-IN">selection is of user choice based on the application user can choose the image (Windows 10, Linux based OS and Windows Server)</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">6.    </span><span lang="EN-IN">Under</span><strong><span lang="EN-IN">Administrator account</span></strong><span lang="EN-IN">, provide a username, such as</span><span lang="EN-IN">Azureuserand a password. The password must be at least 12 characters long and meet the</span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-"><span lang="EN-IN">defined complexity requirements</span></a><span lang="EN-IN">.</span></p>
+        <p><span lang="EN-IN"><img id="Picture 6" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image006.jpg" alt="" width="550" height="111" border="0" /></span></p>
+        <p class="MsoNormal"><span lang="EN-IN">7.    </span><span lang="EN-IN">Under</span><strong><span lang="EN-IN">Inbound port rules</span></strong><span lang="EN-IN">, choose</span><strong><span lang="EN-IN">Allow selected ports</span></strong><span lang="EN-IN">and then select</span><strong><span lang="EN-IN">SSH (22)</span></strong><span lang="EN-IN">from the drop-down.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 2" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image007.jpg" alt="" width="550" height="210" border="0" /></span></p>
+        <p class="MsoNormal"><a name="_Ref81315987"></a><span lang="EN-IN">8.    </span><span lang="EN-IN">In <strong>Advanced</strong> tab, under the Extensions click <strong>Select an extension to install</strong>, select <strong>NVIDIA GPU Driver Extension</strong> (user choice)</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 19" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image008.jpg" alt="" width="550" height="160" border="0" /></span></p>
+        <p class="MsoNormal"><strong><span lang="EN-IN">Note: This Step 8, will installs the older version of Nvidia and Cuda driver hence the user can skip this step and proceed the VM deployment without extension. Follow manual installation as per chapter 2.5</span></strong><strong><em>.</em></strong></p>
+        <p class="MsoNormal"><span lang="EN-IN">9.    </span><span lang="EN-IN">Leave the remaining defaults and then select the<strong>Review + create</strong>button at the bottom of the page.</span></p>
+        <span lang="EN-IN"><br clear="all" /> </span>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><span lang="EN-IN">10.  </span><span lang="EN-IN">After validation runs, select theCreatebutton at the bottom of the page.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 13" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image009.jpg" alt="" width="550" height="63" border="0" /></span></p>
+        <p class="MsoNormal"><span lang="EN-IN">11.  </span><span lang="EN-IN">After deployment is complete, selectGo to resource.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 14" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image010.jpg" alt="" width="550" height="133" border="0" /></span></p>
+        <h2><a name="_Toc81313723"></a><a name="_Toc81323172"></a><a name="_Toc81330554"></a><a name="_Toc81389018"></a><a name="_Toc81405763"></a><a name="_Toc85794190"></a><a name="_Toc85794517"></a><a name="_Toc85798821"></a><a name="_Toc88471710"></a>2.4    Connect to virtual machine</h2>
+        <p><a name="_Toc81330555"></a><a name="_Toc81389019"></a><a name="_Toc81405764"></a><span lang="EN-IN">Create a SSH connection to the virtual machine. </span></p>
+        <p><span lang="EN-IN">1.    </span><span lang="EN-IN">On the overview page of a virtual machine, select the<strong>Connect</strong>button then select<strong>SSH </strong><strong>and copy the public IP address</strong><strong>.</strong></span></p>
+        <p><span lang="EN-IN"><img id="Picture 24" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image011.jpg" alt="" width="550" height="138" border="0" /></span></p>
+        <p><span lang="EN-IN">2.    </span><span lang="EN-IN">Open any SSH client tool of user choice, in this case <strong>PUTTY </strong>is used.</span></p>
+        <span lang="EN-IN"><br clear="all" /> </span>
+        <p class="MsoNormal"></p>
+        <p><span lang="EN-IN">3.    </span><span lang="EN-IN">Enter the <strong>IP address</strong> and port as 22 and click <strong>Open</strong></span></p>
+        <p><span lang="EN-IN"><img id="Picture 3" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image012.jpg" alt="" width="352" height="347" border="0" /></span></p>
+        <p><span lang="EN-IN">4.    </span><span lang="EN-IN">Enter username in <strong>Login as</strong>, enter the password, and click<strong> Enter.</strong></span></p>
+        <p><span lang="EN-IN">5.    </span><span lang="EN-IN">Now user connected to the VM in Console</span></p>
+        <span lang="EN-IN"><br clear="all" /> </span>
+        <p class="MsoNormal"></p>
+        <h2><a name="_Ref85632735"></a><a name="_Toc85794191"></a><a name="_Toc85794518"></a><a name="_Toc85798822"></a><a name="_Toc88471711"></a>2.5    Install Nvidia Drivers</h2>
+        <p class="MsoNormal"><span lang="EN-IN">To take advantage of the GPU capabilities of Azure N-series VMs backed by NVIDIA GPUs, the user must install NVIDIA GPU drivers. </span></p>
+        <p class="MsoNormal"><span lang="EN-IN">If the machine has a NVLink or NVSwitch connecting the GPUs like in the case of NDv4 virtual machine, one should also install the associated version of the Nvidia fabric manager.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">There are two ways to install the drivers,</span></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">TheNVIDIA GPU Driver Extensioninstalls appropriate NVIDIA CUDA or GRID drivers on an N-series VM. Install or manage the extension using the Azure portal (Ref 8)</span></p>
+        <p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot;     </span><span lang="EN-IN">Install NVIDIA GPU drivers manually. (For the manual installation follow the procedure given below)</span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><strong><span lang="EN-IN">Nvidia Data Center Driver installation guide for CentOS 8</span></strong></p>
+        <p class="MsoNormal"><span lang="EN-IN">The step-by-step instruction is given below,</span></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">1.    </span><span lang="EN-IN">In some cases, user may need to install some additional dependencies that are required</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">For installing the NVIDIA drivers.</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y tar bzip2 make automake gcc gcc-c++ pciutils elfutils-libelf-devel libglvnd-devel</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">2.    </span><span lang="EN-IN">Enable the PowerTools repo and set up the external dependency on EPEL for DKMS.</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf config-manager --set-enabled PowerTools</span></em></strong></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y epel-release</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">3.    </span><span lang="EN-IN">Install the CUDA repository public GPG key</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># Distribution=rhel8</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">4.    </span><span lang="EN-IN">Setup the CUDA network repository</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># ARCH=$( /bin/arch)</span></em></strong></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf config-manager --add-repo </span></em></strong><strong><em><span lang="EN-IN">http://developer.download.nvidia.com/compute/cuda/repos/$distribution/${ARCH}/cuda-$distribution.repo</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">5.    </span><span lang="EN-IN">For CentOS 8, ensure that the system has the correct Linux kernel sources from the CentOS repositories:</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">6.    </span><span lang="EN-IN">Note that in some cases, user may have to update the running kernel as a pre-requisite:</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y kernel kernel-core kernel-modules</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">7.    </span><span lang="EN-IN">Update the repository cache and install the driver using the nvidia-driver meta-package</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf clean all</span></em></strong></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf -y module install nvidia-driver:latest-dkms</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraph"><span lang="EN-IN">8.    </span><span lang="EN-IN">Install fabric manager to activate the NVswitch (For NDv4 instance)</span></p>
+        <p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf module install nvidia-driver:latest-dkms/fm</span></em></strong></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">9.    </span><span lang="EN-IN">Enable FM Service to Auto Start at Boot</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><strong><em><span lang="EN-IN"># sudo systemctl enable nvidia-fabricmanager</span></em></strong></p>
+        <p class="MsoListParagraphCxSpLast"><strong><em><span lang="EN-IN">Reference: </span></em></strong><a href="https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#centos8/"><strong><em><span lang="EN-IN">https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#centos8/</span></em></strong></a><span lang="EN-IN"><br clear="all" /> </span></p>
+        <h1><a name="_Toc81405765"></a><a name="_Toc85794192"></a><a name="_Toc85794519"></a><a name="_Toc85798823"></a><a name="_Toc88471712"></a><span lang="EN-IN">3     </span><span lang="EN-IN">Install CPFD Barracuda-VR Application on Virtual Machine</span></h1>
+        <h2><a name="_Toc85794193"></a><a name="_Toc85794520"></a><a name="_Toc85798824"></a><a name="_Toc88471713"></a><span lang="EN-IN">3.1    </span><span lang="EN-IN">Download product</span></h2>
+        <p class="MsoNormal"><strong><span lang="EN-IN">Instructions on how to download </span><span lang="EN-IN">Barracuda-VR </span></strong><strong><span lang="EN-IN">products from CPFD Marketplace</span></strong><span lang="EN-IN">:</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">Before beginning, open CPFD Marketplace in a web browser and log on. </span></p>
+        <p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">1.    </span><span lang="EN-IN">Type <strong>Barracuda-VR </strong>in the search box and press Enter. </span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">2.    </span><span lang="EN-IN">Click on <strong>CPFD software: Home </strong></span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">3.    </span><span lang="EN-IN">Click on <strong>Log on</strong> to CPFD account at upper right corner.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">4.    </span><span lang="EN-IN">For log in user need to create CPFD account.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">5.    </span><span lang="EN-IN">After log in user have dashboard panel</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">6.    </span><span lang="EN-IN">Dashboard panel contain two downloadable packages.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">7.    </span><span lang="EN-IN">Click the <strong>Download For Linux </strong>icon.</span></p>
+        <p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">8.    </span><span lang="EN-IN">That package contains one installation user guide and one run file.</span></p>
+        <p class="MsoListParagraphCxSpLast"></p>
+        <p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image013.png" alt="" width="60" height="21" /><span lang="EN-IN"><img id="Picture 135" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image014.png" alt="A picture containing timeline
+        
+        Description automatically generated" width="538" height="254" border="0" /></span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Picture 136" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image015.png" alt="Graphical user interface, text, application
+        
+        Description automatically generated" width="561" height="285" border="0" /></span></p>
+        <p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image016.png" alt="" width="120" height="49" /><span lang="EN-IN"><img id="Picture 138" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image017.png" alt="Graphical user interface, text, application, email
+        
+        Description automatically generated" width="592" height="310" border="0" /></span></p>
+        <p class="MsoListParagraph"></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"></p>
+        <h2><a name="_Toc85794194"></a><a name="_Toc85794521"></a><a name="_Toc85798825"></a><a name="_Toc88471714"></a><a name="_Toc81399916"></a><a name="_Toc81405767"></a><span lang="EN-IN">3.2    </span><span lang="EN-IN">Install Barracuda- VR application</span><span lang="EN-IN"> on Linux</span></h2>
+        <p class="MsoNormal"><span lang="EN-IN">Installation instructions for Barracuda Virtual Reactor can be found in below path:</span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><a href="https://cpfd-software.com/user-manual/installation.html">https://cpfd-software.com/user-manual/installation.html</a></span></p>
+        <p class="MsoNormal"></p>
+        <br clear="all" />
+        <h1><a name="_Toc81399917"></a><a name="_Toc81405768"></a><a name="_Toc85794196"></a><a name="_Toc85794523"></a><a name="_Toc85798827"></a><a name="_Toc88471715"></a><span lang="EN-IN">4     </span><span lang="EN-IN">Performance results of Barracuda- VR on Azure virtual machine</span></h1>
+        <h2><a name="_Toc85794197"></a><a name="_Toc85794524"></a><a name="_Toc85798828"></a><a name="_Toc88471716"></a><span lang="EN-IN">4.1    </span><span lang="EN-IN">CPFD Barracuda-VR Overview</span></h2>
+        <p class="MsoNormal"><span lang="EN-IN">Barracuda Virtual Reactor is a computational fluid dynamics (CFD) software package developed specifically for engineering design, problem solving, and optimization of industrial-scale fluidized bed reactors (FBRs). Employing an easy-to-use Graphical User Interface (GUI), and enhanced with visualization software from Tecplot, Inc. of Bellevue, Washington, U.S.A. Virtual Reactor TM helps engineers improve the reliability, capacity, and profitability of FBRs &ndash; through efficient modelling of both non-reacting and reacting gas-particle dynamics. Leveraging low-cost, high-performance computing, Barracuda physics-based simulation technology delivers key process performance information supporting critical design and operational decisions &ndash; providing competitive advantage through improved equipment performance, lower warranty risk and rework, higher yields, lower operating costs and longer up-time</span></p>
+        <h2><a name="_Toc81323180"></a><a name="_Toc81330562"></a><a name="_Toc81390114"></a><a name="_Toc81411727"></a><a name="_Toc81413124"></a><a name="_Toc81420235"></a><a name="_Toc81498995"></a><a name="_Toc85794199"></a><a name="_Toc85794526"></a><a name="_Toc85798830"></a><a name="_Toc88471717"></a>4.2    <span lang="EN-IN">CPFD Barracuda-VR </span>on Azure Platform</h2>
+        <p class="MsoNormal"><span lang="EN-IN">To carry out the CFD simulations on CPFD Barracuda-VR software, right hardware with latest CPUs and GPUs are required. Microsoft partnered with Nvidia provides the required and suitable Infrastructure and hardware on Azure cloud platform. It provides the latest and fastest compute capabilities for both CPU and GPU intensive workloads.</span></p>
+        <div>
+        <table class="MsoTable15Grid4Accent3" border="1" width="645" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td colspan="2" width="645">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Operating system and Nvidia drivers Details </span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="285">
+        <p class="MsoNormal"><span lang="EN-IN">Operating system version</span></p>
+        </td>
+        <td width="360">
+        <p class="MsoNormal"><span lang="EN-IN">CentOS Linux release 8.1.1911 (Core)</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="285">
+        <p class="MsoNormal"><span lang="EN-IN">OS Architecture</span></p>
+        </td>
+        <td width="360">
+        <p class="MsoNormal"><span lang="EN-IN">X86-64</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="285">
+        <p class="MsoNormal"><span lang="EN-IN">GPU Drivers version </span></p>
+        </td>
+        <td width="360">
+        <p class="MsoNormal"><span lang="EN-IN">470.57.02</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="285">
+        <p class="MsoNormal"><span lang="EN-IN">Cuda version</span></p>
+        </td>
+        <td width="360">
+        <p class="MsoNormal"><span lang="EN-IN">11.4</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <p class="MsoNormal"></p>
+        <h2><a name="_Toc81323186"></a><a name="_Toc81330568"></a><a name="_Toc81390120"></a><a name="_Toc81411733"></a><a name="_Toc81413130"></a><a name="_Toc81420241"></a><a name="_Toc81498996"></a><a name="_Toc85794200"></a><a name="_Toc85794527"></a><a name="_Toc85798831"></a><a name="_Toc88471718"></a><span lang="EN-IN">4.3    </span><span lang="EN-IN">CPFD Barracuda-VR Performance Result</span><span lang="EN-IN">s</span></h2>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><strong><span lang="EN-IN">Model Details:</span></strong></p>
+        <div>
+        <table class="MsoTable15List4Accent5" border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">Test Problem No</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">Cell count</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">No. of particles</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">Chemistry</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">Thermal</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">P1 model</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">479</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">243267</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">29920300</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">499</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">243267</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">3581140</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">480</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">105157</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">40581300</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">500</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">105157</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">9528670</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">481</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">389320</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">50170500</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">501</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">389320</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">12994400</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">482</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">821781</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">55070200</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">502</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">821781</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">22625700</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">enabled</span></p>
+        </td>
+        <td width="113">
+        <p class="MsoNormal"><span lang="EN-IN">disabled</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"><span lang="EN-IN">Particle-based fluid dynamics simulations are carried out on the following Virtual machine configurations. </span></p>
+        <p class="MsoNormal"><span lang="EN-IN">Azure Virtual machines tested: </span>ND96asr_v4,<span lang="EN-IN"> NC24s_v3 and </span>NC64as_T4_v3</p>
+        <p class="MsoNormal"><span lang="EN-IN">The simulations are carried out to see the performance of GPU and CPU on the chosen Azure Virtual Machine Configuration. Refer chapter 2.2 for the VM specifications.</span></p>
+        <p class="MsoNormal"><span lang="EN-IN">The results are presented below,</span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal">Elapsed time for NDV4 Virtual Machine - (&ldquo;Seconds&rdquo;)</p>
+        <table class="MsoTable15Grid4Accent3" border="1" width="680" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Test Problem NO.</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">479</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">480</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">481</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">482</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">499</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">500</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">501</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">502</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">CPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">422.55</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">755.8</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">755.8</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1258.1</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">92.92</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">222.81</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">594.3</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">601.59</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">1-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">2.92</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">12.7</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">12.7</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">13.8</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.453</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">2.63</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">9.57</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.59</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">2-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">2.85</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.4</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.4</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.4</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.358</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1.8</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.38</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">4.57</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">3-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">2.68</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">5.4</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">5.4</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">6.1</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.629</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1.61</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">5.65</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">4.49</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">4-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">3.35</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.8</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.845</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1.71</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">5.41</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">4.44</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">5-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">3.35</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.5</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.5</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">8</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">2.189</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1.83</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">5.86</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">5.39</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">6-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">3.67</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.8</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.8</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">8</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">2.908</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">2.36</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.21</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.46</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">7-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">4.17</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">9.6</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">3.433</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">2.69</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.56</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.63</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">8-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">4.62</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">9</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">3.971</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">3.01</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.12</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">7.93</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal">Elapsed time for NCV3 Virtual Machine - (&ldquo;Seconds&rdquo;)</p>
+        <table class="MsoTable15Grid4Accent3" border="1" width="680" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Test Problem NO.</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">479</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">480</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">481</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">482</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">499</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">500</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">501</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">502</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">CPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">595.68</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1146.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">5327.5</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1768.7</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">113.751</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">335.73</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">772.93</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">678.59</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">1-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.8</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">55</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">216.3</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">183.2</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">2.17</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">5.19</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">17.2</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">12.88</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">2-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.03</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">12.5</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">49.9</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">22.7</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">5.217</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">5.2</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">24.37</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">13.8</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">3-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.06</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">10.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">46</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">20.8</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">5.708</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.31</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">29.68</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">12.88</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">4-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.07</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">9.5</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">67.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">19.1</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.61</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.84</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">35.98</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">13.93</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="MsoNormal">Elapsed time for NCas-T4 Virtual Machine - (&ldquo;Seconds&rdquo;)</p>
+        <table class="MsoTable15Grid4Accent3" border="1" width="680" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Test Problem NO.</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">479</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">480</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">481</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">482</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">499</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">500</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">501</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">502</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">CPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">439.31</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">789.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1673.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1266.5</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">96.427</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">251.59</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">609.31</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">609.34</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">1-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">28.31</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">87.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">295.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">238</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.37</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">9.9</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">49.15</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">39.5</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">2-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">16.82</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">29.9</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">163.6</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">50.7</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">7.271</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.95</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">87.51</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">27.47</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">3-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">14.17</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">21.7</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">258.2</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">45.2</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">7.47</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.72</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">127.32</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">24.21</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">4-GPU</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">12.73</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">18</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">351.1</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">35.4</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">8.025</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">7.72</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">128.35</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">22.34</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <span lang="EN-IN"><br clear="all" /> </span>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal">Simulation speed-up for NDV4 Virtual Machine - (&ldquo;Seconds/Day&rdquo;)</p>
+        <table class="MsoTable15Grid4Accent3" border="1" width="680" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Test Problem NO.</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">479</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">480</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">481</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">482</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">499</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">500</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">501</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">502</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">CPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.84</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">1.03</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.49</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.62</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">7.44</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">3.49</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.31</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.29</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">1-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">172.10</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">61.10</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">29.37</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">56.11</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">475.84</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">295.82</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">81.31</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">118.05</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">2-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">266.81</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">104.80</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">52.80</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">96.60</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">509.10</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">433.26</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">81.31</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">170.29</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">3-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">272.85</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">145.75</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">68.53</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">105.11</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">424.87</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">482.75</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">137.87</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">173.19</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">4-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">290.68</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">168.87</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">75.92</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">126.11</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">375.23</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">454.95</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">144.20</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">175.39</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">5-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">232.16</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">162.10</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">77.81</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">99.79</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">316.32</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">426.85</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">132.83</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">144.44</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">6-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">211.66</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">172.31</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">79.69</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">96.47</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">238.60</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">329.83</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">125.22</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">120.73</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">7-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">186.82</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">163.73</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">71.68</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">81.18</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">201.66</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">289.21</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">101.61</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">117.47</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">8-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">168.21</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">171.39</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">78.23</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">85.89</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">174.89</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">258.41</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">96.02</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">98.20</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal">Simulation speed-up for NCV3 Virtual Machine - (&ldquo;Seconds/Day&rdquo;)</p>
+        <table class="MsoTable15Grid4Accent3" border="1" width="680" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="128">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Test Problem NO.</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">479</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">480</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">481</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">482</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">499</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">500</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">501</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">502</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">CPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.31</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.68</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.24</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.44</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.08</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">2.32</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.01</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.15</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">1-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">91.28</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">14.14</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">3.60</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">4.25</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">317.20</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">149.69</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">45.20</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">60.38</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">2-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">96.82</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">61.91</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">17.18</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">34.33</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">132.88</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">149.65</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">32.40</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">56.41</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">3-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">96.62</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">76.89</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">18.84</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">37.51</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">122.35</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">180.74</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">27.03</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">60.45</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">4-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">96.45</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">82.22</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">12.13</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">40.68</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">105.15</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">160.74</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">24.38</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">55.87</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="MsoNormal">Simulation speed-up for NCas-T4 Virtual Machine - (&ldquo;Seconds/Day&rdquo;)</p>
+        <table class="MsoTable15Grid4Accent3" border="1" width="680" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="128">
+        <p class="MsoNormal"><a name="_Hlk87619670"></a><strong><span lang="EN-IN">Test Problem NO.</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">479</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">480</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">481</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">482</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">499</span></strong></p>
+        </td>
+        <td width="76">
+        <p class="MsoNormal"><strong><span lang="EN-IN">500</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">501</span></strong></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><strong><span lang="EN-IN">502</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">CPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.77</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.98</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.47</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">0.61</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">7.17</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">3.09</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.28</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">1.28</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">1-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">27.50</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">8.93</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">2.64</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">3.27</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">108.69</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">52.73</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">15.82</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">19.69</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">2-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">46.23</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">26.00</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">5.08</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">15.32</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">95.26</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">78.55</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">9.19</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">28.30</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">3-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">54.90</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">35.83</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">17.21</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">17.21</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">92.92</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">97.88</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.12</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">32.16</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td nowrap="nowrap" width="128">
+        <p class="MsoNormal"><span lang="EN-IN">4-GPU</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">61.07</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">43.13</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">21.95</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">21.95</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">86.39</span></p>
+        </td>
+        <td nowrap="nowrap" width="76">
+        <p class="MsoNormal"><span lang="EN-IN">100.70</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">6.07</span></p>
+        </td>
+        <td width="62">
+        <p class="MsoNormal"><span lang="EN-IN">34.86</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <br clear="all" />
+        <p class="MsoNormal">Simulation Speed-up Charts for NDV4 Virtual Machine</p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 4" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image018.png" alt="" width="682" height="437" border="0" /></span></p>
+        <p class="MsoNormal">The below chart shows the performance of two similar models with difference in particle count,</p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 5" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image019.png" alt="" width="322" height="324" border="0" /></span><span lang="EN-IN">  </span><span lang="EN-IN"><img id="Chart 30" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image020.png" alt="" width="322" height="324" border="0" /></span></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal"></p>
+        <p class="MsoNormal">  <span lang="EN-IN"><img id="Chart 128" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image021.png" alt="" width="322" height="324" border="0" /></span>  <span lang="EN-IN"><img id="Chart 129" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image022.png" alt="" width="322" height="324" border="0" /></span></p>
+        <p class="MsoNormal">Simulation Speedup charts for NCV3 Virtual Machine</p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 15" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image023.png" alt="" width="681" height="386" border="0" /></span></p>
+        <br clear="all" />
+        <p class="MsoNormal">The below chart shows the performance of two similar models with difference in particle count,</p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 130" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image024.png" alt="" width="341" height="231" border="0" /></span>  <span lang="EN-IN"><img id="Chart 20" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image025.png" alt="" width="318" height="236" border="0" /></span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 132" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image026.png" alt="" width="337" height="227" border="0" /></span> <span lang="EN-IN"><img id="Chart 133" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image027.png" alt="" width="318" height="229" border="0" /></span></p>
+        <p class="MsoNormal">Simulation Speedup Charts for NCas-T4 Virtual Machine</p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 25" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image028.png" alt="" width="658" height="294" border="0" /></span></p>
+        <p class="MsoNormal">The below chart shows the performance of two similar models with difference in particle count,</p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 134" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image029.png" alt="" width="322" height="230" border="0" /></span>  <span lang="EN-IN"><img id="Chart 28" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image030.png" alt="" width="332" height="230" border="0" /></span></p>
+        <p class="MsoNormal"><span lang="EN-IN"><img id="Chart 137" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image031.png" alt="" width="322" height="230" border="0" /></span>  <span lang="EN-IN"><img id="Chart 139" src="Azure%20HPC%20Recipe%20for%20CPFD%20Barracuda-VR_v2.0_files/image032.png" alt="" width="322" height="230" border="0" /></span></p>
+        <h1><a name="_Toc88471719"></a><a name="_Toc85794201"></a><a name="_Toc85794528"></a><a name="_Toc85798832"></a>5     Azure Cost</h1>
+        <p class="MsoNormal"><span lang="EN-IN">For the below cost reports, the application installation time is not considered and only wall clock time is considered for the cost calculation.</span></p>
+        <table class="MsoTable15Grid4Accent3" border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><strong>Azure VM Size</strong></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><strong>CPU&amp;GPU</strong></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><strong>Elapsed Time in Hours</strong></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><strong>Azure VM Hourly Cost</strong></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><strong>Total Azure Cost</strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td rowspan="9" width="133">
+        <p class="MsoNormal">ND96asr_v4</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">CPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">1.31</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$51.96</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">1-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.02</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.69</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">2-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.43</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">3-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.36</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">4-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.37</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">5-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.39</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">6-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.43</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">7-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.49</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">8-GPU</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">0.01</span></p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal">$39.77</p>
+        </td>
+        <td width="133">
+        <p class="MsoNormal"><span lang="EN-IN">$0.51</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="MsoNormal"></p>
+        <div>
+        <table class="MsoTable15Grid4Accent3" border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><a name="_Hlk87966446"></a><strong><span lang="EN-IN">Azure VM Size</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">CPU&amp;GPU</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Elapsed Time in Hours</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Azure VM Hourly Cost</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Total Azure Cost</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td rowspan="5" width="136">
+        <p class="MsoNormal"><span lang="EN-IN">NC24s_v3</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">CPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">2.98</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal">$16.41</p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$48.96</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">1-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.14</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$16.41</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$2.28</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">2-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.04</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$16.41</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$0.65</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">3-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.04</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$16.41</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$0.63</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">4-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.05</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$16.41</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$0.75</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        </div>
+        <table class="MsoTable15Grid4Accent3" border="1" cellspacing="0" cellpadding="0">
+        <tbody>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Azure VM Size</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">CPU&amp;GPU</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Elapsed Time in Hours</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Azure VM Hourly Cost</span></strong></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><strong><span lang="EN-IN">Total Azure Cost</span></strong></p>
+        </td>
+        </tr>
+        <tr>
+        <td rowspan="5" width="136">
+        <p class="MsoNormal">NC64as_T4_v3</p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">CPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">1.59</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal">$<span lang="EN-IN">5.48</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$8.73</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">1-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.21</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal">$<span lang="EN-IN">5.48</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$1.15</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">2-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.11</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal">$<span lang="EN-IN">5.48</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$0.60</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">3-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.14</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal">$<span lang="EN-IN">5.48</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$0.77</span></p>
+        </td>
+        </tr>
+        <tr>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">4-GPU</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">0.16</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal">$<span lang="EN-IN">5.48</span></p>
+        </td>
+        <td width="136">
+        <p class="MsoNormal"><span lang="EN-IN">$0.89</span></p>
+        </td>
+        </tr>
+        </tbody>
+        </table>
+        <p class="MsoNormal"><strong>Note:</strong> The Elapsed time for full production-level test cases will be on the higher side than the results presented here and hence, the associated cost will increase.</p>
+        <h1><a name="_Toc85794202"></a><a name="_Toc85794529"></a><a name="_Toc85798833"></a><a name="_Toc88471720"></a>6     Summary</h1>
+        <p class="paragraph"><span class="normaltextrun"><span lang="EN-IN">1.    </span></span><span class="normaltextrun"><span lang="EN-IN">Barracuda-VR is successfully tested on NDV4, NCv3 and NCas-T4 Virtual Machines on Azure Cloud Platform</span></span></p>
+        <p class="paragraph"><span class="normaltextrun"><span lang="EN-IN">2.    </span></span><span class="normaltextrun"><span lang="EN-IN">For NDv4 Virtual Machine, we can see that the application is scaling well up to 4 GPUs for the models with larger particle counts and for the models with lesser particle counts, it is scaling only up to 2 GPUs.</span></span></p>
+        <p class="paragraph"><span class="normaltextrun"><span lang="EN-IN">3.    </span></span><span class="normaltextrun"><span lang="EN-IN">For NCv3 Virtual Machine, we can see performance improvement up to 3 GPUs for the models with larger particle counts and for models with smaller particle count, only 1 GPU configuration is recommended</span></span></p>
+        <p class="paragraph"><span class="normaltextrun"><span lang="EN-IN">4.    </span></span><span class="normaltextrun"><span lang="EN-IN">For NCas-T4 Virtual Machine,</span></span><span class="normaltextrun"><span lang="EN-IN"> the application is speed-up well with all the 4 GPUs for models with larger particle count and for the models with lesser particle count, it is scaling well only with 1 GPU configuration.</span></span></p>
+        <p class="paragraph"><span lang="EN-IN">5.    </span><span lang="EN-IN">For simulations with large numbers of particles and cells, a single 16 GB GPU may not be sufficient to run well due to the memory requirements. In these cases, running the simulation with two GPUs is critical. This is seen in test problems 480, 481, and 482 on the NCV3 and NCAS T4 machines</span></p>
+        <p class="paragraph">6.   For smaller simulations where there are performance penalties when utilizing all GPUs on an instance, concurrent simulations can be run using the other GPUs. In this scenario, multiple points in the simulation parameterspace could be explored more quickly.</p>
+      </div><!--content-->
+      
+     <div class="col-4 col-md-2 px-1 px-sm-0 toc">
+        <label>Table of Contents</label>
+<!--             <nav>  
+                
+                <ol>
+                    <li class="nav-item"><a href="#intro" class="nav-link p-0">Introduction</a></li>
+                    <li class="nav-item"><a href="#deploy" class="nav-link p-0">Deploy Virtual Machine on Azure Cloud Platform
+                        <nav>
+                            <ol class="sub-menu">
+                                <li><a href="#2.1">Azure cloud architecture for application</a></li>
+                                <li><a href="#2.2">AZURE VIRTUAL MACHINE (VM)</a></li>
+                                <li><a href="#2.3">CREATE A VIRTUAL MACHINE ON AZURE PLATFORM</a></li>
+                                <li><a href="#2.4">CONNECT TO VIRTUAL MACHINE</a></li>
+                                <li><a href="#2.5">INSTALL NVIDIA DRIVERS</a></li>
+                            </ol>
+                        </nav>
+
+                    </li>
+                      <li class="nav-item "><a href="#install" class="nav-link p-0">Install VRED Application on
+                        Virtual Machine:</a></li>
+                      <li class="nav-item "><a href="#performance" class="nav-link p-0">Performance results of
+                        Autodesk VRED on Azure Virtual Machines</a></li>
+                      <li class="nav-item "><a href="#consumption" class="nav-link p-0">Azure Consumption</a></li>
+                      <li class="nav-item "><a href="#summary" class="nav-link p-0">Summary</a></li>
+                </ol>
+            </nav> -->
+            <p ><a href="#_Toc88471705"><span >1</span> <span >Introduction</span></a></p>
+            <p ><a href="#_Toc88471706"><span >2</span> <span >Deploy Virtual Machine on Azure Cloud Platform</span></a></p>
+            <p ><a href="#_Toc88471707"><span >2.1</span> <span >Azure Cloud Architecture for Application</span></a></p>
+            <p ><a href="#_Toc88471708"><span >2.2</span> <span >Azure Virtual Machine (VM)</span></a></p>
+            <p ><a href="#_Toc88471709"><span >2.3</span> <span >Create a Virtual Machine on Azure Platform</span></a></p>
+            <p ><a href="#_Toc88471710"><span >2.4</span> <span >Connect to virtual machine</span></a></p>
+            <p ><a href="#_Toc88471711"><span >2.5</span> <span >Install Nvidia Drivers</span></a></p>
+            <p ><a href="#_Toc88471712"><span >3</span> <span >Install CPFD Barracuda-VR Application on Virtual Machine</span></a></p>
+            <p ><a href="#_Toc88471713"><span >3.1</span> <span >Download product</span></a></p>
+            <p ><a href="#_Toc88471714"><span >3.2</span> <span >Install Barracuda- VR application on Linux</span></a></p>
+            <p ><a href="#_Toc88471715"><span >4</span> <span >Performance results of Barracuda- VR on Azure virtual machine</span></a></p>
+            <p ><a href="#_Toc88471716"><span >4.1</span> <span >CPFD Barracuda-VR Overview</span></a></p>
+            <p ><a href="#_Toc88471717"><span >4.2</span> <span >CPFD Barracuda-VR </span><span >on Azure Platform</span></a></p>
+            <p ><a href="#_Toc88471718"><span >4.3</span> <span >CPFD Barracuda-VR Performance Results</span></a></p>
+            <p ><a href="#_Toc88471719"><span >5</span> <span >Azure Cost</span></a></p>
+            <p ><a href="#_Toc88471720"><span >6</span> <span >Summary</span></a></p>
+     </div>
+
+    </div><!--rpt-->
+
+
+      </section>
+          
+      <button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top"><i class="fas fa-arrow-up"></i></button>
+ 
+    </main>
+
+
+    <footer>
+        <div class="d-flex justify-content-around align-items-center container">
+          <p class="pt-md-3">Copyright &copy; 2021 Microsoft HPC Azure</p>
+          <ul>
+            <li>
+              <a href="#">
+                <img src="img/CapgeminiLogo.png" alt="Capgemini Logo" />
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="img/MicrosoftLogo.png" alt="Microsoft Logo" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+      </div><!--wrapper-->
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+-->
+
+<!--Back-to-Top Code Begins..-->
+
+<script>let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+</body>
+</html>
