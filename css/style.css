@@ -239,6 +239,19 @@ header a{
     color:#fff;
 }
 
+.artifacts-steps{
+font-size: 1.25rem;
+font-weight: 300;
+max-width: 250px;
+text-align: center;
+margin: auto;
+}
+
+.artifacts-steps1{
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin: auto;
+    }
 
 .aligner {
   display: flex;
@@ -465,7 +478,7 @@ text-decoration: none;
 
 .content{
    word-wrap: break-word;
-   word-break: break-all;
+   /* word-break: break-all; */
 }
 
 .content table{
@@ -714,17 +727,24 @@ border:unset;
     .testimonials img{
         width:70%;
     }
+
+    .hero-image{
+        max-width:25%;
+        min-height: 225px;
+    }
+
+    .hero-wrapper{
+        max-width:75%;
+    }
 	
     .hero-links a{	
         padding:5px;
         line-height:2.5em;
-        font-size: smaller;
+        /* font-size: smaller; */
+        font-size: 0.5em;
     }
     .hero-lead {
         font-size: large;
-    }
-    .hero-wrapper{
-        width:65%;
     }
 
     .recipe-guide a {
@@ -745,17 +765,19 @@ border:unset;
     .hero-lead {
         font-size:medium;
     }
-    .recipe-guide a {
-        font-size: 0.44em;
-    }
-    
-    .toc{
-        /* display:none; */
-    }
+}
 
 
+@media (max-width: 540px) {  
+.hero-links a{	
+    font-size: 0.37em;
+}
+.recipe-guide a {
+    font-size: 0.37em;
 }
 }
+
+
    
  @media (max-width:414px) {  
     .hero-links a{	
