@@ -251,7 +251,7 @@ margin: auto;
     font-size: 1.25rem;
     font-weight: 300;
     margin: auto;
-    }
+}
 
 .aligner {
   display: flex;
@@ -269,6 +269,16 @@ margin: auto;
   background-color: #f2f2f2;
 }
 
+.navigation-links a{
+    /* font-size:smaller; */
+	background-color: rgb(46 40 40 / 85%);
+	border-radius: 7px;
+	padding:8px;
+	text-decoration:none;
+	color:#f9f9f9;
+	line-height:2.8em;
+}
+
 /*navigation callout styles ends*/
 
 /*recipe-guide styles begins*/
@@ -284,6 +294,7 @@ margin: auto;
 	text-decoration:none;
 	color:#f9f9f9;
 	line-height:2.8em;
+    font-size: 0.8em;
 }
 
 .recipe-guide a:hover{
@@ -295,7 +306,7 @@ background-color: rgb(78 70 70 / 85%);
 }
 
 .recipe-guide .aplns img{
-max-width:200px;
+width:200px;
 }
 
 /*recipe-guide callout styles ends*/
@@ -482,9 +493,18 @@ text-decoration: none;
 }
 
 .content table{
-    width:100% !important;
+    width:100%;
     margin-bottom: 2rem;
-    word-break: break-word;
+    /* word-break: break-word; */
+}
+
+.rpt .content div{
+/* overflow-x: auto; */
+}
+
+table::before div::content{
+    overflow-x: scroll;
+    background-color: red;
 }
 
 .content table tr:first-child{
@@ -683,6 +703,9 @@ border:unset;
     .recipe-guide a {
         font-size: 1em;
     }
+    .navigation-links a {
+        font-size: 1em;
+    }
     }
 
 @media (min-width:1182px){
@@ -700,7 +723,8 @@ border:unset;
     .recipe-guide .aplns{
         min-width:290px !important;
       }
-      .recipe-guide a {
+
+    .navigation-links a {
         font-size: 0.8em;
     }
 
@@ -708,10 +732,41 @@ border:unset;
         /* display: none; */
     }
 
+    .content table{
+        width: max-content;
+        font-size: 70%;
+    }
+
+    .overflow{
+        overflow: hidden;
+        overflow-x: auto;
+    }
+
+ /*    .overflow::-webkit-scrollbar {
+        height: 5px;
+      }
+      
+    .overflow::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+    .overflow::-webkit-scrollbar-thumb {
+        background: #bbb; 
+        border-radius: 10px;
+      }
+      
+    .overflow::-webkit-scrollbar-thumb:hover {
+        background: #aaa; 
+      } */
+
 }
 
 
 @media (max-width:767px) {
+    .rpt h1{
+        font-size: 1.5em;
+    }
+
     h1 {
         font-size: 3em;
     }
@@ -747,15 +802,14 @@ border:unset;
         font-size: large;
     }
 
-    .recipe-guide a {
-        font-size: 0.5em;
+    .navigation-links a {
+        font-size: 0.59em;
     }
 
     .index{
         display:none;
     }
 }
-
 
 @media (max-width: 576px) {  
     .logo{
@@ -765,41 +819,73 @@ border:unset;
     .hero-lead {
         font-size:medium;
     }
+    .artifacts-steps1{
+        font-size: 1.2rem;
+    }
 }
 
+
+@media (max-width: 556px) { 
+    .navigation-links a {
+        font-size: 0.5em;
+    }
+}
 
 @media (max-width: 540px) {  
 .hero-links a{	
     font-size: 0.37em;
 }
-.recipe-guide a {
-    font-size: 0.37em;
-}
 }
 
 
+@media (max-width: 506px) { 
+.navigation-links a {
+    font-size: 0.49em;
+}
+.artifacts-steps1{
+    font-size: 1rem;
+}
+}
    
  @media (max-width:414px) {  
     .hero-links a{	
-        font-size:x-small;
+        /* font-size:x-small; */
+        font-size: 0.4em;
     }
+
     .recipe-guide a {
+        font-size: 0.8em;
+    }
+    .navigation-links a {
         font-size: 0.33em;
+    }
+    .content table{
+        font-size: 0.8em;
     }
  }
 
  @media (max-width:376px) {  
     .recipe-guide a {
+        font-size: 0.6em;
+    }
+    .navigation-links a {
         font-size: 0.27em;
     }
  }
 
  @media (max-width:320px) {  
     .hero-links a{	
-        font-size:xx-small;
+        /* font-size:xx-small; */
+        font-size: 0.3em;
     }
-    .recipe-guide a {
-        font-size: 0.2em;
+    .navigation-links a {
+        font-size: 0.21em;
+    }
+    .artifacts-steps1{
+        font-size: 0.6rem;
+    }
+    .content table{
+        font-size: 0.5em;
     }
  }
 
