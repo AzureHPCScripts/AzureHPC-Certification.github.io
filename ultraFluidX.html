@@ -18,11 +18,11 @@
 
     <script src="https://kit.fontawesome.com/3d0a07deaa.js" crossorigin="anonymous"></script>
 
-    <title>Microsoft HPC Azure | HOME</title>
+    <title>Microsoft HPC Azure | Report</title>
     
   </head>
   <body>
-    <div id="wrapper" class="row g-0">
+    <div id="wrapper" class="row g-0">  
       <header class="container-fluid">   
         <div class="logo container-lg px-3 px-lg-0">
          <a href="index.html">Microsoft <span>HPC Azure</span> </a><br>
@@ -43,780 +43,693 @@
     <main class="container-fluid">
 
       <section class="container-lg px-3 px-lg-0 rpt-wrapper">        
-      <h3 class="text-center text-uppercase py-4">Azure HPC Recipe Document for Altair ultraFluidX</h3>
+      <h3 class="text-center text-uppercase py-4"><!--The Report title goes here-->Azure HPC Recipe Document for Altair ultraFluidX</h3>
     <div class="d-flex flex-row rpt">
 
       <div class="col-2 px-1 px-sm-0 text-left index">
-        <label>ultraFluidX</label>
-        <div class="index-scroll">
+        <label class="px-3"><!--The Report Name goes here-->Altair ultraFluidX</label>
+        <div class="index-scroll">   
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 8pt 0pt;"><a name="_Toc81399914"></a></p>
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041716"><span>1</span> <span>Introduction</span></a></p>
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041717"><span>2</span> <span>Deploy Virtual Machine on Azure Cloud Platform</span></a></p>
 
-       <!--  <ul class="nav flex-column">
-          <li class="nav-item "><a href="#intro" class="nav-link p-0">Introduction</a></li>
-          <li class="nav-item "><a href="#deploy" class="nav-link p-0">Deploy Virtual Machine on
-            Azure Cloud Platform</a></li>
-          <li class="nav-item "><a href="#install" class="nav-link p-0">Install VRED Application on
-            Virtual Machine:</a></li>
-          <li class="nav-item "><a href="#performance" class="nav-link p-0">Performance results of
-            Autodesk VRED on Azure Virtual Machines</a></li>
-          <li class="nav-item "><a href="#consumption" class="nav-link p-0">Azure Consumption</a></li>
-          <li class="nav-item "><a href="#summary" class="nav-link p-0">Summary</a></li>
-        </ul> -->
-    
-        <p><a href="#_Toc88041716">1 Introduction</a></p>
-        <p><a href="#_Toc88041717">2 Deploy Virtual Machine on Azure Cloud Platform</a></p>
-        <p><a href="#_Toc88041723">3 Install Altair ultraFluidX Application on Virtual Machine</a></p>
-        <p><a href="#_Toc88041727">4 Performance results of ultraFluidX on Azure virtual machine</a></p>
-        <p><a href="#_Toc88041732">5 Azure Cost</a></p>
-        <p><a href="#_Toc88041733">6 Summary</a></p>
-    
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041723"><span>3</span> <span>Install Altair ultraFluidX Application on Virtual Machine</span></a></p>
+
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041727"><span>4</span> <span>Performance results of ultraFluidX on Azure virtual machine</span></a></p>
+
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041732"><span>5</span> <span>Azure Consumption</span></a></p>
+          <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041733"><span>6</span> <span>Summary</span></a></p>
     </div>
       </div><!--index-->
 
       <div class="col-8 col-md-8 px-3 content">
+        <!--Add class="h1" for the Manin Headings (1-6) eg. 1 Introdcution | 2 Deploy Virtual Machine on Azure Cloud Platform-->
+        <!--Add class="h2" for the Sub Headings (2.1 - 2.4) eg. 2.1 Azure Cloud Architecture for Application-->
 
-      
-<h1><a name="_Toc81323166"></a><a name="_Toc81330548"></a><a name="_Toc81389013"></a><a name="_Toc81405758"></a><a name="_Toc85794185"></a><a name="_Toc85794512"></a><a name="_Toc85798816"></a><a name="_Toc88041716"></a><span lang="EN-IN">1 </span><span lang="EN-IN">Introduction</span></h1>
-<p class="MsoNormal"><span lang="EN-IN">This document briefly explains the steps to install and run Altair ultraFluidX application on a Virtual Machine deployed in Azure Cloud Platform and presents the performance results.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">This recipe document covers the following topics: -</span></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Deploy &amp; connect a required virtual machine on Azure platform.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Install required NVIDIA drivers in virtual machine.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Install Application on virtual machine.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Install license manager for current application</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Performance results of current application on azure virtual machine</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Azure cost</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Summary</span></p>
-<h1><a name="_Toc81323168"></a><a name="_Toc81330550"></a><a name="_Toc81389015"></a><a name="_Toc81405760"></a><a name="_Toc85794187"></a><a name="_Toc85794514"></a><a name="_Toc85798817"></a><a name="_Toc88041717"></a><span lang="EN-IN">2 </span><span lang="EN-IN">Deploy Virtual Machine on Azure Cloud Platform</span></h1>
-<h2><a name="_Toc81323169"></a><a name="_Toc81330551"></a><a name="_Toc81389016"></a><a name="_Toc81405761"></a><a name="_Toc85794188"></a><a name="_Toc85794515"></a><a name="_Ref85797239"></a><a name="_Toc85798819"></a><a name="_Toc88041719"></a>2.1 Azure Virtual Machine (VM)</h2>
-<p class="MsoNormal"><span lang="EN-IN">A VM is a virtualized instance of a computer that can perform almost all the same functions as a computer, including running applications and operating systems.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">An Azure VM gives the flexibility of virtualization without having to buy and maintain the physical hardware that runs it. However, the user still needs to maintain the VM by performing tasks, such as configuring, patching, and installing the software that runs on it.</span></p>
-<h2><a name="_Toc85798818"></a><a name="_Toc88041718"></a><span lang="EN-IN">2.2 </span><span lang="EN-IN">Azure Cloud Architecture for Application</span></h2>
-<p class="MsoNormal"><span lang="EN-IN">The below Architecture explains the virtual machine running on an Azure Platform</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 35" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image003.png" alt="" width="604" height="477" /></span></p>
-<p><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">Things to be considered before deploying a VM,</span></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The names of the application resources</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The location where the resources are stored</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The size of the VM</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The operating system that the VM runs</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The configuration of the VM</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The related resources that the VM needs</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">There are different sizes and options available for the Azure virtual machines and </span><span lang="EN-IN">user can use to run apps</span><span lang="EN-IN"> and workloads. Depending on the workload user must choose the appropriate VM size. For complete list check this </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes/"><span lang="EN-IN">https://docs.microsoft.com/en-us/azure/virtual-machines/sizes/</span></a><span lang="EN-IN">.</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">To test the performance of Altair ultraFluidX on Azure Platform, </span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/nda100-v4-series"><span lang="EN-IN">ND A100 v4</span></a><span lang="EN-IN"> virtual machine is deployed.</span></p>
-<p class="MsoNormal"></p>
-<div>
-<table class="MsoNormalTable" border="0" width="621" cellspacing="0" cellpadding="0">
+        <!--Add <div class="overflow-table"> before every <table> within the content-->
+       
+
+        <!--The Report content goes here-->
+<h1>1 <a name="_Toc88041716"></a>Introduction</h1>
+<p>This document briefly explains the steps to install and run Altair ultraFluidX application on a Virtual Machine deployed in Azure Cloud Platform and presents the performance results.</p>
+<p>This recipe document covers the following topics: -</p>
+<ul>
+<p class="li">Deploy &amp; connect a required virtual machine on Azure platform.</p>
+<p class="li">Install required NVIDIA drivers in virtual machine.</p>
+<p class="li">Install Application on virtual machine.</p>
+<p class="li">Install license manager for current application</p>
+<p class="li">Performance results of current application on azure virtual machine</p>
+<p class="li">Azure consumption</p>
+<p class="li">Summary</p></ul>
+<h1>2 <a name="_Toc88041717"></a>Deploy Virtual Machine on Azure Cloud Platform</h1>
+<p class="h2">2.1 <a name="_Toc88041719"></a>Azure Virtual Machine (VM)</p>
+<p>A VM is a virtualized instance of a computer that can perform almost all the same functions as a computer, including running applications and operating systems.</p>
+<p>An Azure VM gives the flexibility of virtualization without having to buy and maintain the physical hardware that runs it. However, the user still needs to maintain the VM by performing tasks, such as configuring, patching, and installing the software that runs on it.</p>
+<p class="h2">2.2 <a name="_Toc88041718"></a>Azure Cloud Architecture for Application</p>
+<p>The below Architecture explains the virtual machine running on an Azure Platform</p>
+<p><img src="ultraFluidX_files/Image1.png" alt="" width="604" height="477" border="0" /></p>
+<p>Things to be considered before deploying a VM,</p>
+<ul>
+<li>The names of the application resources</li>
+<li>The location where the resources are stored</li>
+<li>The size of the VM</li>
+<li>The operating system that the VM runs</li>
+<li>The configuration of the VM</li>
+<li>The related resources that the VM needs</li></ul>
+<p>There are different sizes and options available for the Azure virtual machines and user can use to run apps and workloads. Depending on the workload user must choose the appropriate VM size. For complete list check this <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/sizes/">https://docs.microsoft.com/en-us/azure/virtual-machines/sizes/</a>.</p>
+<p>To test the performance of Altair ultraFluidX on Azure Platform, <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/nda100-v4-series">ND A100 v4</a> virtual machine is deployed.</p>
+<div class="overflow-table"><table><colgroup><col /><col span="6" /></colgroup>
 <tbody>
 <tr>
-<td nowrap="nowrap" width="149">
-<p class="MsoNormal"><strong>VM Name</strong></p>
+<td>
+<p>VM Name</p>
 </td>
-<td width="79">
-<p class="MsoNormal"><strong>vCPU</strong></p>
+<td>
+<p>vCPU</p>
 </td>
-<td width="79">
-<p class="MsoNormal"><strong>Memory (GiB)</strong></p>
+<td>
+<p>Memory (GiB)</p>
 </td>
-<td width="79">
-<p class="MsoNormal"><strong>SSD (GiB)</strong></p>
+<td>
+<p>SSD (GiB)</p>
 </td>
-<td width="79">
-<p class="MsoNormal"><strong>GPU</strong></p>
+<td>
+<p>GPU</p>
 </td>
-<td width="79">
-<p class="MsoNormal"><strong>GPU Memory (GiB)</strong></p>
+<td>
+<p>GPU Memory (GiB)</p>
 </td>
-<td width="79">
-<p class="MsoNormal"><strong>Max Data Disk</strong></p>
+<td>
+<p>Max Data Disk</p>
 </td>
 </tr>
 <tr>
-<td nowrap="nowrap" width="149">
-<p class="MsoNormal"><span lang="EN-IN">Standard_ND96asr_v4</span></p>
+<td>
+<p>Standard_ND96asr_v4</p>
 </td>
-<td nowrap="nowrap" width="79">
-<p class="MsoNormal"><span lang="EN-IN">96</span></p>
+<td>
+<p>96</p>
 </td>
-<td nowrap="nowrap" width="79">
-<p class="MsoNormal"><span lang="EN-IN">900</span></p>
+<td>
+<p>900</p>
 </td>
-<td nowrap="nowrap" width="79">
-<p class="MsoNormal">6000</p>
+<td>
+<p>6000</p>
 </td>
-<td nowrap="nowrap" width="79">
-<p class="MsoNormal"><span lang="EN-IN">8 A100</span></p>
+<td>
+<p>8 A100</p>
 </td>
-<td nowrap="nowrap" width="79">
-<p class="MsoNormal">40</p>
+<td>
+<p>40</p>
 </td>
-<td nowrap="nowrap" width="79">
-<p class="MsoNormal">32</p>
+<td>
+<p>32</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">The current virtual machine is a new flagship addition to the Azure GPU family. (Standard_ND96asr_v4 Virtual Machine). This VMs is powered by </span><a href="https://www.nvidia.com/en-in/data-center/a100/"><span lang="EN-IN">NVIDIA Ampere A100 Tensor Core</span></a><span lang="EN-IN"> GPUs and 96 physical 2nd-generation AMD Epyc&trade; CPU cores (2.44GHz). The &ldquo;ND96asr_v4&rdquo; VM has 8 GPUs with 40 GB of memory each and supported by 96 AMD processor cores with a total memory of 900GB. Each GPU features NVLINK 3.0 connectivity for communication within the VM.</span></p>
-<p class="MsoNormal"></p>
-<h2><a name="_Toc81323171"></a><a name="_Toc81330553"></a><a name="_Toc81389017"></a><a name="_Toc81405762"></a><a name="_Toc85794189"></a><a name="_Toc85794516"></a><a name="_Toc85798820"></a><a name="_Toc88041720"></a>2.3 Create a Virtual Machine on Azure Platform</h2>
-<p class="MsoNormal"><strong>Sign into Azure</strong></p>
-<p class="MsoNormal"><span lang="EN-IN">Sign into the Azure portal by using </span><a href="https://portal.azure.com/"><span lang="EN-IN">https://portal.azure.com/</span></a></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><a href="https://azure.microsoft.com/offers/ms-azr-0044p"><span lang="EN-IN">Free Trial subscriptions</span></a><span lang="EN-IN">&nbsp;aren't eligible for limit or quota increases. </span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">After the successful sign in or sign up, one has to upgrade the Azure subscription to </span><a href="https://azure.microsoft.com/en-us/offers/ms-azr-0003p/"><span lang="EN-IN">Pay-As-You-Go</span></a><span lang="EN-IN"> to deploy a Virtual machine. For deployment, the user must have regional vCPU quota which can be obtained by raising a request.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">The step-by-step procedure to increase the vCPU quota is given below,</span></p>
-<p class="MsoNormal"><a href="https://docs.microsoft.com/en-us/azure/azure-portal/supportability/per-vm-quota-requests"><span lang="EN-IN">https://docs.microsoft.com/en-us/azure/azure-portal/supportability/per-vm-quota-requests</span></a><span class="MsoHyperlink"><span lang="EN-IN"><br clear="all" /> </span></span></p>
-<p class="MsoNormal"><span lang="EN-IN">The step-by-step procedure to deploy Virtual machine is given below,</span></p>
-<p class="MsoNormal"><span lang="EN-IN">1. </span><span lang="EN-IN">Type&nbsp;<strong>virtual machines</strong>&nbsp;in the marketplace search.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">2. </span><span lang="EN-IN">Under&nbsp;<strong>Services</strong>, select&nbsp;<strong>Virtual machines</strong>.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">3. </span><span lang="EN-IN">In the&nbsp;<strong>Virtual machines</strong>&nbsp;page, select&nbsp;<strong>Create</strong>&nbsp;Then&nbsp;<strong>Virtual machine</strong>.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">4. </span><span lang="EN-IN">In the&nbsp;<strong>Basics</strong>&nbsp;tab, under&nbsp;<strong>Project details</strong>, make sure the correct subscription is selected and then choose to&nbsp;<strong>Create new</strong>&nbsp;resource group. Type&nbsp;<strong><em>Azure-PerformanceTest</em>&nbsp;(user choice) </strong>for the name.</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 23" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image004.jpg" alt="" width="550" height="270" border="0" /></span></p>
-<p class="MsoNormal"><span lang="EN-IN">5. </span><span lang="EN-IN">Under&nbsp;</span><strong><span lang="EN-IN">Instance details</span></strong><span lang="EN-IN">, type&nbsp;</span><span lang="EN-IN">Azure-VM (user choice)</span><span lang="EN-IN">&nbsp;for the&nbsp;</span><strong><span lang="EN-IN">Virtual machine name</span></strong><span lang="EN-IN">&nbsp;and choose&nbsp;West Europe</span> <span lang="EN-IN">for </span><strong><span lang="EN-IN">Region</span></strong><span lang="EN-IN">. Choose&nbsp;</span><span lang="EN-IN">CentOS, Version 8.1 HPC-Gen2 </span><span lang="EN-IN">for the&nbsp;</span><strong><span lang="EN-IN">Image</span></strong><span lang="EN-IN">&nbsp;and&nbsp;</span><span lang="EN-IN">Standard_ND96asr_v4</span><span lang="EN-IN">&nbsp;for the&nbsp;</span><strong><span lang="EN-IN">Size </span></strong><span lang="EN-IN">(user choice).</span><span lang="EN-IN"> Leave the other defaults.</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 1" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image005.jpg" alt="" width="550" height="222" border="0" /></span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Note: </span></strong></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot; </span><strong><span lang="EN-IN">Region</span></strong><span lang="EN-IN"> must be decided based on where the Virtual machine is going to be deployed. To avoid the network latency, the region should be near to the location where the VM is to be deployed.</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot; </span><strong><span lang="EN-IN">Image </span></strong><span lang="EN-IN">selection is of user choice based on the application user can choose the image (Windows 10, Linux based OS and Windows Server)</span></p>
-<p class="MsoNormal"><span lang="EN-IN">6. </span><span lang="EN-IN">Under&nbsp;</span><strong><span lang="EN-IN">Administrator account</span></strong><span lang="EN-IN">, provide a username, such as&nbsp;</span><span lang="EN-IN">Azureuser&nbsp;and a password. The password must be at least 12 characters long and meet the&nbsp;</span><a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-"><span lang="EN-IN">defined complexity requirements</span></a><span lang="EN-IN">.</span></p>
-<p><span lang="EN-IN"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image006.jpg" alt="" width="550" height="111" border="0" /></span></p>
-<p class="MsoNormal"><span lang="EN-IN">7. </span><span lang="EN-IN">Under&nbsp;</span><strong><span lang="EN-IN">Inbound port rules</span></strong><span lang="EN-IN">, choose&nbsp;</span><strong><span lang="EN-IN">Allow selected ports</span></strong><span lang="EN-IN">&nbsp;and then select&nbsp;</span><strong><span lang="EN-IN">SSH (22)</span></strong><span lang="EN-IN">&nbsp;from the drop-down.</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image007.jpg" alt="" width="550" height="210" border="0" /></span></p>
-<p class="MsoNormal"><a name="_Ref81315987"></a><span lang="EN-IN">8. </span><span lang="EN-IN">In <strong>Advanced</strong> tab, under the Extensions click <strong>Select an extension to install</strong>, select <strong>NVIDIA GPU Driver Extension</strong> (user choice)</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 19" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image008.jpg" alt="" width="550" height="160" border="0" /></span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Note: This Step 8, will installs the older version of Nvidia and Cuda driver hence the user can skip this step and proceed the VM deployment without extension. Follow manual installation as per chapter </span></strong><strong><span lang="EN-IN">2.5</span></strong><strong><em>.</em></strong></p>
-<p class="MsoNormal"><span lang="EN-IN">9. </span><span lang="EN-IN">Leave the remaining defaults and then select the&nbsp;<strong>Review + create</strong>&nbsp;button at the bottom of the page.</span></p>
-<p><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">10. </span><span lang="EN-IN">After validation runs, select the&nbsp;Create&nbsp;button at the bottom of the page.</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 13" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image009.jpg" alt="" width="550" height="63" border="0" /></span></p>
-<p class="MsoNormal"><span lang="EN-IN">11. </span><span lang="EN-IN">After deployment is complete, select&nbsp;Go to resource.</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 14" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image010.jpg" alt="" width="550" height="133" border="0" /></span></p>
-<h2><a name="_Toc81313723"></a><a name="_Toc81323172"></a><a name="_Toc81330554"></a><a name="_Toc81389018"></a><a name="_Toc81405763"></a><a name="_Toc85794190"></a><a name="_Toc85794517"></a><a name="_Toc85798821"></a><a name="_Toc88041721"></a>2.4 Connect to virtual machine</h2>
-<p><a name="_Toc81330555"></a><a name="_Toc81389019"></a><a name="_Toc81405764"></a><span lang="EN-IN">Create a SSH connection to the virtual machine. </span></p>
-<p><span lang="EN-IN">1. </span><span lang="EN-IN">On the overview page of a virtual machine, select the&nbsp;<strong>Connect</strong>&nbsp;button then select&nbsp;<strong>SSH </strong><strong>and copy the public IP address</strong><strong>.</strong></span></p>
-<p><span lang="EN-IN"><img id="Picture 24" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image011.jpg" alt="" width="550" height="138" border="0" /></span></p>
-<p><span lang="EN-IN">2. </span><span lang="EN-IN">Open any SSH client tool of user choice, in this case <strong>PUTTY </strong>is used.</span></p>
-<p><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"></p>
-<p><span lang="EN-IN">3. </span><span lang="EN-IN">Enter the <strong>IP address</strong> and port as 22 and click <strong>Open</strong></span></p>
-<p><span lang="EN-IN"><img id="Picture 3" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image012.jpg" alt="" width="352" height="347" border="0" /></span></p>
-<p><span lang="EN-IN">4. </span><span lang="EN-IN">Enter username in <strong>Login as</strong> and enter the <strong>password </strong>and click<strong> Enter.</strong></span></p>
-<p><span lang="EN-IN">5. </span><span lang="EN-IN">Now user connected to the VM in Console</span></p>
-<p><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"></p>
-<h2><a name="_Ref85632735"></a><a name="_Toc85794191"></a><a name="_Toc85794518"></a><a name="_Toc85798822"></a><a name="_Toc88041722"></a>2.5 Install Nvidia Drivers</h2>
-<p class="MsoNormal"><span lang="EN-IN">To take advantage of the GPU capabilities of Azure N-series VMs backed by NVIDIA GPUs, the user must install NVIDIA GPU drivers. </span></p>
-<p class="MsoNormal"><span lang="EN-IN">If the machine has a NVLink or NVSwitch connecting the GPUs (In this case the current VM ND A100 v4 series instances has), one should also install the associated version of the Nvidia fabric manager.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">There are two ways to install the drivers,</span></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">&middot; </span><span lang="EN-IN">The&nbsp;NVIDIA GPU Driver Extension&nbsp;installs appropriate NVIDIA CUDA or GRID drivers on an N-series VM. Install or manage the extension using the Azure portal (Ref </span><span lang="EN-IN">8</span><span lang="EN-IN">)</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN">&middot; </span><span lang="EN-IN">Install NVIDIA GPU drivers manually. (For the manual installation follow the procedure given below)</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Nvidia Data Center Driver installation guide for CentOS 8</span></strong></p>
-<p class="MsoNormal"><span lang="EN-IN">The step-by-step instruction is given below,</span></p>
-<p class="MsoListParagraph"><span lang="EN-IN">1. </span><span lang="EN-IN">In some cases, user may need to install some additional dependencies that are required</span></p>
-<p class="MsoNormal"><span lang="EN-IN">for installing the NVIDIA drivers.</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y tar bzip2 make automake gcc gcc-c++ pciutils elfutils-libelf-devel libglvnd-devel</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">2. </span><span lang="EN-IN">Enable the PowerTools repo and set up the external dependency on EPEL for DKMS.</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf config-manager --set-enabled PowerTools</span></em></strong></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y epel-release</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">3. </span><span lang="EN-IN">Install the CUDA repository public GPG key</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># distribution=rhel8</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">4. </span><span lang="EN-IN">Setup the CUDA network repository</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># ARCH=$( /bin/arch )</span></em></strong></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/$distribution/${ARCH}/cuda-$distribution.repo</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">5. </span><span lang="EN-IN">For CentOS 8, ensure that the system has the correct Linux kernel sources from the CentOS repositories:</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">6. </span><span lang="EN-IN">Note that in some cases, user may have to update the running kernel as a pre-requisite:</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf install -y kernel kernel-core kernel-modules</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">7. </span><span lang="EN-IN">Update the repository cache and install the driver using the nvidia-driver meta-package</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf clean all</span></em></strong></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf -y module install nvidia-driver:latest-dkms</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraph"><span lang="EN-IN">8. </span><span lang="EN-IN">Install fabric manager to activate the NVswitch</span></p>
-<p class="MsoNormal"><strong><em><span lang="EN-IN"># sudo dnf module install nvidia-driver:latest-dkms/fm</span></em></strong></p>
-<p class="MsoNormal"></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">9. </span><span lang="EN-IN">Enable FM Service to Auto Start at Boot</span></p>
-<p class="MsoListParagraphCxSpMiddle"><strong><em><span lang="EN-IN"># sudo systemctl enable nvidia-fabricmanager</span></em></strong></p>
-<p class="MsoListParagraphCxSpLast"><strong><em><span lang="EN-IN">Reference: </span></em></strong><a href="https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#centos8/"><strong><em><span lang="EN-IN">https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#centos8/</span></em></strong></a><span lang="EN-IN"><br clear="all" /> </span></p>
-<h1><a name="_Toc81405765"></a><a name="_Toc85794192"></a><a name="_Toc85794519"></a><a name="_Toc85798823"></a><a name="_Toc88041723"></a><span lang="EN-IN">3 </span><span lang="EN-IN">Install Altair ultraFluidX Application on Virtual Machine</span></h1>
-<h2><a name="_Toc85794193"></a><a name="_Toc85794520"></a><a name="_Toc85798824"></a><a name="_Toc88041724"></a><span lang="EN-IN">3.1 </span><span lang="EN-IN">Download product</span></h2>
-<p class="MsoNormal"><span lang="EN-IN">Instructions on how to download Altair products from Altair One Marketplace. Before beginning, open Altair One Marketplace in a web browser and log on. </span></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">1. </span><span lang="EN-IN">Type <strong>ultraFluidX </strong>in the search box and press Enter. </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">2. </span><span lang="EN-IN">In the right pane of the web browser, click the <strong>Download </strong>tab. </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">3. </span><span lang="EN-IN">From the Suite Version drop-down menu, select a suite version. </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">4. </span><span lang="EN-IN">From the Operating System drop-down menu, select a platform. </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">At this point of time, ultraFluidX is only available for Linux platform (Operating system drop down menu selection is not editable at the moment).</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN">5. </span><span lang="EN-IN">Click the <strong>Download </strong>button to the right of each software package to download and click the download icon.</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image013.png" alt="" width="218" height="19" /><span lang="EN-IN">&nbsp;<img id="Picture 7" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image014.jpg" alt="" width="600" height="289" border="0" /></span></p>
-<p class="MsoListParagraph"><span lang="EN-IN">6. </span><span lang="EN-IN">Click the <strong>License Manager</strong> tab button to the right of each software package to download and click the download icon.</span></p>
-<p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image015.png" alt="" width="220" height="23" /><span lang="EN-IN"><img id="Picture 8" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image016.jpg" alt="" width="599" height="287" border="0" /></span></p>
-<p><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"></p>
-<h2><a name="_Toc85794194"></a><a name="_Toc85794521"></a><a name="_Toc85798825"></a><a name="_Toc88041725"></a><a name="_Toc81399916"></a><a name="_Toc81405767"></a><span lang="EN-IN">3.2 </span><span lang="EN-IN">Install ultraFluidX application</span><span lang="EN-IN"> on Linux</span></h2>
-<p class="MsoNormal"><span lang="EN-IN">The step-by-step procedure for product installation is given below,</span></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">1. </span><span lang="EN-IN">Open a command terminal window/prompt.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">a) <strong>cd &ndash;</strong> change directory &ndash; to the location where the installer executable resides. </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">b) Execute the <strong>sh</strong> command on the installer binary with the additional parameter "-i console", </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">for example, <strong>sh hwCFDSolvers2021.2_linux64.bin -i console</strong>.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">2. </span><span lang="EN-IN">In the multi-language selector prompt, select the proper locale and press <strong>Enter</strong> to continue.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">3. </span><span lang="EN-IN">In the <strong>License Agreement</strong> panel, hit any key and press <strong>Enter</strong> to advance, or type <strong>0</strong> and press <strong>Enter</strong> to proceed to the acceptance of the license agreement. Type <strong>Y</strong> and press <strong>Enter</strong> to accept the agreement.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">4. </span><span lang="EN-IN">In the <strong>Pre-Installation Summary</strong> panel, review the Product Features list, Install Folder and disk space requirements. Press <strong>Enter</strong> to continue</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">5. </span><span lang="EN-IN">Follow the prompt to complete the installation.</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN">6. </span><span lang="EN-IN">Once the installation completes, press <strong>Enter</strong> to exit the installer</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><span lang="EN-IN">For more information, the installation guide can be found in readme file, which is shown below,</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image017.png" alt="" width="15" height="18" /><span lang="EN-IN"><img id="Picture 11" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image018.jpg" alt="" width="600" height="289" border="0" /></span></p>
-
-
-<h2><a name="_Toc85794195"></a><a name="_Toc85794522"></a><a name="_Toc85798826"></a><a name="_Toc88041726"></a><span lang="EN-IN">3.3 </span><span lang="EN-IN">License Manager installation</span></h2>
-<p class="MsoNormal"><span lang="EN-IN">The License manage step by step installation procedure is given below,</span></p>
-<p class="MsoListParagraphCxSpFirst"><span lang="EN-IN">1. </span><span lang="EN-IN">Open a command terminal window/prompt.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">a) </span><strong><span lang="EN-IN">cd &ndash;</span></strong><span lang="EN-IN"> change directory &ndash; to the location where the installer executable resides.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">2. </span><span lang="EN-IN">Log in as <strong>root </strong>on the machine where the license package will be installed.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">User need to log in as <strong>root </strong>to set up the license in it scripts to automatically launch the daemons at boot time.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">3. </span><span lang="EN-IN">Execute the installer package.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">for example, <strong>sh altair_licensing_14.5.1.linux_x64.bin -i console</strong></span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">4. </span><span lang="EN-IN">Follow the prompt to continue installation.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">5. </span><span lang="EN-IN">In the <strong>Pre-Installation Summary</strong> panel, review the Product Features list, Install Folder and disk space requirements. Press <strong>Enter</strong> to continue</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN"><img id="Picture 5" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image019.png" alt="" width="557" height="287" border="0" /></span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">6. </span><span lang="EN-IN">Follow the prompt to complete the installation.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">7. </span><span lang="EN-IN">Once the installation completes, press <strong>Enter</strong> to exit the installer</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image020.jpg" alt="" width="554" height="287" border="0" /></span></p>
-
-
-<p class="MsoNormal"><span lang="EN-IN">The following steps explains license activation for Hosted Altair Units (HAU) system to manage the Licenses. </span></p>
-<p class="MsoListParagraphCxSpFirst"><strong><span lang="EN-IN">Pre-requisites</span></strong><span lang="EN-IN">: To use the HAU system user must first have a valid Altair Connect user account, and account (user&rsquo;s company account) must have purchased and enabled Hosted Units. Check with the administrator if needed. </span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">Once above pre-requisites are met, user should be able to see the HAU or Hosted Units menu on the left-hand side. There are both administrative functions (if user is one of the company's designated admins) and user functions. This section will cover the typical user functions such as authorizing a machine to use HAU.</span></p>
-<p class="MsoListParagraphCxSpMiddle">1. <span lang="EN-IN">The command line utility <strong>almutil</strong> is in the install directory, navigate to the directory where <strong>almutil</strong> resides.</span></p>
-<p class="MsoListParagraphCxSpMiddle">2. <span lang="EN-IN">To authorize a machine, obtain the authorization code by logging in to Altair Connect, click <strong>HHWU User</strong> and click <strong>Generate New Token</strong>.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN"><img id="Picture 130" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image021.jpg" alt="" width="286" height="92" border="0" /></span></p>
-<p class="MsoListParagraphCxSpMiddle">3. <span lang="EN-IN">Highlight the code and copy it using in browser, or simply keep the window available to see the code.</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN"><img id="Picture 132" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image022.jpg" alt="" width="287" height="76" border="0" /></span></p>
-<p class="MsoListParagraphCxSpMiddle">4. <span lang="EN-IN">Enter the authorization code into the command prompt</span></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">Use the following command, replacing YOURCODE with the code obtained from Altair portal</span></p>
-<p class="MsoListParagraphCxSpMiddle"><strong><span lang="EN-IN">./almutil -hhwuauth -code YOURCODE</span></strong></p>
-<p class="MsoListParagraphCxSpMiddle"><span lang="EN-IN">5. </span><span lang="EN-IN">The below image shows the successful authorization of machine.</span></p>
-<p class="MsoListParagraphCxSpLast"><span lang="EN-IN"><img id="Picture 133" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image023.jpg" alt="" width="588" height="81" border="0" /></span></p>
-<p class="MsoNormal"><strong>The detailed instruction can be found in the below highlighted document</strong></p>
-<table cellspacing="0" cellpadding="0">
+</table></div>
+<p>The current virtual machine is a new flagship addition to the Azure GPU family. (Standard_ND96asr_v4 Virtual Machine). This VMs is powered by <a href="https://www.nvidia.com/en-in/data-center/a100/">NVIDIA Ampere A100 Tensor Core</a> GPUs and 96 physical 2nd-generation AMD Epyc&trade; CPU cores (2.44GHz). The &ldquo;ND96asr_v4&rdquo; VM has 8 GPUs with 40 GB of memory each and supported by 96 AMD processor cores with a total memory of 900GB. Each GPU features NVLINK 3.0 connectivity for communication within the VM.</p>
+<p class="h2">2.3 <a name="_Toc88041720"></a>Create a Virtual Machine on Azure Platform</p>
+<p>Sign into Azure</p>
+<p>Sign into the Azure portal by using <a href="https://portal.azure.com/">https://portal.azure.com/</a></p>
+<p><a href="https://azure.microsoft.com/offers/ms-azr-0044p">Free Trial subscriptions</a>&nbsp;aren't eligible for limit or quota increases.</p>
+<p>After the successful sign in or sign up, one has to upgrade the Azure subscription to <a href="https://azure.microsoft.com/en-us/offers/ms-azr-0003p/">Pay-As-You-Go</a> to deploy a Virtual machine. For deployment, the user must have regional vCPU quota which can be obtained by raising a request.</p>
+<p>The step-by-step procedure to increase the vCPU quota is given below,</p>
+<p><a href="https://docs.microsoft.com/en-us/azure/azure-portal/supportability/per-vm-quota-requests">https://docs.microsoft.com/en-us/azure/azure-portal/supportability/per-vm-quota-requests</a></p>
+<p>The step-by-step procedure to deploy Virtual machine is given below,</p>
+<p>1. Type&nbsp;virtual machines&nbsp;in the marketplace search.</p>
+<p>2. Under&nbsp;Services, select&nbsp;Virtual machines.</p>
+<p>3. In the&nbsp;Virtual machines&nbsp;page, select&nbsp;Create&nbsp;Then&nbsp;Virtual machine.</p>
+<p>4. In the&nbsp;Basics&nbsp;tab, under&nbsp;Project details, make sure the correct subscription is selected and then choose to&nbsp;Create new&nbsp;resource group. Type&nbsp;Azure-PerformanceTest&nbsp;(user choice) for the name.</p>
+<p><img src="ultraFluidX_files/Image2.png" alt="" width="548" height="268" border="0" /></p>
+<p>5. Under&nbsp;Instance details, type&nbsp;Azure-VM (user choice)&nbsp;for the&nbsp;Virtual machine name&nbsp;and choose&nbsp;West Europe for Region. Choose&nbsp;CentOS, Version 8.1 HPC-Gen2 for the&nbsp;Image&nbsp;and&nbsp;Standard_ND96asr_v4&nbsp;for the&nbsp;Size (user choice). Leave the other defaults.</p>
+<p><img src="ultraFluidX_files/Image3.png" alt="" width="548" height="219" border="0" /></p>
+<p>Note:</p>
+<ul>
+<li>Region must be decided based on where the Virtual machine is going to be deployed. To avoid the network latency, the region should be near to the location where the VM is to be deployed.</li>
+<li>Image selection is of user choice based on the application user can choose the image (Windows 10, Linux based OS and Windows Server)</li></ul>
+<p>6. Under&nbsp;Administrator account, provide a username, such as&nbsp;Azureuser&nbsp;and a password. The password must be at least 12 characters long and meet the&nbsp;<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/faq#what-are-the-password-requirements-when-creating-a-vm-">defined complexity requirements</a>.</p>
+<p><img src="ultraFluidX_files/Image4.png" alt="" width="548" height="109" border="0" /></p>
+<p>7. Under&nbsp;Inbound port rules, choose&nbsp;Allow selected ports&nbsp;and then select&nbsp;SSH (22)&nbsp;from the drop-down.</p>
+<p><img src="ultraFluidX_files/Image5.png" alt="" width="548" height="208" border="0" /></p>
+<p>8. <a name="_Ref81315987"></a>In Advanced tab, under the Extensions click Select an extension to install, select NVIDIA GPU Driver Extension (user choice)</p>
+<p><img src="ultraFluidX_files/Image6.png" alt="" width="548" height="158" border="0" /></p>
+<p>Note: This Step 8, will installs the older version of Nvidia and Cuda driver hence the user can skip this step and proceed the VM deployment without extension. Follow manual installation as per chapter 2.5.</p>
+<p>9. Leave the remaining defaults and then select the&nbsp;Review + create&nbsp;button at the bottom of the page.</p>
+<p>10. After validation runs, select the&nbsp;Create&nbsp;button at the bottom of the page.</p>
+<p><img src="ultraFluidX_files/Image7.png" alt="" width="548" height="61" border="0" /></p>
+<p>11. After deployment is complete, select&nbsp;Go to resource.</p>
+<p><img src="ultraFluidX_files/Image8.png" alt="" width="548" height="131" border="0" /></p>
+<p class="h2">2.4 <a name="_Toc88041721"></a>Connect to virtual machine</p>
+<p><a name="_Toc81405764"></a>Create a SSH connection to the virtual machine. <a name="_Toc81389019"></a></p>
+<p>1. On the overview page of a virtual machine, select the&nbsp;Connect&nbsp;button then select&nbsp;SSH and copy the public IP address.</p>
+<p><a name="_Toc81389019"></a></p>
+<p><img src="ultraFluidX_files/Image9.png" alt="" width="548" height="136" border="0" /></p>
+<p><a name="_Toc81389019"></a></p>
+<p>2. Open any SSH client tool of user choice, in this case PUTTY is used.</p>
+<p><a name="_Toc81389019"></a></p>
+<p><a name="_Toc81389019"></a></p>
+<p>3. Enter the IP address and port as 22 and click Open</p>
+<p><a name="_Toc81389019"></a></p>
+<p><img src="ultraFluidX_files/Image10.png" alt="" width="353" height="347" border="0" /></p>
+<p><a name="_Toc81389019"></a></p>
+<p>4. Enter username in Login as and enter the password and click Enter.</p>
+<p><a name="_Toc81389019"></a></p>
+<p>5. Now user connected to the VM in Console</p>
+<p><a name="_Toc81389019"></a></p>
+<p><a name="_Toc81389019"></a></p>
+<p class="h2">2.5 <a name="_Toc88041722"></a>Install Nvidia Drivers</p>
+<p><a name="_Toc81389019"></a></p>
+<p>To take advantage of the GPU capabilities of Azure N-series VMs backed by NVIDIA GPUs, the user must install NVIDIA GPU drivers.</p>
+<p>If the machine has a NVLink or NVSwitch connecting the GPUs (In this case the current VM ND A100 v4 series instances has), one should also install the associated version of the Nvidia fabric manager.</p>
+<p>There are two ways to install the drivers,</p>
+<ul>
+<p class="li">The&nbsp;NVIDIA GPU Driver Extension&nbsp;installs appropriate NVIDIA CUDA or GRID drivers on an N-series VM. Install or manage the extension using the Azure portal (Ref 8)</p>
+<p class="li">Install NVIDIA GPU drivers manually. (For the manual installation follow the procedure given below)</p></ul>
+<p>Nvidia Data Center Driver installation guide for CentOS 8</p>
+<p>The step-by-step instruction is given below,</p>
+<p>1. In some cases, user may need to install some additional dependencies that are required</p>
+<p>for installing the NVIDIA drivers.</p>
+<p># sudo dnf install -y tar bzip2 make automake gcc gcc-c++ pciutils elfutils-libelf-devel libglvnd-devel</p>
+<p>2. Enable the PowerTools repo and set up the external dependency on EPEL for DKMS.</p>
+<p># sudo dnf config-manager --set-enabled PowerTools</p>
+<p># sudo dnf install -y epel-release</p>
+<p>3. Install the CUDA repository public GPG key</p>
+<p># distribution=rhel8</p>
+<p>4. Setup the CUDA network repository</p>
+<p># ARCH=$( /bin/arch )</p>
+<p># sudo dnf config-manager --add-repo http://developer.download.nvidia.com/compute/cuda/repos/$distribution/${ARCH}/cuda-$distribution.repo</p>
+<p>5. For CentOS 8, ensure that the system has the correct Linux kernel sources from the CentOS repositories:</p>
+<p># sudo dnf install -y kernel-devel-$(uname -r) kernel-headers-$(uname -r)</p>
+<p>6. Note that in some cases, user may have to update the running kernel as a pre-requisite:</p>
+<p># sudo dnf install -y kernel kernel-core kernel-modules</p>
+<p>7. Update the repository cache and install the driver using the nvidia-driver meta-package</p>
+<p># sudo dnf clean all</p>
+<p># sudo dnf -y module install nvidia-driver:latest-dkms</p>
+<p>8. Install fabric manager to activate the NVswitch</p>
+<p># sudo dnf module install nvidia-driver:latest-dkms/fm</p>
+<p>9. Enable FM Service to Auto Start at Boot</p>
+<p># sudo systemctl enable nvidia-fabricmanager</p>
+<p>Reference: <a href="https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#centos8/">https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#centos8/</a></p>
+<h1>3 <a name="_Toc88041723"></a>Install Altair ultraFluidX Application on Virtual Machine</h1>
+<p class="h2">3.1 <a name="_Toc88041724"></a>Download product</p>
+<p>Instructions on how to download Altair products from Altair One Marketplace. Before beginning, open Altair One Marketplace in a web browser and log on.</p>
+<p>1. Type ultraFluidX in the search box and press Enter.</p>
+<p>2. In the right pane of the web browser, click the Download tab.</p>
+<p>3. From the Suite Version drop-down menu, select a suite version.</p>
+<p>4. From the Operating System drop-down menu, select a platform.</p>
+<p>At this point of time, ultraFluidX is only available for Linux platform (Operating system drop down menu selection is not editable at the moment).</p>
+<p>5. Click the Download button to the right of each software package to download and click the download icon.</p>
+<p><img src="ultraFluidX_files/Image11.png" alt="" width="597" height="287" border="0" /></p>
+<p>6. Click the License Manager tab button to the right of each software package to download and click the download icon.</p>
+<p><img src="ultraFluidX_files/Image12.png" alt="" width="597" height="285" border="0" /></p>
+<p class="h2">3.2 <a name="_Toc88041725"></a>Install ultraFluidX application<a name="_Toc85794521"></a> on Linux</p>
+<p>The step-by-step procedure for product installation is given below,</p>
+<p>1. Open a command terminal window/prompt.</p>
+<p>a) cd &ndash; change directory &ndash; to the location where the installer executable resides.</p>
+<p>b) Execute the sh command on the installer binary with the additional parameter "-i console",</p>
+<p>for example, sh hwCFDSolvers2021.2_linux64.bin -i console.</p>
+<p>2. In the multi-language selector prompt, select the proper locale and press Enter to continue.</p>
+<p>3. In the License Agreement panel, hit any key and press Enter to advance, or type 0 and press Enter to proceed to the acceptance of the license agreement. Type Y and press Enter to accept the agreement.</p>
+<p>4. In the Pre-Installation Summary panel, review the Product Features list, Install Folder and disk space requirements. Press Enter to continue</p>
+<p>5. Follow the prompt to complete the installation.</p>
+<p>6. Once the installation completes, press Enter to exit the installer</p>
+<p>For more information, the installation guide can be found in readme file, which is shown below,</p>
+<p><img src="ultraFluidX_files/Image11.png" alt="" width="597" height="287" border="0" /></p>
+<p class="h2">3.3 <a name="_Toc88041726"></a>License Manager installation</p>
+<p>The License manage step by step installation procedure is given below,</p>
+<p>1. Open a command terminal window/prompt.</p>
+<p>a) cd &ndash; change directory &ndash; to the location where the installer executable resides.</p>
+<p>2. Log in as root on the machine where the license package will be installed.</p>
+<p>User need to log in as root to set up the license in it scripts to automatically launch the daemons at boot time.</p>
+<p>3. Execute the installer package.</p>
+<p>for example, sh altair_licensing_14.5.1.linux_x64.bin -i console</p>
+<p>4. Follow the prompt to continue installation.</p>
+<p>5. In the Pre-Installation Summary panel, review the Product Features list, Install Folder and disk space requirements. Press Enter to continue</p>
+<p><img src="ultraFluidX_files/Image13.png" alt="" width="557" height="287" border="0" /></p>
+<p>6. Follow the prompt to complete the installation.</p>
+<p>7. Once the installation completes, press Enter to exit the installer</p>
+<p><img src="ultraFluidX_files/Image14.png" alt="" width="554" height="287" border="0" /></p>
+<p>The following steps explains license activation for Hosted Altair Units (HAU) system to manage the Licenses.</p>
+<p>Pre-requisites: To use the HAU system user must first have a valid Altair Connect user account, and account (user&rsquo;s company account) must have purchased and enabled Hosted Units. Check with the administrator if needed.</p>
+<p>Once above pre-requisites are met, user should be able to see the HAU or Hosted Units menu on the left-hand side. There are both administrative functions (if user is one of the company's designated admins) and user functions. This section will cover the typical user functions such as authorizing a machine to use HAU.</p>
+<p>1. The command line utility almutil is in the install directory, navigate to the directory where almutil resides.</p>
+<p>2. To authorize a machine, obtain the authorization code by logging in to Altair Connect, click HHWU User and click Generate New Token.</p>
+<p><img src="ultraFluidX_files/Image15.png" alt="" width="286" height="92" border="0" /></p>
+<p>3. Highlight the code and copy it using in browser, or simply keep the window available to see the code.</p>
+<p><img src="ultraFluidX_files/Image16.png" alt="" width="287" height="76" border="0" /></p>
+<p>4. Enter the authorization code into the command prompt</p>
+<p>Use the following command, replacing YOURCODE with the code obtained from Altair portal</p>
+<p>./almutil -hhwuauth -code YOURCODE</p>
+<p>5. The below image shows the successful authorization of machine.</p>
+<p><img src="ultraFluidX_files/Image17.png" alt="" width="588" height="81" border="0" /></p>
+<p>The detailed instruction can be found in the below highlighted document</p>
+<h1>4 <a name="_Toc88041727"></a>Performance results of ultraFluidX on Azure virtual machine</h1>
+<p class="h2">4.1 <a name="_Toc88041728"></a>Altair ultraFluidX Overview</p>
+<p>The aerodynamic characteristics of passenger and heavy-duty vehicles are critical in the production process. Altair ultraFluidXTM is a simulation tool for predicting these aerodynamic characteristics as well as evaluating building and environmental aerodynamics. Altair ultraFluidX's innovative technology is tailored for GPUs. It provides unrivalled performance and allows for overnight simulations of complicated scenarios on a single server.</p>
+<p>Product Highlights</p>
+<p>Lattice Boltzmann Method (LBM) Solver</p>
+<p>Allows for the ultra-fast prediction of aerodynamic characteristics of passenger and heavy-duty vehicles, as well as in building and environmental aerodynamics. Overnight resolution of highly transient aerodynamics simulations on a single server</p>
+<p>Integrated, robust volume meshing for fast design changes</p>
+<p>A completely automated volume mesh generation with minimal surface mesh requirements and support for intersecting parts simplifies component replacement and enables rapid assessment of hundreds of variants.</p>
+<p>Native GPU Implementation</p>
+<p>A native GPU-based code that naturally takes use of current GPUs' enormous power and memory bandwidth.</p>
+<p>Efficient Result Analysis</p>
+<p>Enhanced post-processing capabilities enable the extraction of useful simulation data with a smaller memory footprint while focusing on only the relevant computational domain areas.</p>
+<p>4.1.1 <a name="_Toc88041729"></a>Model De<a name="_Toc85798829"></a>tails</p>
+<p>The Roadster and CX1 test case model have been selected as standard performance test case for testing the expected performance of the ultraFluidX on Azure VM. The models are shown below,</p>
+<p>Roadster</p>
+<p><img src="ultraFluidX_files/Image18.png" alt="Image" width="527" height="323" border="0" /></p>
+<p>CX1</p>
+<p><img src="ultraFluidX_files/Image19.png" alt="" width="556" height="433" border="0" /></p>
+<p class="h2">4.2 <a name="_Toc88041730"></a>Altair ultraFluidX on Azure Platform</p>
+<p>When it comes to performance parameters, Computation time (time taken to complete the simulation using GPUs) is one parameter which needs to be analysed. To carry out these complex and heavy simulations on Altair ultraFluidX software, right hardware is required. Microsoft partnered with Nvidia provides the required and suitable Infrastructure and hardware on Azure cloud platform. Microsoft Azure provides the latest and fastest compute capabilities for GPU intensive workloads.</p>
+<div class="overflow-table"><table><colgroup><col /><col /></colgroup>
 <tbody>
 <tr>
-
-</tr>
-<tr>
-
-<td><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image024.png" alt="" width="662" height="288" /></td>
-</tr>
-</tbody>
-</table>
-<p class="MsoListParagraph"><em><br clear="all" /> </em></p>
-
-<h1><a name="_Toc81399917"></a><a name="_Toc81405768"></a><a name="_Toc85794196"></a><a name="_Toc85794523"></a><a name="_Toc85798827"></a><a name="_Toc88041727"></a><span lang="EN-IN">4 </span><span lang="EN-IN">Performance results of ultraFluidX on Azure virtual machine</span></h1>
-<h2><a name="_Toc85794197"></a><a name="_Toc85794524"></a><a name="_Toc85798828"></a><a name="_Toc88041728"></a><span lang="EN-IN">4.1 </span><span lang="EN-IN">Altair ultraFluidX Overview</span></h2>
-<p class="MsoNormal"><span lang="EN-IN">The aerodynamic characteristics of passenger and heavy-duty vehicles are critical in the production process. Altair ultraFluidX<sup>TM</sup> is a simulation tool for predicting these aerodynamic characteristics as well as evaluating building and environmental aerodynamics. Altair ultraFluidX's innovative technology is tailored for GPUs. It provides unrivalled performance and allows for overnight simulations of complicated scenarios on a single server.</span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Product Highlights</span></strong></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Lattice Boltzmann Method (LBM) Solver</span></strong></p>
-<p class="MsoNormal"><span lang="EN-IN">Allows for the ultra-fast prediction of aerodynamic characteristics of passenger and heavy-duty vehicles, as well as in building and environmental aerodynamics. Overnight resolution of highly transient aerodynamics simulations on a single server</span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Integrated, robust volume meshing for fast design changes</span></strong></p>
-<p class="MsoNormal"><span lang="EN-IN">A completely automated volume mesh generation with minimal surface mesh requirements and support for intersecting parts simplifies component replacement and enables rapid assessment of hundreds of variants.</span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Native GPU Implementation</span></strong></p>
-<p class="MsoNormal"><span lang="EN-IN">A native GPU-based code that naturally takes use of current GPUs' enormous power and memory bandwidth.</span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Efficient Result Analysis</span></strong></p>
-<p class="MsoNormal"><span lang="EN-IN">Enhanced post-processing capabilities enable the extraction of useful simulation data with a smaller memory footprint while focusing on only the relevant computational domain areas.</span></p>
-<p class="MsoNormal"></p>
-<h3><a name="_Toc85794198"></a><a name="_Toc85794525"></a><a name="_Toc85798829"></a><a name="_Toc88041729"></a><a name="_Toc81498994"></a><span lang="EN-IN">4.1.1 </span><span lang="EN-IN">Model De</span><span lang="EN-IN">tails</span></h3>
-<p class="MsoNormal"><span lang="EN-IN">The Roadster and CX1 test case model have been selected as standard performance test case for testing the expected performance of the ultraFluidX on Azure VM. The models are shown below,</span></p>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Roadster</span></strong></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 6" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image025.png" alt="Image" width="528" height="325" border="0" /></span><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"><span lang="EN-IN">CX1</span></p>
-<p class="MsoNormal"><span lang="EN-IN"><img id="Picture 2" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image026.png" alt="" width="558" height="435" border="0" /></span></p>
-<p class="MsoNormal"></p>
-<h2><a name="_Toc81323180"></a><a name="_Toc81330562"></a><a name="_Toc81390114"></a><a name="_Toc81411727"></a><a name="_Toc81413124"></a><a name="_Toc81420235"></a><a name="_Toc81498995"></a><a name="_Toc85794199"></a><a name="_Toc85794526"></a><a name="_Toc85798830"></a><a name="_Toc88041730"></a>4.2 Altair <span lang="EN-IN">ultraFluidX </span>on Azure Platform</h2>
-<p class="MsoNormal"><span lang="EN-IN">When it comes to performance parameters, Computation time (time taken to complete the simulation using GPUs) is one parameter which needs to be analysed. To carry out these complex and heavy simulations on Altair ultraFluidX software, right hardware is required. <strong>Microsoft </strong>partnered with<strong> Nvidia</strong> provides the required and suitable Infrastructure and hardware on Azure cloud platform. Microsoft Azure provides the latest and fastest compute capabilities for GPU intensive workloads.</span></p>
-<div>
-<table class="MsoTable15Grid4Accent3" border="1" width="645" cellspacing="0" cellpadding="0">
-<tbody>
-<tr>
-<td colspan="2" width="645">
-<p class="MsoNormal"><strong><span lang="EN-IN">Operating system and Nvidia drivers Details </span></strong></p>
+<td colspan="2">
+<p>Operating system and Nvidia drivers Details</p>
 </td>
 </tr>
 <tr>
-<td width="285">
-<p class="MsoNormal"><span lang="EN-IN">Operating system version</span></p>
+<td>
+<p>Operating system version</p>
 </td>
-<td width="360">
-<p class="MsoNormal"><span lang="EN-IN">CentOS Linux release 8.1.1911 (Core)</span></p>
-</td>
-</tr>
-<tr>
-<td width="285">
-<p class="MsoNormal"><span lang="EN-IN">OS Architecture</span></p>
-</td>
-<td width="360">
-<p class="MsoNormal"><span lang="EN-IN">X86-64</span></p>
+<td>
+<p>CentOS Linux release 8.1.1911 (Core)</p>
 </td>
 </tr>
 <tr>
-<td width="285">
-<p class="MsoNormal"><span lang="EN-IN">GPU Drivers version </span></p>
+<td>
+<p>OS Architecture</p>
 </td>
-<td width="360">
-<p class="MsoNormal"><span lang="EN-IN">470.57.02</span></p>
+<td>
+<p>X86-64</p>
 </td>
 </tr>
 <tr>
-<td width="285">
-<p class="MsoNormal"><span lang="EN-IN">Cuda version</span></p>
+<td>
+<p>GPU Drivers version</p>
 </td>
-<td width="360">
-<p class="MsoNormal"><span lang="EN-IN">11.4</span></p>
+<td>
+<p>470.57.02</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Cuda version</p>
+</td>
+<td>
+<p>11.4</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"></p>
-<p><span lang="EN-IN"><br clear="all" /> </span></p>
-<p class="MsoNormal"></p>
-<h2><a name="_Toc81323186"></a><a name="_Toc81330568"></a><a name="_Toc81390120"></a><a name="_Toc81411733"></a><a name="_Toc81413130"></a><a name="_Toc81420241"></a><a name="_Toc81498996"></a><a name="_Toc85794200"></a><a name="_Toc85794527"></a><a name="_Toc85798831"></a><a name="_Toc88041731"></a><span lang="EN-IN">4.3 </span><span lang="EN-IN">Altair ultraFluidX 2021.2 Performance Results</span></h2>
-<p class="MsoNormal"><span lang="EN-IN">GPU-based fluid dynamics simulations are carried out on the VM. To analyse the performance, the simulation is carried out for shortened test cases only and not to full production-level test cases.</span></p>
-<p class="MsoNormal"><span lang="EN-IN">The total simulation consists of two phases, ultraFluidX runs a mostly CPU-based pre-processing phase and the GPU based computation phase. The simulation is carried out to see the performance of GPU on the chosen Azure VM. Refer chapter </span><span lang="EN-IN">2.2</span><span lang="EN-IN"> for the VM specifications. The results are presented below, </span></p>
-<p class="MsoNormal"><strong><span lang="EN-IN">Wall clock time in seconds:</span></strong></p>
-<div>
-<table class="MsoTable15Grid4Accent3" border="1" width="432" cellspacing="0" cellpadding="0">
+</table></div>
+<p class="h2">4.3 <a name="_Toc88041731"></a>Altair ultraFluidX 2021.2 Performance Results</p>
+<p>GPU-based fluid dynamics simulations are carried out on the VM. To analyse the performance, the simulation is carried out for shortened test cases only and not to full production-level test cases.</p>
+<p>The total simulation consists of two phases, ultraFluidX runs a mostly CPU-based pre-processing phase and the GPU based computation phase. The simulation is carried out to see the performance of GPU on the chosen Azure VM. Refer chapter 2.2 for the VM specifications. The results are presented below,</p>
+<p>Wall clock time in seconds:</p>
+<div class="overflow-table"><table><colgroup><col /><col span="4" /></colgroup>
 <tbody>
 <tr>
-<td width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Model Name</span></strong></p>
+<td>
+<p>Model Name</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#1 GPU</span></strong></p>
+<td>
+<p>#1 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#2 GPU</span></strong></p>
+<td>
+<p>#2 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#4 GPU</span></strong></p>
+<td>
+<p>#4 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#8 GPU</span></strong></p>
-</td>
-</tr>
-<tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">CX1</span></strong></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">6679</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">4743</span></p>
+<td>
+<p>#8 GPU</p>
 </td>
 </tr>
 <tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Roadster</span></strong></p>
+<td>
+<p>CX1</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1571</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1097</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">731</span></p>
+<td>
+<p>6679</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">539</span></p>
+<td>
+<p>4743</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Roadster</p>
+</td>
+<td>
+<p>1571</p>
+</td>
+<td>
+<p>1097</p>
+</td>
+<td>
+<p>731</p>
+</td>
+<td>
+<p>539</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"><strong><span lang="EN-IN">Pre-processing</span><span lang="EN-IN"> time in seconds:</span></strong></p>
-<div>
-<table class="MsoTable15Grid4Accent3" border="1" width="432" cellspacing="0" cellpadding="0">
+</table></div>
+<p>Pre-processing time in seconds:</p>
+<div class="overflow-table"><table><colgroup><col /><col span="4" /></colgroup>
 <tbody>
 <tr>
-<td width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Model Name</span></strong></p>
+<td>
+<p>Model Name</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#1 GPU</span></strong></p>
+<td>
+<p>#1 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#2 GPU</span></strong></p>
+<td>
+<p>#2 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#4 GPU</span></strong></p>
+<td>
+<p>#4 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#8 GPU</span></strong></p>
-</td>
-</tr>
-<tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">CX1</span></strong></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">4926</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">3728</span></p>
+<td>
+<p>#8 GPU</p>
 </td>
 </tr>
 <tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Roadster</span></strong></p>
+<td>
+<p>CX1</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">679</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">607</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">446</span></p>
+<td>
+<p>4926</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">350</span></p>
+<td>
+<p>3728</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Roadster</p>
+</td>
+<td>
+<p>679</p>
+</td>
+<td>
+<p>607</p>
+</td>
+<td>
+<p>446</p>
+</td>
+<td>
+<p>350</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"><strong><span lang="EN-IN">Computation</span><span lang="EN-IN"> time in seconds:</span></strong></p>
-<div>
-<table class="MsoTable15Grid4Accent3" border="1" width="432" cellspacing="0" cellpadding="0">
+</table></div>
+<p>Computation time in seconds:</p>
+<div class="overflow-table"><table><colgroup><col /><col span="4" /></colgroup>
 <tbody>
 <tr>
-<td width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Model Name</span></strong></p>
+<td>
+<p>Model Name</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#1 GPU</span></strong></p>
+<td>
+<p>#1 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#2 GPU</span></strong></p>
+<td>
+<p>#2 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#4 GPU</span></strong></p>
+<td>
+<p>#4 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#8 GPU</span></strong></p>
-</td>
-</tr>
-<tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">CX1</span></strong></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1560</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">903</span></p>
+<td>
+<p>#8 GPU</p>
 </td>
 </tr>
 <tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Roadster</span></strong></p>
+<td>
+<p>CX1</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">782</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">433</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">257</span></p>
+<td>
+<p>1560</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">174</span></p>
+<td>
+<p>903</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Roadster</p>
+</td>
+<td>
+<p>782</p>
+</td>
+<td>
+<p>433</p>
+</td>
+<td>
+<p>257</p>
+</td>
+<td>
+<p>174</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><strong>Speed-up (Between GPUs):</strong></p>
-<div>
-<table class="MsoTable15Grid4Accent3" border="1" width="432" cellspacing="0" cellpadding="0">
+</table></div>
+<p>Speed-up (Between GPUs):</p>
+<div class="overflow-table"><table><colgroup><col /><col span="4" /></colgroup>
 <tbody>
 <tr>
-<td width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Model Name</span></strong></p>
+<td>
+<p>Model Name</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#1 GPU</span></strong></p>
+<td>
+<p>#1 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#2 GPU</span></strong></p>
+<td>
+<p>#2 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#4 GPU</span></strong></p>
+<td>
+<p>#4 GPU</p>
 </td>
-<td width="76">
-<p class="MsoNormal"><strong><span lang="EN-IN">#8 GPU</span></strong></p>
-</td>
-</tr>
-<tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">CX1</span></strong></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">NA</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1.00</span></p>
-</td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1.73</span></p>
+<td>
+<p>#8 GPU</p>
 </td>
 </tr>
 <tr>
-<td nowrap="nowrap" width="128">
-<p class="MsoNormal"><strong><span lang="EN-IN">Roadster</span></strong></p>
+<td>
+<p>CX1</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1.00</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">1.81</span></p>
+<td>
+<p>NA</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">3.04</span></p>
+<td>
+<p>1.00</p>
 </td>
-<td nowrap="nowrap" width="76">
-<p class="MsoNormal"><span lang="EN-IN">4.49</span></p>
+<td>
+<p>1.73</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Roadster</p>
+</td>
+<td>
+<p>1.00</p>
+</td>
+<td>
+<p>1.81</p>
+</td>
+<td>
+<p>3.04</p>
+</td>
+<td>
+<p>4.49</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"><strong>Note:</strong></p>
-<p class="MsoListParagraphCxSpFirst">1. "NA" Denotes the model requires more than 100GB of GPU Memory, hence simulation can't perform with #1GPU &amp; #2GPU</p>
-<p class="MsoListParagraphCxSpLast">2. The Speed-up is calculated for the computation time (the phase where GPU is utilized) to see the GPU performance.</p>
-
-
-<p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image027.png" alt="Lower is better" width="59" height="36" /><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image028.png" alt="" width="66" height="77" /><span lang="EN-IN"><img id="Picture 30" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image029.png" alt="" width="635" height="367" border="0" /></span></p>
-<p class="MsoNormal"><strong>Note:</strong> To run the CX1 model, minimum of 100GB of GPU memory required, hence simulation didn&rsquo;t perform with #1GPU &amp; #2GPU</p>
-
-<p class="MsoNormal"><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image030.png" alt="Higher is better" width="59" height="36" /><img src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image031.png" alt="" width="66" height="77" /><span lang="EN-IN"><img id="Picture 22" src="Azure%20HPC%20Recipe%20for%20Altair_ultraFluidX_v3_files/image032.png" alt="" width="643" height="322" border="0" /></span></p>
-<p class="MsoNormal"><strong>Note:</strong> To run the CX1 model, minimum of 100GB of GPU memory required, hence simulation didn&rsquo;t perform with #1GPU &amp; #2GPU</p>
-
-
-
-<h1><a name="_Toc85794201"></a><a name="_Toc85794528"></a><a name="_Toc85798832"></a><a name="_Toc88041732"></a>5 Azure Cost</h1>
-<p class="MsoNormal"><span lang="EN-IN">For the below cost reports, the application installation time is not considered and only wall clock time is considered for the cost calculation.</span></p>
-<div>
-<table class="MsoNormalTable" border="0" width="601" cellspacing="0" cellpadding="0">
+</table></div>
+<p>Note:</p>
+<p>1. "NA" Denotes the model requires more than 100GB of GPU Memory, hence simulation can't perform with #1GPU &amp; #2GPU</p>
+<p>2. The Speed-up is calculated for the computation time (the phase where GPU is utilized) to see the GPU performance.</p>
+<p><img src="ultraFluidX_files/Image20.png" alt="" width="636" height="367" border="0" /></p>
+<p>Note: To run the CX1 model, minimum of 100GB of GPU memory required, hence simulation didn&rsquo;t perform with #1GPU &amp; #2GPU</p>
+<p><img src="ultraFluidX_files/Image21.png" alt="" width="643" height="322" border="0" /></p>
+<p>Note: To run the CX1 model, minimum of 100GB of GPU memory required, hence simulation didn&rsquo;t perform with #1GPU &amp; #2GPU</p>
+<h1>5 <a name="_Toc88041732"></a>Azure Consumption</h1>
+<p>For the below cost reports, the application installation time is not considered and only wall clock time is considered for the cost calculation.</p>
+<div class="overflow-table"><table><colgroup><col /><col /><col /><col span="2" /><col /></colgroup>
 <tbody>
 <tr>
-<td width="97">
-<p class="MsoNormal"><strong><span lang="EN-IN">Azure VM Size</span></strong></p>
+<td>
+<p>Azure VM Size</p>
 </td>
-<td width="100">
-<p class="MsoNormal"><strong><span lang="EN-IN">Model Name</span></strong></p>
+<td>
+<p>Model Name</p>
 </td>
-<td width="93">
-<p class="MsoNormal"><strong><span lang="EN-IN"># GPU</span></strong></p>
+<td>
+<p># GPU</p>
 </td>
-<td width="100">
-<p class="MsoNormal"><strong><span lang="EN-IN">Wall clock time in Sec</span></strong></p>
+<td>
+<p>Wall clock time in Sec</p>
 </td>
-<td width="100">
-<p class="MsoNormal"><strong><span lang="EN-IN">Azure VM Hourly Cost</span></strong></p>
+<td>
+<p>Azure VM Hourly Cost</p>
 </td>
-<td width="111">
-<p class="MsoNormal"><strong><span lang="EN-IN">Total Azure Cost</span></strong></p>
-</td>
-</tr>
-<tr>
-<td rowspan="6" nowrap="nowrap" width="97">
-<p class="MsoNormal"><span lang="EN-IN">ND96asr_v4</span></p>
-</td>
-<td rowspan="2" nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">CX1</span></p>
-</td>
-<td width="93">
-<p class="MsoNormal"><span lang="EN-IN">4</span></p>
-</td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">6679</span></p>
-</td>
-<td width="100">
-<p class="MsoNormal"><span lang="EN-IN">$39.77</span></p>
-</td>
-<td width="111">
-<p class="MsoNormal"><span lang="EN-IN">$73.78</span></p>
+<td>
+<p>Total Azure consumption</p>
 </td>
 </tr>
 <tr>
-<td width="93">
-<p class="MsoNormal"><span lang="EN-IN">8</span></p>
+<td rowspan="6">
+<p>ND96asr_v4</p>
 </td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">4743</span></p>
+<td rowspan="2">
+<p>CX1</p>
 </td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">$39.77</span></p>
+<td>
+<p>4</p>
 </td>
-<td width="111">
-<p class="MsoNormal"><span lang="EN-IN">$52.40</span></p>
+<td>
+<p>6679</p>
 </td>
-</tr>
-<tr>
-<td rowspan="4" nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">Roadster</span></p>
+<td>
+<p>$39.77</p>
 </td>
-<td width="93">
-<p class="MsoNormal"><span lang="EN-IN">1</span></p>
-</td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">1571</span></p>
-</td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">$39.77</span></p>
-</td>
-<td width="111">
-<p class="MsoNormal"><span lang="EN-IN">$17.36</span></p>
+<td>
+<p>$73.78</p>
 </td>
 </tr>
 <tr>
-<td width="93">
-<p class="MsoNormal"><span lang="EN-IN">2</span></p>
+<td>
+<p>8</p>
 </td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">1097</span></p>
+<td>
+<p>4743</p>
 </td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">$39.77</span></p>
+<td>
+<p>$39.77</p>
 </td>
-<td width="111">
-<p class="MsoNormal"><span lang="EN-IN">$12.12</span></p>
-</td>
-</tr>
-<tr>
-<td width="93">
-<p class="MsoNormal"><span lang="EN-IN">4</span></p>
-</td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">731</span></p>
-</td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">$39.77</span></p>
-</td>
-<td width="111">
-<p class="MsoNormal"><span lang="EN-IN">$8.08</span></p>
+<td>
+<p>$52.40</p>
 </td>
 </tr>
 <tr>
-<td width="93">
-<p class="MsoNormal"><span lang="EN-IN">8</span></p>
+<td rowspan="4">
+<p>Roadster</p>
 </td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">539</span></p>
+<td>
+<p>1</p>
 </td>
-<td nowrap="nowrap" width="100">
-<p class="MsoNormal"><span lang="EN-IN">$39.77</span></p>
+<td>
+<p>1571</p>
 </td>
-<td width="111">
-<p class="MsoNormal"><span lang="EN-IN">$5.95</span></p>
+<td>
+<p>$39.77</p>
+</td>
+<td>
+<p>$17.36</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>2</p>
+</td>
+<td>
+<p>1097</p>
+</td>
+<td>
+<p>$39.77</p>
+</td>
+<td>
+<p>$12.12</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>4</p>
+</td>
+<td>
+<p>731</p>
+</td>
+<td>
+<p>$39.77</p>
+</td>
+<td>
+<p>$8.08</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>8</p>
+</td>
+<td>
+<p>539</p>
+</td>
+<td>
+<p>$39.77</p>
+</td>
+<td>
+<p>$5.95</p>
 </td>
 </tr>
 </tbody>
-</table>
-</div>
-<p class="MsoNormal"></p>
-<p class="MsoNormal"><strong>Note:</strong></p>
-<p class="MsoListParagraphCxSpFirst">1. To run the CX1 model, minimum of 100GB of GPU memory required, hence simulation didn&rsquo;t perform with #1GPU &amp; #2GPU</p>
-<p class="MsoListParagraphCxSpLast">2. The wall clock time for a full production-level test case of CX1 will be on the higher side than the results presented here and the associated cost will also increase.</p>
-<h1><a name="_Toc85794202"></a><a name="_Toc85794529"></a><a name="_Toc85798833"></a><a name="_Toc88041733"></a>6 Summary</h1>
-<p class="paragraph"><span class="normaltextrun"><span lang="EN-IN">1. </span></span><span class="normaltextrun"><span lang="EN-IN">Altair </span></span><span class="normaltextrun">ultraFluidX</span> <span class="normaltextrun"><span lang="EN-IN">is successfully deployed and tested on ND A100_v4 series VM on Azure Platform.</span></span></p>
-<p class="paragraph"><span class="normaltextrun"><span lang="EN-IN">2. </span></span><span lang="EN-IN">Many complex problems can be solved within a few hours on Azure <span class="normaltextrun">ND A100_v4 instance.</span></span></p>
-<p class="paragraph"><span lang="EN-IN">3. </span><span class="normaltextrun"><span lang="EN-IN">Expected Speed-up is achieved with multi-GPUs.</span></span></p>
-  
-        </div><!--content-->
+</table></div>
+<p>Note:</p>
+<p>1. To run the CX1 model, minimum of 100GB of GPU memory required, hence simulation didn&rsquo;t perform with #1GPU &amp; #2GPU</p>
+<p>2. The wall clock time for a full production-level test case of CX1 will be on the higher side than the results presented here and the associated cost will also increase.</p>
+<h1>6 <a name="_Toc88041733"></a>Summary</h1>
+<p>1. Altair ultraFluidX is successfully deployed and tested on ND A100_v4 series VM on Azure Platform.</p>
+<p>2. Many complex problems can be solved within a few hours on Azure ND A100_v4 instance.</p>
+<p>3. Expected Speed-up is achieved with multi-GPUs.</p>
+
+</div><!--content-->
       
      <div class="col-4 col-md-2 px-1 px-sm-0 toc">
-        <label>Table of Contents</label>
-<!--             <nav>  
-                
-                <ol>
-                    <li class="nav-item"><a href="#intro" class="nav-link p-0">Introduction</a></li>
-                    <li class="nav-item"><a href="#deploy" class="nav-link p-0">Deploy Virtual Machine on Azure Cloud Platform
-                        <nav>
-                            <ol class="sub-menu">
-                                <li><a href="#2.1">Azure cloud architecture for application</a></li>
-                                <li><a href="#2.2">AZURE VIRTUAL MACHINE (VM)</a></li>
-                                <li><a href="#2.3">CREATE A VIRTUAL MACHINE ON AZURE PLATFORM</a></li>
-                                <li><a href="#2.4">CONNECT TO VIRTUAL MACHINE</a></li>
-                                <li><a href="#2.5">INSTALL NVIDIA DRIVERS</a></li>
-                            </ol>
-                        </nav>
+        <label class="px-3">Table of Contents</label>
 
-                    </li>
-                      <li class="nav-item "><a href="#install" class="nav-link p-0">Install VRED Application on
-                        Virtual Machine:</a></li>
-                      <li class="nav-item "><a href="#performance" class="nav-link p-0">Performance results of
-                        Autodesk VRED on Azure Virtual Machines</a></li>
-                      <li class="nav-item "><a href="#consumption" class="nav-link p-0">Azure Consumption</a></li>
-                      <li class="nav-item "><a href="#summary" class="nav-link p-0">Summary</a></li>
-                </ol>
-            </nav> -->
-            <p><a href="#_Toc88041716">1 Introduction</a></p>
-            <p><a href="#_Toc88041717">2 Deploy Virtual Machine on Azure Cloud Platform</a></p>
-            <p><a href="#_Toc88041718">2.1 Azure Cloud Architecture for Application</a></p>
-            <p><a href="#_Toc88041719">2.2 Azure Virtual Machine (VM)</a></p>
-            <p><a href="#_Toc88041720">2.3 Create a Virtual Machine on Azure Platform</a></p>
-            <p><a href="#_Toc88041721">2.4 Connect to virtual machine</a></p>
-            <p><a href="#_Toc88041722">2.5 Install Nvidia Drivers</a></p>
-            <p><a href="#_Toc88041723">3 Install Altair ultraFluidX Application on Virtual Machine</a></p>
-            <p><a href="#_Toc88041724">3.1 Download product</a></p>
-            <p><a href="#_Toc88041725">3.2 Install ultraFluidX application on Linux</a></p>
-            <p><a href="#_Toc88041726">3.3 License Manager installation</a></p>
-            <p><a href="#_Toc88041727">4 Performance results of ultraFluidX on Azure virtual machine</a></p>
-            <p><a href="#_Toc88041728">4.1 Altair ultraFluidX Overview</a></p>
-            <p><a href="#_Toc88041729">4.1.1 Model Details</a></p>
-            <p><a href="#_Toc88041730">4.2 Altair ultraFluidX on Azure Platform</a></p>
-            <p><a href="#_Toc88041731">4.3 Altair ultraFluidX 2021.2 Performance Results</a></p>
-            <p><a href="#_Toc88041732">5 Azure Cost</a></p>
-            <p><a href="#_Toc88041733">6 Summary</a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 8pt 0pt;"><a name="_Toc81399914"></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041716"><span>1</span> <span>Introduction</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041717"><span>2</span> <span>Deploy Virtual Machine on Azure Cloud Platform</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041718"><span>2.1</span> <span>Azure Cloud Architecture for Application</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041719"><span>2.2</span> <span>Azure Virtual Machine (VM)</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041720"><span>2.3</span> <span>Create a Virtual Machine on Azure Platform</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041721"><span>2.4</span> <span>Connect to virtual machine</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041722"><span>2.5</span> <span>Install Nvidia Drivers</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041723"><span>3</span> <span>Install Altair ultraFluidX Application on Virtual Machine</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041724"><span>3.1</span> <span>Download product</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041725"><span>3.2</span> <span>Install ultraFluidX application on Linux</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041726"><span>3.3</span> <span>License Manager installation</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041727"><span>4</span> <span>Performance results of ultraFluidX on Azure virtual machine</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041728"><span>4.1</span> <span>Altair ultraFluidX Overview</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 22pt;"><a href="#_Toc88041729"><span>4.1.1</span> <span>Model Details</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041730"><span>4.2</span> <span>Altair </span><span>ultraFluidX </span><span>on Azure Platform</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 11pt;"><a href="#_Toc88041731"><span>4.3</span> <span>Altair ultraFluidX 2021.2 Performance Results</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041732"><span>5</span> <span>Azure Consumption</span></a></p>
+        <p style="padding: 1pt 4pt; margin: 0pt 0pt 5pt 0pt;"><a href="#_Toc88041733"><span>6</span> <span>Summary</span></a></p>
      </div>
 
     </div><!--rpt-->
