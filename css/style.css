@@ -552,8 +552,8 @@ text-decoration: none;
 }
 
 .content h2{
-    margin: 2pt 0cm 0cm 35.9pt;
-    text-indent: -28.8pt;
+/*     margin: 2pt 0cm 0cm 35.9pt;
+    text-indent: -28.8pt; */
     line-height: normal;
     font-size: 17px;
     font-family: "Calibri Light", sans-serif;
@@ -565,8 +565,8 @@ text-decoration: none;
 }
 
 .content .h2{
-    margin: 2pt 0cm 0cm 35.9pt;
-    text-indent: -28.8pt;
+/*     margin: 2pt 0cm 0cm 35.9pt;
+    text-indent: -28.8pt; */
     line-height: normal;
     font-size: 17px;
     font-family: "Calibri Light", sans-serif;
@@ -656,6 +656,10 @@ text-decoration: none;
 
 .toc .nav-link{
     display:unset;
+}
+
+.toc p{
+    padding: 1pt 4pt; margin: 0pt 0pt 8pt 0pt;
 }
 
 /*rpt page*/
