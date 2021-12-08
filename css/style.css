@@ -169,17 +169,23 @@ header a{
     font-weight: 500;
 
     border: 0.25mm solid #6c757dbf;
-    background-color: #afc2b361;
+   background-color: #afc2b361;
     color:#1f2b38c2 ;
+
+    /* background-color: #1f2b38c2;
+    color: #e6dccd;*/
 }
 
 .hero-links a:hover{
 
- /*    color: #615f5f;
-    background-color:#6c757d5d; */
+  
+   /* background-color:#6c757d5d;*/
+   
     background-color: #1f2b38c2;
-    border-color: #464444;
-    color: #e6dccd;
+    color: #e6dccd; 
+     /* color: #1f2b38c2; 
+    background-color: rgba(175, 194, 179, 0.38);*/
+    border-color: 0.25mm solid #6c757dbf;
 
 } 
 
@@ -438,6 +444,10 @@ footer ul {
 footer ul li {
     display: inline-block;
     margin-left: 20px;
+}
+
+footer .footer-logo{
+max-width:150px;
 }
 /*footer styles ends*/
 
@@ -919,6 +929,12 @@ border:unset;
     .content table{
         font-size: 0.8em;
     }
+    footer .footer-logo{
+        max-width:125px;
+        }
+    footer .footer-text{
+        font-size: smaller;
+    }    
  }
 
  @media (max-width:376px) {  
