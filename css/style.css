@@ -68,8 +68,12 @@ header a{
     z-index: 20;
 }
 
+.title-text{
+    margin-bottom:-15px;
+}
+
 .logo{
-    text-shadow: 1px 1px 4px rgb(0 0 0 / 50%);
+    text-shadow: 1px 1px 4px rgb(0 0 0 / 35%);
     font-size:1.5em;
     font-family:  'Poppins', sans-serif;
 }
@@ -77,7 +81,8 @@ header a{
 
 .logo a {
     color: #fff;
-    text-transform: uppercase;
+    font-size:xx-large;
+   /* text-transform: uppercase;*/
 }
 
 .logo a:hover {
@@ -87,6 +92,16 @@ header a{
 .logo span {
     color: #1b2427ba;
 }
+
+header span.logoline-top{
+    color: #f1511b;
+    text-shadow: 0 0 transparent;
+    font-stretch: condensed;
+    font: icon;
+    top: -7px;
+    left: -1.5px;
+    position: relative;
+  }
 
 /*hero section styles begins*/
 
@@ -357,6 +372,33 @@ background-color: #f2f2f2;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
  }
+
+ #letterlinks{
+     margin-bottom:0.5em;
+ }
+
+ #letterlinks a{
+    /* font-size: 1.5em; */
+    color:#00a4ef;
+    font-weight:bold;
+    margin-right:1em;
+ }
+
+ dt{
+     margin-top:2em;
+     margin-bottom:.7em;
+     color:#00a4ef;
+     font-weight:bold;
+     text-align:left;
+     padding:0 0 0 5em;
+ }
+
+ dd{
+     margin-left:1em;
+     color:#212529;
+     padding:0 5em;
+     text-align: start;
+ }
 /*videos*/
 
 /*testimonials callout styles begins*/
@@ -448,6 +490,12 @@ footer ul li {
 
 footer .footer-logo{
 max-width:150px;
+}
+
+footer span.logoline-bot{
+    border-right: 1px solid #00a4ef;
+    height: 45px;
+    position: absolute;
 }
 /*footer styles ends*/
 
@@ -825,6 +873,18 @@ border:unset;
 }
 
 
+/*@media (min-width:768px) {
+
+    dt{
+        padding:0 0 0 6em;
+    }
+
+    dd{
+        padding:0 5em;
+    }
+
+}*/
+
 @media (max-width:767px) {
     .rpt h1{
         font-size: 1.5em;
@@ -876,6 +936,7 @@ border:unset;
     .index{
         display:none;
     }
+
 }
 
 @media (max-width: 576px) {  
@@ -889,10 +950,23 @@ border:unset;
     .artifacts-steps1{
         font-size: 1.2rem;
     }
+
+    dt{
+        padding:0 0 0 2em;
+    }
+    dd{
+        padding:0 1em;
+    }
+
+    #letterlinks a {
+        /* font-size: 1.3em; */
+        letter-spacing: -15px;
+    }
+
 }
 
 
-@media (max-width: 556px) { 
+@media (max-width: 557px) { 
     .navigation-links a {
         font-size: 0.5em;
     }
@@ -935,6 +1009,11 @@ border:unset;
     footer .footer-text{
         font-size: smaller;
     }    
+    footer span.logoline-bot{
+        border-right: 1px solid #00a4ef;
+        height: 38px;
+        position: absolute;
+    }
  }
 
  @media (max-width:376px) {  
