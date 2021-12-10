@@ -359,6 +359,32 @@ background-color: rgb(78 70 70 / 85%);
 width:200px;
 }
 
+.recipe-guide a.disabled{
+    background-color: #6c757d;
+    cursor:auto;
+}
+
+.recipe-guide a:hover.diabled{
+    background-color: red;
+}
+
+.recipe-guide .disclaimer-group{
+    font-size:small;
+    color:#212529;
+    margin-top:-20px;
+    font-style: italic;
+    line-height: 1em;
+}
+
+.recipe-guide .disclaimer-single{
+    font-size:smaller;
+    color:#212529;
+    font-style: italic;
+    max-width:50px;
+    word-break: word;
+    line-height: 1em;
+}
+
 /*recipe-guide callout styles ends*/
 
 /*videos*/
@@ -372,6 +398,19 @@ background-color: #f2f2f2;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
  }
+
+ .videos-wrapper .video-title{
+    font-size: smaller;
+    min-height: 32px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+ }
+
+ .videos-wrapper .video-text{
+    font-size: xx-small;
+    min-height: 40px; 
+    text-align: left;
+}
 
  #letterlinks{
      margin-bottom:0.5em;
@@ -792,6 +831,14 @@ text-decoration: none;
 background-color:unset;
 border:unset;
 }
+
+.card-body{
+    font-size: 0.9em;
+}
+
+.card-text{
+    text-align: left;
+}
 /*Override code ends*/
 
 /*----------------------------------*/
@@ -823,7 +870,9 @@ border:unset;
 }
 
 @media (max-width:1181px){
-
+    .videos-wrapper .video-text{
+        min-height: 54px; 
+    }
 }
 
 @media (max-width: 991px) {
@@ -853,6 +902,13 @@ border:unset;
         overflow-x: auto;
     }
 
+    .videos-wrapper .video-title{
+        min-height: 25px;
+     }
+    
+     .videos-wrapper .video-text{
+        min-height: 67px;
+    }
     /*.overflow-table::-webkit-scrollbar {
         height: 5px;
       }
@@ -937,6 +993,11 @@ border:unset;
         display:none;
     }
 
+    .videos-wrapper .video-text{
+        min-height:54px;
+    }
+
+
 }
 
 @media (max-width: 576px) {  
@@ -962,6 +1023,14 @@ border:unset;
         /* font-size: 1.3em; */
         letter-spacing: -15px;
     }
+    .videos-wrapper .video-title{
+        min-height:unset;
+    }
+        
+    .videos-wrapper .video-text{
+        min-height:unset;
+    }
+
 
 }
 
