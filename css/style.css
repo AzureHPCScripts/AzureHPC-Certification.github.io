@@ -69,7 +69,7 @@ header a{
 }
 
 .title-text{
-    margin-bottom:-15px;
+    margin-bottom:-20px;
 }
 
 .logo{
@@ -93,13 +93,16 @@ header a{
     color: #1b2427ba;
 }
 
+.logo img{
+    width:72px;
+}
+
 header span.logoline-top{
-    color: #f1511b;
+    color: #0071ae;
     text-shadow: 0 0 transparent;
     font-stretch: condensed;
     font: icon;
-    top: -7px;
-    left: -1.5px;
+    top: -5px;
     position: relative;
   }
 
@@ -183,9 +186,15 @@ header span.logoline-top{
     line-height: 2.6em;
     font-weight: 500;
 
-    border: 0.25mm solid #6c757dbf;
-   background-color: #afc2b361;
-    color:#1f2b38c2 ;
+     background-color: #afc2b361;
+    color:#1f2b38c2 ;  
+   border:0.25mm solid rgb(108 117 125 / 35%);
+
+  /*   border: 0.25mm solid #6c757dbf; 
+   background-color: #fff;
+    color:#1f2b38c2 ;*/
+    
+
 
     /* background-color: #1f2b38c2;
     color: #e6dccd;*/
@@ -196,7 +205,7 @@ header span.logoline-top{
   
    /* background-color:#6c757d5d;*/
    
-    background-color: #1f2b38c2;
+    background-color: rgb(46 40 40 / 80%); /*#1f2b38c2;*/
     color: #e6dccd; 
      /* color: #1f2b38c2; 
     background-color: rgba(175, 194, 179, 0.38);*/
@@ -356,7 +365,7 @@ background-color: rgb(78 70 70 / 85%);
 }
 
 .recipe-guide .aplns img{
-width:200px;
+width:250px; /*200px*/
 }
 
 .recipe-guide a.disabled{
@@ -532,10 +541,15 @@ max-width:150px;
 }
 
 footer span.logoline-bot{
-    border-right: 1px solid #00a4ef;
-    height: 45px;
+    border-right: 1px solid #0071ae;
+    height: 25px;
     position: absolute;
+    margin-top: 12px;
 }
+
+footer .footer-text{
+    font-size:small;
+} 
 /*footer styles ends*/
 
 
@@ -625,6 +639,10 @@ text-decoration: none;
    /* word-break: break-all; */
 }
 
+.content a{
+    color:rgb(0 120 215);
+}
+
 .content table{
     width:100%;
     margin-bottom: 2rem;
@@ -654,8 +672,8 @@ text-decoration: none;
     line-height: normal;
     font-size: 17px;
     font-family: "Calibri Light", sans-serif;
-    color: rgb(47, 84, 150);
-    font-weight: normal;
+    color: rgb(0 113 174); /*rgb(47, 84, 150);*/
+    font-weight: bold;
     font-style: normal;
     text-align: start;
     text-transform: uppercase;
@@ -667,8 +685,9 @@ text-decoration: none;
     line-height: normal;
     font-size: 17px;
     font-family: "Calibri Light", sans-serif;
-    color: rgb(47, 84, 150);
-    font-weight: normal;
+    /* color: rgb(47, 84, 150); */
+    color: rgb(0 113 174);
+    font-weight: bold;
     font-style: normal;
     text-align: start;
     text-transform: uppercase;
