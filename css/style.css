@@ -404,7 +404,7 @@ width:250px; /*200px*/
 
 /* Customer Case Studies begins */
 .case-study img{
-    max-height:38px;
+    /* max-height:38px; */
 }
 
 .case-study-text{
