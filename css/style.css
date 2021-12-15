@@ -29,6 +29,22 @@ section h2{
 	text-transform: uppercase;
 }
 
+.indent{
+    text-indent:1.5em;
+} 
+
+.bold{
+    font-weight:bold;
+}
+.italic{
+    font-style: italic;
+}
+
+.blue-code{
+    color:#0071ae;
+    font-weight:bold;
+}
+
 hr{
     padding:0px;
     margin: 0px;
@@ -405,6 +421,7 @@ width:250px; /*200px*/
 /* Customer Case Studies begins */
 .case-study img{
     /* max-height:38px; */
+    max-width: 225px;
 }
 
 .case-study-text{
@@ -578,14 +595,14 @@ footer ul li {
 }
 
 footer .footer-logo{
-max-width:150px;
+max-width: 130px;
 }
 
 footer span.logoline-bot{
     border-right: 1px solid #0071ae;
     height: 25px;
     position: absolute;
-    margin-top: 12px;
+    margin-top: 9px;
 }
 
 footer .footer-text{
@@ -685,6 +702,14 @@ text-decoration: none;
     color:rgb(0 120 215);
 }
 
+.content p::first-line {
+   /*   text-indent: 16pt !important;
+         color:red;
+         text-justify: auto !important;
+       text-align: justify; 
+        color:red; */
+}
+
 .content table{
     width:100%;
     margin-bottom: 2rem;
@@ -696,9 +721,14 @@ text-decoration: none;
 /* overflow-x: auto; */
 }
 
+.rpt img{
+    border:#000;
+}
+
 .content table tr:first-child{
     background: #f2f2f2;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .content table tr{
@@ -725,7 +755,7 @@ text-decoration: none;
     text-align: start;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif, 'Roboto Mono', monospace;
-    margin-top: 1.5em;
+    /* margin-top: 1.5em; */
 }
 
 .content .h2{
@@ -739,7 +769,7 @@ text-decoration: none;
     text-align: start;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif, 'Roboto Mono', monospace;
-    margin-top: 1.5em;
+    /* margin-top: 1.5em; */
 }
 
 .toc{
