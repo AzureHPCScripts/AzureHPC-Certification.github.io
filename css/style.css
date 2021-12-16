@@ -1000,7 +1000,7 @@ border:unset;
     }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 990px) {
     
     .hero-links a {
         font-size:0.73em;
@@ -1010,7 +1010,7 @@ border:unset;
       }
 
     .navigation-links a {
-        font-size: 0.8em;
+        font-size: 0.72em;
     }
 
     .index{
@@ -1066,7 +1066,7 @@ border:unset;
 
 }*/
 
-@media (max-width:767px) {
+@media (max-width:768px) {
     .rpt h1{
         font-size: 1.5em;
     }
@@ -1111,7 +1111,7 @@ border:unset;
     }
 
     .navigation-links a {
-        font-size: 0.59em;
+        font-size: 0.46em;
     }
 
     .index{
@@ -1162,7 +1162,7 @@ border:unset;
 
 @media (max-width: 557px) { 
     .navigation-links a {
-        font-size: 0.5em;
+        font-size: 0.39em;
     }
 }
 
@@ -1175,7 +1175,7 @@ border:unset;
 
 @media (max-width: 506px) { 
 .navigation-links a {
-    font-size: 0.49em;
+    font-size: 0.387em;
 }
 .artifacts-steps1{
     font-size: 1rem;
@@ -1215,7 +1215,7 @@ border:unset;
         font-size: 0.6em;
     }
     .navigation-links a {
-        font-size: 0.23em;
+        font-size: 0.2em;
     }
  }
 
@@ -1225,13 +1225,20 @@ border:unset;
         font-size: 0.3em;
     }
     .navigation-links a {
-        font-size: 0.21em;
+        font-size: 0.15em;
     }
     .artifacts-steps1{
         font-size: 0.6rem;
     }
     .content table{
         font-size: 0.5em;
+    }
+
+ }
+
+ @media (max-width:280px) {  
+    .navigation-links a {
+        font-size:0.092em;
     }
  }
 /*custom media queries ends*/
