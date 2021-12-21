@@ -363,7 +363,7 @@ margin: auto;
 
 /*recipe-guide styles begins*/
 .recipe-guide{
-    min-height:300px;
+    /* min-height:300px; */
 }
 
 .recipe-guide a{
@@ -382,18 +382,19 @@ background-color: rgb(78 70 70 / 85%);
 }
 
 .recipe-guide .aplns{
-  min-width:447px !important;
+  /*min-width:447px !important;*/
 }
 
-.recipe-guide .aplns img{
-/* width:250px; 200px */
-height:75px;
+.recipe-guide .aplns .turbostream img{
+height:55px;
+filter: invert(10%);
 }
 
 .recipe-guide a.disabled{
     background-color: #6c757d;
     cursor:auto;
     color: #bbb;
+    pointer-events: none;
 }
 
 .recipe-guide a:hover.diabled{
@@ -406,6 +407,16 @@ height:75px;
     margin-top:-20px;
     font-style: italic;
     line-height: 1em;
+}
+
+.recipe-guide .disclaimer-group-new{
+    font-size:small;
+    color:#212529;
+    margin-top:-20px;
+    font-style: italic;
+    line-height: 1em;
+    position: absolute;
+    bottom: 3%;
 }
 
 .recipe-guide .disclaimer-single{
@@ -442,6 +453,9 @@ margin: auto;
 #more3 {
     display: none;
 }
+#more4 {
+    display: none;
+}
 
 #myBtn1,#myBtn2,#myBtn3{
     font-size: smaller;
@@ -454,17 +468,130 @@ margin: auto;
     background-color: whitesmoke;
 }
 
-.read-more{
-font-size: smaller;
-font-weight: 300;
-margin: auto;
-border-radius: 2px;
-padding: 1px 8px;
-text-decoration: none;
-border: 0;
-background-color: whitesmoke;
-padding:4px;
+#myBtn4{
+    font-size:0.67em;
+    font-weight: 300;
+    margin: auto;
+    border-radius: 2px;
+    padding: 1px 8px;
+    text-decoration: none;
+    border: 0;
+    background-color: whitesmoke;
+    margin-left:0.5em;
 }
+
+.read-more{
+    font-size: smaller;
+    font-weight: 300;
+    margin: auto;
+    border-radius: 2px;
+    padding: 1px 8px;
+    text-decoration: none;
+    border: 0;
+    background-color: whitesmoke;
+    padding:4px;
+    }
+
+ /*    #myBtn-Altair{
+        font-size:0.67em;
+        font-weight: 300;
+        border-radius: 2px;
+        padding: 1px 8px;
+        text-decoration: none;
+        border: 0;
+        background-color: whitesmoke;
+        margin-left:0.5em;
+    }
+
+    #myBtn-Ansys{
+        font-size:0.67em;
+        font-weight: 300;
+        border-radius: 2px;
+        padding: 1px 8px;
+        text-decoration: none;
+        border: 0;
+        background-color: whitesmoke;
+        margin-left:0.5em;
+    } */
+
+ .modal-button{
+    font-size:0.67em;
+    font-weight: 300;
+    border-radius: 2px;
+    padding: 1px 8px;
+    text-decoration: none;
+    border: 0;
+    background-color: whitesmoke;
+    margin-left:0.5em;
+ }   
+
+    /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    min-height:50vh;
+  }
+
+  .modal-header {
+    padding: 2px 16px;
+  }
+  
+  .modal-body {
+      padding: 2px 16px;
+      display:flex;
+      width:90%;
+      margin-left:auto;
+      margin-right:auto;
+      word-wrap: break-word;
+}
+
+.modal-body div{
+    margin-left:5px;
+    margin-right:5px;
+}
+  
+  .modal-footer {
+    padding: 2px 16px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    right: 16px;
+    top: 10;
+    background-color: rgb(119, 117, 117);
+    padding:0px 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: rgb(83, 83, 83);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 /* Customer Case Studies ends */
 
 /*videos*/
@@ -480,7 +607,7 @@ background-color: #f2f2f2;
  }
 
  .videos-wrapper .video-title{
-    /* font-size: smaller; */
+    font-size: smaller;
     min-height: 32px;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -496,12 +623,17 @@ background-color: #f2f2f2;
  #letterlinks{
      margin-bottom:0.5em;
  }
-
+ 
  #letterlinks a{
     /* font-size: 1.5em; */
     color:#00a4ef;
     font-weight:bold;
     margin-right:1em;
+ }
+
+ #letterlinks a.inactive{
+    cursor:auto;
+    color: #bbb;
  }
 
  dt{
@@ -629,30 +761,56 @@ footer .footer-text{
 /*rpt page*/
 .rpt-wrapper{
     color: #1b2427ba;
+    font-family: roboto !important;
 }
 
 .rpt{
 text-decoration: none;
+font-family:roboto !important;
 }
 
 .index-scroll p{
+    font-size:11pt !important;
+    font-size:small !important;
+}
 
+.index-scroll p a span{
+    text-decoration: none !important;
+    color:unset !important;
+    font-family: unset !important;
 }
 
 .rpt h1{
-    color:#737373;
-    font-size: 1.8em;
+    color: rgb(115, 115, 115) !important;
+    font-size: 1.3em !important;
     line-height: 1.3;
-    margin: 0 0 0.5em;
-    font-weight: 400;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
     margin-bottom: 0.5em !important;
+    font-family:roboto !important;
+    font-weight:300 !important;
 }
+
+.rpt h1 span{
+    color: rgb(115, 115, 115) !important;
+    font-size: 1.3em !important;
+    line-height: 1.3;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0.5em !important;
+    font-family:roboto !important;
+    font-weight:300 !important;
+}
+
 .rpt .h1{
     color:#737373;
-    font-size: 1.8em;
+    font-size: 1.3em !important;
     line-height: 1.3;
     margin: 0 0 0.5em;
-    font-weight: 400;
+    font-family:roboto !important;
+    font-weight:300 !important;
 }
 
 .rpt .index p{
@@ -731,7 +889,7 @@ text-decoration: none;
           text-justify: auto !important;
         text-align: justify; 
          color:red; */
-         margin: 0pt 0pt 0pt 21.6pt !important;
+         /* margin: 0pt 0pt 0pt 21.6pt !important; */
  }
  
 
@@ -823,6 +981,11 @@ text-decoration: none;
     overflow-y: auto;
     padding-top:10px;
     border-left: 1px solid #ccc;    
+}
+
+.toc p a span{
+    text-decoration: none !important;
+    color:unset !important;
 }
 
 .toc::-webkit-scrollbar {
@@ -964,7 +1127,6 @@ text-decoration: none;
 }
 
 .card{
-background-color:unset;
 border:unset;
 }
 
@@ -991,7 +1153,7 @@ border:unset;
         width: 20% !important;
     }
     .recipe-guide a {
-        font-size: 1em;
+        font-size: 0.7em;
     }
     .navigation-links a {
         font-size: 1em;
@@ -1003,6 +1165,12 @@ border:unset;
         width: 90%;
         left: 5%;
         } 
+}
+
+@media (min-width:991px){
+.recipe-guide img{ 
+    max-width: 175px;
+}
 }
 
 @media (max-width:1181px){
@@ -1022,6 +1190,10 @@ border:unset;
 
     .navigation-links a {
         font-size: 0.72em;
+    }
+
+    .recipe-guide img{ 
+        max-width: 250px;
     }
 
     .index{
@@ -1167,6 +1339,16 @@ border:unset;
         min-height:unset;
     }
 
+    .modal-body {
+        display:list-item;
+        list-style: none;
+    padding: 5px;
+}
+
+.modal-body div{
+    margin-top:5px;
+    margin-bottom:5px;
+}
 
 }
 
@@ -1200,7 +1382,7 @@ border:unset;
     }
 
     .recipe-guide a {
-        font-size: 0.8em;
+        font-size: 0.6em;
     }
     .navigation-links a {
         font-size: 0.28em;
@@ -1223,7 +1405,7 @@ border:unset;
 
  @media (max-width:376px) {  
     .recipe-guide a {
-        font-size: 0.6em;
+        font-size: 0.4em;
     }
     .navigation-links a {
         font-size: 0.2em;
