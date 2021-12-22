@@ -762,12 +762,13 @@ footer .footer-text{
 /*rpt page*/
 .rpt-wrapper{
     color: #1b2427ba;
-    font-family: roboto !important;
+    font-family: 'Roboto', sans-serif, 'Roboto Mono', monospace !important;
 }
 
 .rpt{
 text-decoration: none;
 font-family:roboto !important;
+font-family: unset !important;
 }
 
 .index-scroll p{
@@ -779,6 +780,7 @@ font-family:roboto !important;
     text-decoration: none !important;
     color:unset !important;
     font-family: unset !important;
+    line-height: 1.25em;
 }
 
 .rpt h1{
@@ -869,7 +871,8 @@ font-family:roboto !important;
 .content{
    word-wrap: break-word;
    /* word-break: break-all; */
-   font-size:small;
+   font-size: small !important;
+   line-height: unset !important;
 }
 
 .content a{
@@ -890,7 +893,7 @@ font-family:roboto !important;
           text-justify: auto !important;
         text-align: justify; 
          color:red; */
-         /* margin: 0pt 0pt 0pt 21.6pt !important; */
+         margin: 0pt 0pt 0pt 21.6pt !important;
  }
  
 
@@ -917,7 +920,7 @@ font-family:roboto !important;
 }
 
 .content table tr:first-child{
-    background: #f2f2f2;
+    background: #f2f2f2 !important;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -934,6 +937,7 @@ font-family:roboto !important;
 .content table tr td{
     /* border-right: solid 0.01px #eaecec;  */
     /* border-left: solid 0.3px #f00; */
+    background-color: unset !important;
 }
 
 
@@ -953,6 +957,19 @@ font-family:roboto !important;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif, 'Roboto Mono', monospace;
     margin-top: 0.5rem !important;
+}
+
+.content h2 span{
+    line-height: normal;
+    font-size: 1rem;
+    /* font-family: "Calibri Light", sans-serif; */
+    font-size: 1rem !important;
+    color: rgb(0 113 174) !important;
+    font-style: normal;
+    text-align: start;
+    text-transform: uppercase;
+    font-family: unset !important;
+    font-weight: 500 !important;
 }
 
 .content .h2{
@@ -987,6 +1004,9 @@ font-family:roboto !important;
 .toc p a span{
     text-decoration: none !important;
     color:unset !important;
+    font-family: unset !important;
+    line-height: 1.25em;
+    font-size: small !important;
 }
 
 .toc::-webkit-scrollbar {
