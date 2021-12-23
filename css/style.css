@@ -436,7 +436,8 @@ filter: invert(10%);
 /* Customer Case Studies begins */
 .case-study img{
     /* max-height:38px; */
-    max-width: 225px;
+    /* max-width: 225px; */
+    max-width:170px;
 }
 
 .case-study-text{
@@ -742,14 +743,19 @@ footer ul li {
 }
 
 footer .footer-logo{
-max-width: 130px;
+max-width: 90px;
 }
 
 footer span.logoline-bot{
+  /*   border-right: 1px solid #0071ae;
+    height: 25px;
+    position: absolute;
+    margin-top: 9px; */
+
     border-right: 1px solid #0071ae;
     height: 25px;
     position: absolute;
-    margin-top: 9px;
+    margin-top: 2px;
 }
 
 footer .footer-text{
