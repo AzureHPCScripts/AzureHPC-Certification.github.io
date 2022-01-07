@@ -11,7 +11,10 @@
     <link rel="Stylesheet" href="css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,400&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300&family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,400&family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet"> 
+
+ <link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
  
     <script type="text/javascript" src="js/script.js"></script>
 
@@ -25,6 +28,8 @@
 
     <header class="container-fluid">   
       <div class="logo container">
+
+      
         <div class="title-text"><a href="index.html">Azure <span>HPC</span></a></div>
        
           <span>
@@ -38,8 +43,35 @@
             <img src="img/CapgeminiLogo.svg" alt="Capgemini Logo" />
           </a>
         </span>
-      
+
+        <nav class="navbar navbar-dark">
+          <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </nav>
+
+        
+        <div class="collapse w-100" id="navbarToggleExternalContent">
+          <div class="bg-cus-dark py-4">
+            <section id="navigation" class="text-center m-auto w-80 row navigation-links container">
+              <h2 class="pb-1">Navigation</h2>
+                           <div class="col aplns">
+                                   <div class="d-flex justify-content-center">
+                                     <div class="px-1"><a href="#cook-book">Cook Book</a></div>
+                                     <div class="px-1"><a href="#testimonials">Testimonials</a></div>
+                                     <div class="px-1"><a href="#case-study">Case Studies</a></div>
+                                     <div class="px-1"><a href="#videos">Videos</a></div>                                 
+                                    <div class="px-1"><a href="#onboard">HPC Onboarding Guide</a></div><div class="px-1"><a href="#learn">
+                                    Learning Path for HPC Azure</a></div><!--<div class="px-1"><a href="#cook-book">cook-book</a></div>-->
+                          </div>
+             </section>
+          </div>
+        </div>
       </div>
+
+      
     </header>
 
     <section class="container-fluid">	  
@@ -49,15 +81,57 @@
       
   
         <div class="hero-wrapper">
+
+           <!--/*-----------------Horizontal Forks-----------*/-->
              
-    <p class="hero-lead px-3 px-sm-0">Deploy your design and engineering applications with confidence on the Azure HPC + AI platform</p>
-              <p class="hero-links px-3 px-sm-0">              
+    <p class="hero-lead px-3 px-sm-0">Get your cookbook to deploy High-Performance compute applications on azure HPC</p>
+              <!-- <p class="hero-links px-3 px-sm-0">              
+                <b><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg> Steps to deploy application</b>
+               <b><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg> Performance</b>
+              
+                  <b><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg> Estimated cost</b>
+                
+                </p> -->
+
+                <!--/*-----------------Stacked Forks-----------*/-->
+
+                <p class="hero-links px-3 px-sm-0">              
                   <!-- <a href="#learn">Explore Azure HPC</a> -->
-                <a href="#recipe-guide">Are you a customer looking for product evaluation information on Azure HPC?<!--Get the Recipe Guide, if you are a Product User--></a><br> 
+                <!--<a href="#cook-book">--><b><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg> Steps to deploy application</b><br>
+                  <!--Get the Recipe Guide, if you are a Product User--><!--</a>-->
                   <!-- <a href="#onboard">Azure HPC Technical Onboarding Guide</a> -->
-                  <a href="#get-started">Are you an ISV looking to validate your application on Azure HPC?</a><br>
-                  <a href="#get-started">Are you a customer who wants to migrate to Azure HPC?</a>
+                  <!--<a href="#get-started">--><b><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg> Performance</b><br>
+                  <!--</a>-->
+                  <!--<a href="#get-started">--><b><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-check2-circle" viewBox="0 0 16 16">
+  <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+  <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+</svg> Estimated cost</b>
+                  <!--</a>-->
                 </p>
+
+                <p class="px-3 px-sm-0 pb-3 py-md-3 link">                                    
+          
+                 <a href="#get-started" class="btn btn-lg btn-hpc"><!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-square-fill" viewBox="0 0 16 16">
+                  <path d="M0 14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v12zm4.5-6.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5a.5.5 0 0 1 0-1z"/>
+                </svg>  --> <span class="px-1">Know more about this program ...</span></a>
+            
+                </p>
+
         </div><!--hero-wrapper-->
 
           <div class="hero-image px-3 px-sm-0">      
@@ -82,94 +156,138 @@
             </div>
          </div> -->
 
-         <section id="navigation" class="text-center m-auto w-80 row navigation-links container py-5">
-          <h2 class="pb-5">Navigation</h2>
-                       <div class="col pb-5 pb-sm-4 aplns">
-                               <div class="d-flex justify-content-center"><div class="px-1"><a href="#artifacts">Key Artifacts</a></div><div class="px-1"><a href="#onboard">HPC Onboarding Guide</a></div><div class="px-1"><a href="#learn">
-                                Learning Path for HPC Azure</a></div><div class="px-1"><a href="#videos">Videos</a></div><!--<div class="px-1"><a href="#recipe-guide">Recipe-Guide</a></div>--><div class="px-1"><a href="#testimonials">Testimonials</a></div><div class="px-1"><a href="#case-study">Case Studies</a></div></div>
-                      </div>
-         </section>
+         <section id="cook-book" class="text-center m-auto row cook-book container pt-5">
+      
+          <h2 class="pb-4">COOK BOOK</h2>
 
-         <section id="artifacts" class="py-5 text-center artifacts">
+          <div class="pb-5 cook-feature ">
+            
+            <span class="cookbook-icons"><img src="img/growth-chart-lg.svg"> <small>- Curated perfomance knowledge base</small></span>
+            
+             <!--  <span class="dot">.</span> 
+
+          <span class="cookbook-icons"><img src="img/software-development.svg"> <small>- Tailer made deployment images</small></span> -->
+
+
+            <span class="dot px-2">.</span> 
+
+            <span class="cookbook-icons"><img src="img/hub-connect-lg.svg"> <small>-  Customized configuration matrix dedicated to each application</small></span><br>
+
+         
+            <!-- <span class="dot">.</span>  -->
+
+            <span class="cookbook-icons"><img src="img/cloud-upload-lg.svg"> <small>- Leverage for cloud migration services</small></span>
+
+            <span class="dot px-2">.</span> 
+
+            <span class="cookbook-icons"><img src="img/people-growth-lg.svg"> <small>-  Improved awareness and confidence on cloud infrastructure </small></span>
+
+
+          </div>
+
+          <div class="col pb-5 aplns">
+            <div><img src="img/ADSCFD_logo.png"></div>
+            <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">Code Leo</a><br><div class="disclaimer-single">Arriving soon..</div></div></div>
+        </div>
+                          
+          <div class="col pb-5 aplns">
+            <div><img src="img/ALTAIR_logo.png"></div>
+            <div class="d-flex justify-content-center"><div class="px-1"><a href="edem.html" target="_blank">EDEM</a></div><div class="px-1"><a href="ultraFluidX.html" target="_blank">uFX</a></div><button id="myBtn-Altair" class="modal-button" href="#myModal1">More >></button></div>
+        </div>
+
+        <div class="col pb-5 aplns">
+          <div><img src="img/ANSYS_logo_CS.png"></div>
+          <div class="d-flex justify-content-center">
+
+            <div class="px-1"><a href="rocky.html" target="_blank">Rocky</a></div>   <div class="px-1"><a href="!#" target="_blank" class="disabled">HFSS</a><br><div class="disclaimer-single">Arriving soon..</div></div><button id="myBtn-Ansys" class="modal-button" href="#myModal2">More >></button>
+        </div>
+        <!-- <div class="disclaimer-single-front">Arriving soon..</div> -->
+           
+        </div>
+
+<!-- The Modal Altair -->
+<div id="myModal1" class="modal">
+
+<div class="modal-content">
+<div class="modal-header">
+  <span class="close">×</span>
+  <h4>Applications of ALTAIR</h4>
+</div>
+<div class="modal-body">
+  <div class="px-1"><a href="edem.html" target="_blank">EDEM</a></div><div class="px-1"><a href="ultraFluidX.html" target="_blank">uFX</a></div><div class="px-1"><a href="nanoFluidX.html" target="_blank">nFX</a></div>
+</div>
+<div class="modal-footer">
+ 
+</div>
+</div>
+
+</div>
+
+<!-- The Modal Ansys-->
+<div id="myModal2" class="modal">
+
+<div class="modal-content">
+<div class="modal-header">
+  <span class="close">×</span>
+  <h4>Applications of ANSYS</h4>
+  <!-- <div class="disclaimer-group-new">Arriving soon – pending ANSYS approval</div> -->
+</div>
+<div class="modal-body">
+  <div class="px-1"><a href="!#" target="_blank" class="disabled">HFSS</a><br><div class="disclaimer-single">Arriving soon..</div></div><div class="px-1"><a href="#" target="_blank" class="disabled">Mechanical</a><br><div class="disclaimer-single">Arriving soon..</div></div><div><a href="rocky.html" target="_blank">Rocky</a></div> <div><a href="#" target="_blank" class="disabled">Speos</a><br><div class="disclaimer-single">Arriving soon..</div></div>
+</div>
+<div class="modal-footer">
+ 
+</div>
+</div>
+</div>
+
+
+
+              <div class="col pb-5 aplns">
+                      <div><img src="img/AUTODESK_logo.png"></div>
+                      <div class="d-flex justify-content-center"><div class="px-1"><a href="vred.html" target="_blank">VRED</a></div></div>
+            </div>
+
+            <div class="col pb-5 aplns">
+              <div><img src="img/CPFD_logo.png"></div>
+              <div class="d-flex justify-content-center"><div class="px-1"><a href="barracuda.html" target="_blank">Barracuda</a></div></div>
+            </div>
+
+            </section>
+
+
+
+        <section id="cook-book" class="text-center m-auto row cook-book container">  
+
+             <div class="col pb-5 pb-md-0 aplns">
+              <div><img src="img/indicalabs_logo.png"></div>
+              <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">Indicalabs</a><br><div class="disclaimer-single">Arriving soon..</div></div></div>
+          </div>
+          <div class="col pb-5 pb-md-0 aplns">
+            <div><img src="img/remcom_logo.png"></div>
+            <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">remcom</a><br><div class="disclaimer-single">Arriving soon..</div></div></div>
+        </div>
+      
           
-          <h2 class="pb-3 text-uppercase">Key Artifacts</h2>
+        <div class="col pb-5 pb-md-0 aplns">
+          <div><img src="img/SIEMENS_logo.png"></div>
+          <div class="d-flex justify-content-center"><div class="px-1"><a href="siemens.html" target="_blank">NX</a></div><div class="px-1"><a href="#" target="_blank" class="disabled">Solid Edge</a><div class="disclaimer-single">Arriving soon..</div></div></div><br><!--<div class="disclaimer-group">Arriving soon – pending SIEMENS approval</div>-->
+      </div>
 
-          <div class="row g-0 container mx-auto mt-4">
-            <div class="col-lg-4 text-center">
-              <div class="row g-0">
-              <div class="col-4 col-md-3 col-lg-4 my-4">
-                <!-- <span class="mb-3 display-6">1.</span> -->
-               <!-- <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>-->  <!--<img src="/img/circle-half-g.png" class="mb-4">-->  
-               <svg class="px-1 p-sm-0" width="120" height="120" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="105" cy="105" r="105" fill="#CFD5EA"/>
-                <path d="M104.5 195C71.003 194.33 43 177.5 26.48 149L103.203 149H183.5C164 183.5 129.5 195.5 104.5 195Z" fill="#00a4ef" fill-opacity="0.51"/>
-                </svg>                 
-              </div>
-              <div class="col-8 col-md-9 col-lg-8 my-auto text-start">
-                  <h3 class="artifacts-steps1 px-3 px-sm-0 px-lg-4 px-xl-2">"How to" Set up guide with reference architecture instructions to obtain the optimal setup for each application</h3>
-                <!-- <p class="text-muted mb-0">Step 2</p> -->
-              </div>
-              </div><!--row-->
-            </div>
-            
-            <div class="col-lg-4 text-center">
-              <div class="row g-0">
-              <div class="col-4 col-md-3 col-lg-4 my-4 ">
-                <!-- <span class="mb-3 display-6">2.</span> -->
-               <!-- <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>-->  <!--<img src="/img/circle-half-g.png" class="mb-4">-->  
-               <svg class="px-1 p-sm-0" width="120" height="120" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="105" cy="105" r="105" fill="#CFD5EA"/>
-                <path d="M15 105C15 128.869 24.4821 151.761 41.3604 168.64C58.2387 185.518 81.1305 195 105 195C128.869 195 151.761 185.518 168.64 168.64C185.518 151.761 195 128.869 195 105L105 105L15 105Z" fill="#00a4ef" fill-opacity="0.51"/>
-              </svg>                 
-              </div>
-              <div class="col-8 col-md-9 col-lg-8 my-auto text-start">
-                  <h3 class="artifacts-steps1 px-3 px-sm-0 px-lg-4 px-xl-2">The expected performance of relevant models and configurations</h3>
-                <!-- <p class="text-muted mb-0">Step 2</p> -->
-              </div>
-              </div><!--row-->
-            </div>
-            
-            <div class="col-lg-4 text-center">
-              <div class="row g-0">
-              <div class="col-4 col-md-3 col-lg-4 my-4 ">
-                <!-- <span class="mb-3 display-6">3.</span> -->
-               <!-- <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>-->  <!--<img src="/img/circle-half-g.png" class="mb-4">-->  
-               <svg class="px-1 p-sm-0" width="120" height="120" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="105" cy="105" r="105" fill="#CFD5EA"/>
-                <circle cx="105" cy="105" r="90" fill="#00a4ef" fill-opacity="0.51"/>
-              </svg> 
-               
-              </div>
-              <div class="col-8 col-md-9 col-lg-8 my-auto text-start">
-                  <h3 class="artifacts-steps1 px-3 px-sm-0 px-lg-4 px-xl-2">The anticipated cost of Azure consumption for each application and configuration</h3>
-                <!-- <p class="text-muted mb-0">Step 2</p> -->
-              </div>
-              </div><!--row-->
-            </div>          
-          </div> <!--row-->
-         <!--  <hr>
-          <div class="artifacts-wrapper container px-5">
-            <div class="circle1">
-              <div class="aligner px-3">
-                “How to” guides for set up and performance for each application
-              </div>
-            </div>
-            <div class="circle2">
-              <div class="aligner px-3">
-                Benchmark results for relevant models and specifications
-                </div>
-            </div>
-            <div class="circle3">
-              <div class="aligner px-3">
-                Azure consumption metrics for each application
-              </div>
-            </div>
-          </div>-->
+      <div class="col pb-5 pb-md-0 aplns">
+        <div class="turbostream"><img src="img/turbostream_logo.png"></div>
+        <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">turbostream</a><div class="disclaimer-single">Arriving soon..</div></div></div><br><!--<div class="disclaimer-group">Arriving soon – pending SIEMENS approval</div>-->
+    </div>
 
-         </section>
+    <div class="col pb-5 pb-md-0 aplns">
+      <div><img src="img/zcfd_logo.png"></div>
+      <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">ZCFD</a><div class="disclaimer-single">Arriving soon..</div></div></div><br><!--<div class="disclaimer-group">Arriving soon – pending SIEMENS approval</div>-->
+  </div>
+
+            </section>
 
 
-        <!--<section id="recipe-guide" class="text-center m-auto w-80 row recipe-guide container py-5">
+        <!--<section id="cook-book" class="text-center m-auto w-80 row cook-book container py-5">
       
           <h2 class="pb-5">Recipe Guide</h2>
                           
@@ -201,7 +319,7 @@
             </section>-->
      
 <!-- 
-         <section id="recipe-guide" class="text-center m-auto row recipe-guide container pt-5">
+         <section id="cook-book" class="text-center m-auto row cook-book container pt-5">
       
           <h2 class="pb-5">Recipe Guide</h2>
 
@@ -238,7 +356,7 @@
             </div>
             </section>
 
-            <section id="recipe-guide" class="text-center m-auto row recipe-guide container">  
+            <section id="cook-book" class="text-center m-auto row cook-book container">  
    
               <div class="col pb-5 pb-md-0 aplns">
                <div><img src="img/indicalabs_logo.png"></div>
@@ -269,110 +387,7 @@
 
              <hr> -->
 
-            <section id="recipe-guide" class="text-center m-auto row recipe-guide container pt-5">
-      
-              <h2 class="pb-5">Recipe Guide</h2>
-    
-              <div class="col pb-5 aplns">
-                <div><img src="img/ADSCFD_logo.png"></div>
-                <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">Code Leo</a><br><div class="disclaimer-single">Arriving soon..</div></div></div>
-            </div>
-                              
-              <div class="col pb-5 aplns">
-                <div><img src="img/ALTAIR_logo.png"></div>
-                <div class="d-flex justify-content-center"><div class="px-1"><a href="edem.html" target="_blank">EDEM</a></div><div class="px-1"><a href="ultraFluidX.html" target="_blank">uFX</a></div><button id="myBtn-Altair" class="modal-button" href="#myModal1">More >></button></div>
-            </div>
-    
-            <div class="col pb-5 aplns">
-              <div><img src="img/ANSYS_logo_CS.png"></div>
-              <div class="d-flex justify-content-center">
-    
-                <div class="px-1"><a href="!#" target="_blank" class="disabled">HFSS</a></div><div class="px-1"><a href="#" target="_blank" class="disabled">Mechanical</a></div><button id="myBtn-Ansys" class="modal-button" href="#myModal2">More >></button>
-            </div>
-            <div class="disclaimer-single-front">Arriving soon..</div>
-               
-            </div>
-
-<!-- The Modal Altair -->
-<div id="myModal1" class="modal">
-   
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h4>Applications of ALTAIR</h4>
-    </div>
-    <div class="modal-body">
-      <div class="px-1"><a href="edem.html" target="_blank">EDEM</a></div><div class="px-1"><a href="ultraFluidX.html" target="_blank">uFX</a></div><div class="px-1"><a href="nanoFluidX.html" target="_blank">nFX</a></div>
-    </div>
-    <div class="modal-footer">
-     
-    </div>
-  </div>
-
-</div>
-
-<!-- The Modal Ansys-->
-<div id="myModal2" class="modal">
-
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h4>Applications of ANSYS</h4>
-      <!-- <div class="disclaimer-group-new">Arriving soon – pending ANSYS approval</div> -->
-    </div>
-    <div class="modal-body">
-      <div class="px-1"><a href="!#" target="_blank" class="disabled">HFSS</a><br><div class="disclaimer-single">Arriving soon..</div></div><div class="px-1"><a href="#" target="_blank" class="disabled">Mechanical</a><br><div class="disclaimer-single">Arriving soon..</div></div><div><a href="rocky.html" target="_blank">Rocky</a></div> <div><a href="#" target="_blank" class="disabled">Speos</a><br><div class="disclaimer-single">Arriving soon..</div></div>
-    </div>
-    <div class="modal-footer">
-     
-    </div>
-  </div>
-</div>
-
-
-    
-                  <div class="col pb-5 aplns">
-                          <div><img src="img/AUTODESK_logo.png"></div>
-                          <div class="d-flex justify-content-center"><div class="px-1"><a href="vred.html" target="_blank">VRED</a></div></div>
-                </div>
-    
-                <div class="col pb-5 aplns">
-                  <div><img src="img/CPFD_logo.png"></div>
-                  <div class="d-flex justify-content-center"><div class="px-1"><a href="barracuda.html" target="_blank">Barracuda</a></div></div>
-                </div>
-
-                </section>
-
-  
-
-            <section id="recipe-guide" class="text-center m-auto row recipe-guide container">  
-   
-                 <div class="col pb-5 pb-md-0 aplns">
-                  <div><img src="img/indicalabs_logo.png"></div>
-                  <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">Indicalabs</a><br><div class="disclaimer-single">Arriving soon..</div></div></div>
-              </div>
-              <div class="col pb-5 pb-md-0 aplns">
-                <div><img src="img/remcom_logo.png"></div>
-                <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">remcom</a><br><div class="disclaimer-single">Arriving soon..</div></div></div>
-            </div>
-          
-              
-            <div class="col pb-5 pb-md-0 aplns">
-              <div><img src="img/SIEMENS_logo.png"></div>
-              <div class="d-flex justify-content-center"><div class="px-1"><a href="siemens.html" target="_blank">NX</a></div><div class="px-1"><a href="#" target="_blank" class="disabled">Solid Edge</a><div class="disclaimer-single">Arriving soon..</div></div></div><br><!--<div class="disclaimer-group">Arriving soon – pending SIEMENS approval</div>-->
-          </div>
-    
-          <div class="col pb-5 pb-md-0 aplns">
-            <div class="turbostream"><img src="img/turbostream_logo.png"></div>
-            <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">turbostream</a><div class="disclaimer-single">Arriving soon..</div></div></div><br><!--<div class="disclaimer-group">Arriving soon – pending SIEMENS approval</div>-->
-        </div>
-    
-        <div class="col pb-5 pb-md-0 aplns">
-          <div><img src="img/zcfd_logo.png"></div>
-          <div class="d-flex justify-content-center"><div class="px-1"><a href="#" target="_blank" class="disabled">ZCFD</a><div class="disclaimer-single">Arriving soon..</div></div></div><br><!--<div class="disclaimer-group">Arriving soon – pending SIEMENS approval</div>-->
-      </div>
-    
-                </section>
+        
 
 
 <!--     <article>
@@ -473,10 +488,10 @@
         </section>
       </article>  -->
 
-             
+            
 
-        <section class="pt-5 text-center testimonials bg-light" id="testimonials">
-            <h2 class="pt-4">Testimonials</h2>
+        <section class="pt-4 text-center testimonials bg-light" id="testimonials">
+            <h2 class="pt-3">Testimonials</h2>
           <div class="row g-0 container mx-auto mt-4">  
              <div class="h-100 m-auto px-sm-3 px-md-3 pb-5">
               <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -727,13 +742,38 @@
   </div>
  </section>
 
-          <section id="get-started" class="py-5 get-started">
+          <section id="get-started" class="pt-5 pb-4 get-started">
 
             <div class="get-started-wrapper container px-3 px-md-5">
             <!-- Contact Section -->
             <div class="row g-0"> 
               <h2 class="col-12 text-center pb-5">How to get started?</h2>
-              <div class="col-12 col-lg-6">               
+
+              <div class="row g-0 ind-ven">
+                <div class="col-12 col-md-6 mx-auto px-4 border-right"> 
+
+                  <div class="pb-3">If you use high performance computing applications for your product design:</div>
+                  <div class="row"><div class="col-4"><img src="/img/industry-lg.png"></div><div class="col-8 my-auto"><ul>
+                    
+                    <li>Do you want to evaluate migration to Azure HPC?</li>
+  
+                    <li>Do you want to validate a specific workload on Azure HPC?</li>
+                   <!--<li>Write to us your specific requirements on AzureHPC-Certification@capgemini.com and we will get back to you</li>--></ul></div></div>                  
+                  </div>
+                <div class="col-12 col-md-6 mx-auto mt-2 mt-md-0 px-4">                   
+                  <div class="pb-3">If you develop software that requires high performance computation:</div>
+                  <div class="row"><div class="col-4 my-auto"><img src="/img/vendor-lg.png"> </div><div class="col-8 my-auto"><ul>
+                    <li>Do you want a cookbook for your application to feature here? </li>
+                    <li>Do you want to promote applications capability on cloud infrastructure and showcase performance?</li>
+                   </ul></div></div>
+                                  
+                </div>
+
+              </div>
+
+              <div>&nbsp;</div>
+
+              <div class="col-12 col-lg-9 pt-3 my-auto">               
                 <!-- <p>Here are the next steps you can take to get involved:</p> -->
                 <ul>
                   <li>Reach out and get in contact with Azure Compute or email Capgemini to have your application prioritized</li>
@@ -741,8 +781,8 @@
                   <li>Assign a technical resource to assist Capgemini and Azure in optimization efforts</li>
                 </ul>
                </div>
-               <div class="col-12 col-lg-6 mx-auto mt-2 text-center">
-                <i class="fas fa-envelope fa-3x mb-3 text-muted"></i>
+               <div class="col-12 col-lg-3 mx-auto my-auto pt-2 text-center">
+                <i class="fas fa-envelope fa-3x mb-1 text-muted"></i>
                  <!-- <a class="d-block" href="mailto:AzureHPC-Certification@capgemini.com">AzureHPC-Certification@capgemini.com</a> -->
                  <a class="d-block">AzureHPC-Certification@capgemini.com</a>
                <!--<i class="d-block">AzureHPC-Certification@capgemini.com</i>-->
