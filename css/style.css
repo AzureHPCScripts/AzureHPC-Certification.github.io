@@ -1645,7 +1645,7 @@ outline:red;
     font-size: 0.37em;
 }
 .hero-links b {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
 }
 .btn-group-lg>.btn, .btn-lg {
     padding: 0.2rem 0.5rem;
@@ -1667,17 +1667,15 @@ outline:red;
 .artifacts-steps1{
     font-size: 0.9rem;
 }
-.hero-links b {
-    font-size: 0.5rem;
-    line-height: unset;
-}
+
 .hero-links b svg{
     width:0.75rem;
     height:0.75rem;
 }
 
 }
-   
+
+  
  @media (max-width:414px) {  
     .hero-lead{
         /* margin-bottom:60px; */
