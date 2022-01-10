@@ -417,7 +417,7 @@ margin: auto;
 .cook-book .cook-feature{
     /* color:#4c4c4c; */
     color:#495d67;
-    font-size:18px;
+    font-size:16px;
 }
 .cook-book .cook-feature .dot{
   position:relative;
@@ -428,7 +428,11 @@ margin: auto;
 
 .cook-book .cook-feature .cookbook-icons img{
     width:35px;
+    background-color: #8cbe8c;
+    border-radius: 50px;
+    padding: 8px;
 }
+
 .cook-book a{
     /* font-size:smaller; */
 	background-color: rgb(46 40 40 / 85%);
