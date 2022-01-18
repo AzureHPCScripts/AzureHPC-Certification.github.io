@@ -45,6 +45,30 @@
     }
   }
   /*Read More Button*/
+
+  /*More Button*/
+  function readMore4() {
+    var dots4 = document.getElementById("dots4");
+    var moreText = document.getElementById("more4");
+    var btnText = document.getElementById("myBtn4");
+  
+    if (dots4.style.display === "none") {
+      dots4.style.display = "inline";
+      btnText.innerHTML = "more >>"; 
+      moreText.style.display = "none";
+    } else {
+      dots4.style.display = "none";
+      btnText.innerHTML = "<< less"; 
+      moreText.style.display = "inline";
+    }
+  }
+  /*More Button*/
+
+  /*--------------------------------------------*/
+
+
+
+
   
   /*--------------------------------------------*/
 
