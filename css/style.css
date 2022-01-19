@@ -564,7 +564,7 @@ filter: invert(10%);
     color: rgb(48, 48, 48);
     transition: .5s;
     -webkit-transition: .5s;
-    cursor: pointer;
+    /* cursor: pointer; */
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
     -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.11);
@@ -580,7 +580,7 @@ filter: invert(10%);
     } */
 
 .card-header{
-   cursor: pointer;
+   /* cursor: pointer; */
 }
 
 .card-header h5{
@@ -746,7 +746,7 @@ margin: auto;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 95%; /*fit-content;*/
+    width: 90%; /*fit-content;*/
     /* min-height: 80vh; 20vh */
   }
 
@@ -765,7 +765,7 @@ margin: auto;
   .modal-body {
       padding: 2px 5px; /*2px 16px;*/
       display:flex;
-      width:90%;
+      width:98%; /*90%;*/
       margin-left:auto;
       margin-right:auto;
       word-wrap: break-word;
