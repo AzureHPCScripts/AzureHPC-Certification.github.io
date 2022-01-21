@@ -1430,7 +1430,7 @@ border:unset;
 .card-text{
     text-align: left;
     font-size: 0.8rem;
-    text-transform:initial;
+    text-transform: initial;
 }
 
 #navbarToggleExternalContent{
