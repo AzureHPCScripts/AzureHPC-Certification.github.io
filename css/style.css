@@ -1430,6 +1430,7 @@ border:unset;
 .card-text{
     text-align: left;
     font-size: 0.8rem;
+    text-transform:initial;
 }
 
 #navbarToggleExternalContent{
@@ -1491,6 +1492,13 @@ outline:red;
 
 /*custom media queries starts*/
 
+@media (min-width:1281px){
+        
+    .content p{
+        /* text-align: justify; */
+    }
+}
+
 @media (min-width:1200px){
     
     .w-80{
@@ -1511,6 +1519,7 @@ outline:red;
     .navigation-links a {
         font-size: 0.47em !important;
     }
+
 
     }
 
@@ -1544,9 +1553,6 @@ outline:red;
     height: 18px;
 }
 
-.content p{
-    text-align: justify;
-}
 
 /*.modal-body {
     height:200px;
