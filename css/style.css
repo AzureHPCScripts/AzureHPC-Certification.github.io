@@ -1768,8 +1768,12 @@ outline:red;
      }
 
       .card-content .card {
-        float:right;
+        float: right;
         width: 48%;
+    }
+
+    .content table{
+        margin-bottom: 1rem;
     }
 
 }
