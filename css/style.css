@@ -1628,6 +1628,7 @@ outline:red;
     .content table{
         width: max-content;
         font-size: 70%;
+        margin-bottom: 0.3rem;
     }
 
     .overflow-table{
@@ -1772,10 +1773,6 @@ outline:red;
       .card-content .card {
         float: right;
         width: 48%;
-    }
-
-    .content table{
-        margin-bottom: 0.3rem;
     }
 
 }
