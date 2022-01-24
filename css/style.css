@@ -1633,6 +1633,7 @@ outline:red;
     .overflow-table{
         overflow: hidden;
         overflow-x: auto;
+        margin-bottom: 1rem;
     }
 
     .videos-wrapper .video-title{
@@ -1646,7 +1647,8 @@ outline:red;
     .cook-book .disclaimer-single-front{
         margin-left: auto !important;
     }
-    /*.overflow-table::-webkit-scrollbar {
+
+    .overflow-table::-webkit-scrollbar {
         height: 5px;
       }
       
@@ -1661,7 +1663,7 @@ outline:red;
       
     .overflow-table::-webkit-scrollbar-thumb:hover {
         background: #aaa; 
-      } */
+      } 
 
 }
 
@@ -1773,7 +1775,7 @@ outline:red;
     }
 
     .content table{
-        margin-bottom: 1rem;
+        margin-bottom: 0.3rem;
     }
 
 }
