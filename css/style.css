@@ -131,7 +131,7 @@ header a{
 .logo a {
     color: #fff;
     font-size:xx-large;
-   /* text-transform: uppercase;*/
+    text-transform: uppercase;
 }
 
 .logo a:hover {
@@ -411,6 +411,7 @@ margin: auto;
 	text-decoration:none;
 	color:#f9f9f9;
 	line-height:2.8em;
+    text-transform: unset;
 }
 
 /*navigation callout styles ends*/
@@ -1882,6 +1883,9 @@ outline:red;
         padding-left:15px;
         padding-right:15px;
     }
+    .rpt h1 span{
+        font-size: 1.1em !important; 
+    }
 }
 
 @media (max-width: 540px) {  
@@ -1952,6 +1956,9 @@ outline:red;
         border-right: 1px solid #00a4ef;
         height: 38px;
         position: absolute;
+    }
+    .rpt h1 span{
+        font-size: 1em !important; 
     }
     
  }
