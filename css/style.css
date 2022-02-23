@@ -975,7 +975,7 @@ footer ul li {
 }
 
 footer .footer-logo{
-max-width: 90px;
+max-width: 150px; /*90px;*/
 }
 
 footer span.logoline-bot{
@@ -984,10 +984,13 @@ footer span.logoline-bot{
     position: absolute;
     margin-top: 9px; */
 
-    border-right: 1px solid #0071ae;
+   /* border-right: 1px solid #0071ae;
     height: 25px;
     position: absolute;
-    margin-top: 2px;
+    margin-top: 2px;*/
+
+    border-left: 1px solid #0071ae;
+    margin-right: 10px;
 }
 
 footer .footer-text{
@@ -1956,10 +1959,12 @@ outline:red;
         font-size: smaller;
     }    
     footer span.logoline-bot{
-        border-right: 1px solid #00a4ef;
+/*         border-right: 1px solid #00a4ef;
         height: 38px;
-        position: absolute;
+        position: absolute; */
+        border-left: 1px solid #00a4ef;
     }
+
     .rpt h1 span{
         font-size: 1em !important; 
     }
