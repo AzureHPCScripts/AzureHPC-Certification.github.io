@@ -109,6 +109,17 @@ header{
     font-size: larger;
 }
 
+
+header span.logoline-top{ 
+    border-left: 1px solid #0071ae;
+    margin-right: 14px;
+    font-size: medium;
+    font-weight: 300;
+    position: relative;
+    top: -3px;
+    left:-3px;
+}
+
 header a{
     color:#fff;
 }
@@ -146,16 +157,6 @@ header a{
 .logo img{
     width: 150px; /*90px; /*72px;*/
 }
-
-header span.logoline-top{
-    color: #0071ae;
-    text-shadow: 0 0 transparent;
-    font-stretch: condensed;
-    font: icon;
-    top: -5px;
-    position: relative;
-    left: -10px; /*newly added*/
-  }
 
   
 .link a{
@@ -993,6 +994,7 @@ footer span.logoline-bot{
     margin-right: 10px;
 }
 
+
 footer .footer-text{
     font-size:smaller;
 } 
@@ -1446,7 +1448,7 @@ border:unset;
 
 .navbar {
     position: relative !important;
-    top: -1rem !important;
+    top: -4.5rem !important; /*-1rem*/
     float: right !important;
     right: 1rem !important;
     /* position: fixed !important;
@@ -1759,6 +1761,10 @@ outline:red;
     height: 20px;
 }
 
+.navbar {
+    top: -4rem !important;
+}
+
 .border-right{
     border-right:unset;
 }
@@ -1868,7 +1874,16 @@ outline:red;
 .carousel-control-next, .carousel-control-prev {
     width:unset !important;
 }
-
+  
+  header span.logoline-top{
+    border-left: 1px solid #0071ae;
+    margin-right: 14px;
+    font-size: x-small;
+    font-weight: 300;
+    position: relative;
+    top: -3px;
+    left:0px;
+}
 }
 
 
@@ -1954,7 +1969,7 @@ outline:red;
     }
     footer .footer-logo{
         max-width:125px;
-        }
+    }
     footer .footer-text{
         font-size: smaller;
     }    
@@ -1964,6 +1979,7 @@ outline:red;
         position: absolute; */
         border-left: 1px solid #00a4ef;
     }
+
 
     .rpt h1 span{
         font-size: 1em !important; 
