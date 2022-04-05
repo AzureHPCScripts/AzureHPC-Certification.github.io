@@ -617,6 +617,10 @@ filter: invert(10%);
    font-size:small;
   }
 
+/*   .card-body .plasma a{
+      background-color: red !important;
+  } */
+
   .card-content .card {
       width:221px;
   }
@@ -796,9 +800,14 @@ margin: auto;
       word-wrap: break-word;
 }
 
-.modal-body div{
+/* .modal-body div{
     margin-left:5px;
     margin-right:5px;
+} */
+
+.modal-body div{
+    margin-left:unset;
+    margin-right:unset;
 }
   
   .modal-footer {
