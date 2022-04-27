@@ -19,6 +19,7 @@ h2{
 p{
      /* font-family: 'Roboto', sans-serif; */
      /* font-family: 'Roboto', sans-serif, 'Roboto Mono', monospace; */
+     /*text-align: justify;*/
 }
 
 .bg-color{
@@ -1093,6 +1094,14 @@ text-decoration: none;
 font-family: unset !important;
 }
 
+.rpt p{
+    text-align: justify;
+}
+
+.index p{
+    text-align: unset;
+}
+
 .index-scroll p{
     font-size:11pt !important;
     font-size:small !important;
@@ -1317,6 +1326,7 @@ font-family: unset !important;
     border-right: solid 0.01px #eaecec;
     /* border-left: solid 0.3px #f00; */
     background-color: unset !important;
+    font-weight: 400;
 }
 
 
@@ -1385,6 +1395,10 @@ font-family: unset !important;
     overflow-y: auto;
     padding-top:10px;
     border-left: 1px solid #ccc;    
+}
+
+.toc p{
+    text-align: unset;
 }
 
 .toc p a span{
