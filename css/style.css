@@ -1092,6 +1092,7 @@ footer .footer-text{
 text-decoration: none;
 /*font-family:roboto !important;*/
 font-family: unset !important;
+margin-bottom: 1rem!important;
 }
 
 .rpt p{
