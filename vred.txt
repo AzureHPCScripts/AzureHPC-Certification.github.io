@@ -2316,7 +2316,7 @@ word-wrap:break-word'>
       color:windowtext;mso-ansi-language:EN-IN'><w:sdtPr></w:sdtPr></span></p>
       <p class=MsoToc1 style='line-height:normal;tab-stops:22.0pt right dotted 509.7pt'><!--[if supportFields]><span
       style='mso-element:field-begin'></span><span
-      style='mso-spacerun:yes'> </span>TOC \o &quot;1-3&quot; \h \z \u <span
+      style='mso-spacerun:yes'>Â </span>TOC \o &quot;1-3&quot; \h \z \u <span
       style='mso-element:field-separator'></span><![endif]--><a
       href="#_Toc87550483"><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span style='mso-no-proof:yes;text-underline:white;
@@ -2326,7 +2326,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>       </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Introduction</span></u><u
@@ -2360,7 +2360,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>       </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Deploy Virtual Machine on
@@ -2395,7 +2395,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>        </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Azure Cloud Architecture for
@@ -2431,7 +2431,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Azure Virtual Machine (VM)</span></u><u
@@ -2466,7 +2466,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Create a Virtual Machine on
@@ -2502,7 +2502,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Connect to virtual machine</span></u><u
@@ -2537,7 +2537,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Install Nvidia Drivers</span></u><u
@@ -2571,7 +2571,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>       </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Install VRED Application on
@@ -2607,7 +2607,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>License Manager Installation</span></u><u
@@ -2642,7 +2642,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Product download and Install
@@ -2677,7 +2677,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>       </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Performance results of
@@ -2713,7 +2713,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Autodesk VRED overview:</span></u><u
@@ -2747,7 +2747,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>         </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Rendering</span></u><u
@@ -2782,7 +2782,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Autodesk VRED on Azure
@@ -2818,7 +2818,7 @@ word-wrap:break-word'>
       minor-fareast;color:windowtext;mso-fareast-language:EN-IN;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'><span style='mso-tab-count:
-      1'>        </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
+      1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:white;mso-text-underline-themecolor:
       background1'><span lang=EN-US style='mso-ansi-language:EN-US;mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Autodesk VRED Settings for
@@ -2853,7 +2853,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>         </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Opening </span></u><u
@@ -2894,7 +2894,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>         </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>CPU and GPU Raytracing:</span></u><u
@@ -2928,7 +2928,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>         </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Antialiasing settings</span></u><u
@@ -2962,7 +2962,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>         </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Render settings</span></u><u
@@ -2996,7 +2996,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>        </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span lang=EN-US
       style='mso-ansi-language:EN-US;mso-no-proof:yes;text-underline:white;
       text-decoration:none;text-underline:none;mso-text-underline-themecolor:
@@ -3035,7 +3035,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>        </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span lang=EN-US
       style='mso-ansi-language:EN-US;mso-no-proof:yes;text-underline:white;
       text-decoration:none;text-underline:none;mso-text-underline-themecolor:
@@ -3074,7 +3074,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>       </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Azure Consumption</span></u><u
@@ -3108,7 +3108,7 @@ word-wrap:break-word'>
       mso-fareast-theme-font:minor-fareast;color:windowtext;mso-fareast-language:
       EN-IN;mso-no-proof:yes;text-underline:white;text-decoration:none;
       text-underline:none;mso-text-underline-themecolor:background1'><span
-      style='mso-tab-count:1'>       </span></span></u><u style='text-underline:
+      style='mso-tab-count:1'>Â Â Â Â Â Â  </span></span></u><u style='text-underline:
       white;mso-text-underline-themecolor:background1'><span style='mso-no-proof:
       yes;text-underline:white;text-decoration:none;text-underline:none;
       mso-text-underline-themecolor:background1'>Summary</span></u><u
@@ -3156,7 +3156,7 @@ word-wrap:break-word'>
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-      Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Symbol'><span style='mso-list:Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Deploy &amp; connect a required virtual
       machine on Azure platform.<span style='mso-fareast-font-family:"Times New Roman";
       mso-fareast-theme-font:minor-fareast'><o:p></o:p></span></p>
@@ -3164,7 +3164,7 @@ word-wrap:break-word'>
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-size:12.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
-      Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+      Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Install required NVIDIA drivers in virtual
       machine.<span style='font-size:12.0pt;line-height:106%'><o:p></o:p></span></p>
@@ -3172,20 +3172,20 @@ word-wrap:break-word'>
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-      Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Symbol'><span style='mso-list:Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Install Application on virtual machine.</p>
       <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-      Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Symbol'><span style='mso-list:Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Install license manager for current
       application</p>
       <p class=MsoListParagraphCxSpMiddle style='margin-top:0cm;margin-right:
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-size:12.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
-      Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+      Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Performance results of current application
       on azure virtual machine<span style='font-size:12.0pt;line-height:106%'><o:p></o:p></span></p>
@@ -3193,7 +3193,7 @@ word-wrap:break-word'>
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-size:12.0pt;line-height:106%;font-family:Symbol;mso-fareast-font-family:
-      Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>·<span
+      Symbol;mso-bidi-font-family:Symbol'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Azure consumption<span style='font-size:
       12.0pt;line-height:106%'><o:p></o:p></span></p>
@@ -3201,7 +3201,7 @@ word-wrap:break-word'>
       0cm;margin-bottom:0cm;margin-left:38.5pt;mso-add-space:auto;text-align:
       justify;text-indent:-18.0pt;line-height:106%;mso-list:l8 level1 lfo13'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
-      Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Symbol'><span style='mso-list:Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]>Summary</p>
       <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><o:p>&nbsp;</o:p></p>
       <h1 style='line-height:normal;mso-outline-level:1;mso-list:l5 level1 lfo11'><a
@@ -3269,7 +3269,7 @@ word-wrap:break-word'>
       justify;text-indent:-18.0pt;line-height:normal;mso-list:l11 level1 lfo14;
       background:white'><![if !supportLists]><span style='font-family:Symbol;
       mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#171717;
-      mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+      mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
@@ -3279,7 +3279,7 @@ word-wrap:break-word'>
       justify;text-indent:-18.0pt;line-height:normal;mso-list:l11 level1 lfo14;
       background:white'><![if !supportLists]><span style='font-family:Symbol;
       mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#171717;
-      mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+      mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
@@ -3289,7 +3289,7 @@ word-wrap:break-word'>
       justify;text-indent:-18.0pt;line-height:normal;mso-list:l11 level1 lfo14;
       background:white'><![if !supportLists]><span style='font-family:Symbol;
       mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;color:#171717;
-      mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+      mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
@@ -3299,7 +3299,7 @@ word-wrap:break-word'>
       -18.0pt;line-height:normal;mso-list:l11 level1 lfo14;background:white'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
       Symbol;color:#171717;mso-fareast-language:EN-IN'><span style='mso-list:
-      Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
       mso-fareast-language:EN-IN'>The operating system that the VM runs<o:p></o:p></span></p>
@@ -3308,7 +3308,7 @@ word-wrap:break-word'>
       -18.0pt;line-height:normal;mso-list:l11 level1 lfo14;background:white'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
       Symbol;color:#171717;mso-fareast-language:EN-IN'><span style='mso-list:
-      Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
       mso-fareast-language:EN-IN'>The configuration of the VM<o:p></o:p></span></p>
@@ -3317,7 +3317,7 @@ word-wrap:break-word'>
       -18.0pt;line-height:normal;mso-list:l11 level1 lfo14;background:white'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
       Symbol;color:#171717;mso-fareast-language:EN-IN'><span style='mso-list:
-      Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
       mso-fareast-language:EN-IN'>The related resources that the VM needs<o:p></o:p></span></p>
@@ -3616,7 +3616,7 @@ word-wrap:break-word'>
       T4</span></a></span><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
       mso-fareast-language:EN-IN'>&nbsp;GPUs and AMD EPYC 7V12(Rome) CPUs. The
-      “NC64as_T4_v3” VM has 4 NVIDIA T4 GPUs with 16 GB of memory each, up to
+      Â“NC64as_T4_v3Â” VM has 4 NVIDIA T4 GPUs with 16 GB of memory each, up to
       64 non-multithreaded AMD processor cores with a total memory of 448GB. <o:p></o:p></span></p>
       <p class=MsoNormal style='margin-bottom:0cm;line-height:normal;
       background:white'><span style='mso-fareast-font-family:"Times New Roman";
@@ -3636,7 +3636,7 @@ word-wrap:break-word'>
       style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
       background:white'>NVIDIA M60</span></a></span><span style='mso-bidi-font-family:
       Calibri;mso-bidi-theme-font:minor-latin;color:#171717;background:white'>&nbsp;GPUs
-      and Intel E5-2690 v4 (Broadwell) CPUs (2.60GHz). The “NV48s_v3” VM has
+      and Intel E5-2690 v4 (Broadwell) CPUs (2.60GHz). The Â“NV48s_v3Â” VM has
       NVIDIA Grid Technology with Intel cores and Intel Hyper-Threading
       Technology. Each GPU in NVv3 instances comes with a GRID license,</span><span
       style='font-family:"Segoe UI",sans-serif;color:#171717;background:white'>
@@ -3918,7 +3918,7 @@ word-wrap:break-word'>
       auto;text-align:justify;text-indent:-18.0pt;line-height:normal;
       mso-list:l6 level1 lfo9'><![if !supportLists]><span style='font-family:
       Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
-      color:#171717;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>·<span
+      color:#171717;mso-fareast-language:EN-IN'><span style='mso-list:Ignore'>Â·<span
       style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
       style='mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
@@ -3933,7 +3933,7 @@ word-wrap:break-word'>
       mso-list:l6 level1 lfo9'><![if !supportLists]><span style='font-family:
       Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:Symbol;
       color:#171717;mso-fareast-language:EN-IN;mso-bidi-font-weight:bold'><span
-      style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      style='mso-list:Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><b style='mso-bidi-font-weight:normal'><span
       style='mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
       Calibri;mso-bidi-theme-font:minor-latin;color:#171717;mso-fareast-language:
@@ -4389,7 +4389,7 @@ word-wrap:break-word'>
       auto;text-indent:-18.0pt;line-height:normal;mso-list:l9 level1 lfo8'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
       Symbol;color:#171717;mso-fareast-language:EN-IN'><span style='mso-list:
-      Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
       mso-fareast-language:EN-IN'>The&nbsp;NVIDIA GPU Driver
@@ -4398,8 +4398,8 @@ word-wrap:break-word'>
       style='mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
       Calibri;mso-bidi-theme-font:minor-latin;color:#171717;mso-fareast-language:
       EN-IN'><span style='mso-element:field-begin'></span><span
-      style='mso-spacerun:yes'> </span>REF _Ref81315987 \r \h<span
-      style='mso-spacerun:yes'>  </span>\* MERGEFORMAT <span style='mso-element:
+      style='mso-spacerun:yes'>Â </span>REF _Ref81315987 \r \h<span
+      style='mso-spacerun:yes'>Â  </span>\* MERGEFORMAT <span style='mso-element:
       field-separator'></span></span><![endif]--><span style='mso-fareast-font-family:
       "Times New Roman";mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;
       color:#171717;mso-fareast-language:EN-IN'>9<!--[if gte mso 9]><xml>
@@ -4414,7 +4414,7 @@ word-wrap:break-word'>
       auto;text-indent:-18.0pt;line-height:normal;mso-list:l9 level1 lfo8'><![if !supportLists]><span
       style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
       Symbol;color:#171717;mso-fareast-language:EN-IN;mso-bidi-font-weight:
-      bold'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      bold'><span style='mso-list:Ignore'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </span></span></span><![endif]><span style='mso-fareast-font-family:"Times New Roman";
       mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin;color:#171717;
       mso-fareast-language:EN-IN'>Install NVIDIA GPU drivers manually. (For the
@@ -4447,7 +4447,7 @@ word-wrap:break-word'>
       Machine:</span></span></span></span></span></a></h1>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'>For installing Autodesk VRED on Azure VM, first go to
-      user’s Autodesk Account, check for the purchased products available in
+      userÂ’s Autodesk Account, check for the purchased products available in
       user account under the tab Products and Services. Here in current
       scenario installed VRED Professional.</p>
       <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
@@ -4513,8 +4513,8 @@ word-wrap:break-word'>
       <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'>User can
       install the Autodesk Network License Manager setup as shown in the below
       figure. Once user installs the setup, a folder with name Network License
-      Manager will be created in the path “C:\Autodesk\Network License Manager\
-      “</p>
+      Manager will be created in the path Â“C:\Autodesk\Network License Manager\
+      Â“</p>
       <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
       line-height:normal'><span style='mso-fareast-language:EN-IN;mso-no-proof:
       yes'><!--[if gte vml 1]><v:shape id="_x0000_i1046" type="#_x0000_t75"
@@ -4529,9 +4529,9 @@ word-wrap:break-word'>
       </v:shape><![endif]--><![if !vml]><img border=0 width=669 height=305
       src="vred_files/image028.jpg" v:shapes="_x0000_i1046"><![endif]></span></p>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
-      line-height:normal'>Now generate the license file from user’s Autodesk
+      line-height:normal'>Now generate the license file from userÂ’s Autodesk
       account, and keep the license file in the Network License Manager folder.
-      Create a text file with name “debug.log” and keep it in the same Network
+      Create a text file with name Â“debug.logÂ” and keep it in the same Network
       License Manager folder.</p>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'>Generating license file:</p>
@@ -4556,7 +4556,7 @@ word-wrap:break-word'>
       find their type of license from Products and Services tab in the Autodesk
       account. For next step user will be required to fill the details of
       Server or VM Name and Physical address. Physical Address or MAC address,
-      one can get by typing “ipconfig /all” in the command prompt. After
+      one can get by typing Â“ipconfig /allÂ” in the command prompt. After
       filling those details and selecting the Product for which license <span
       class=GramE>has to</span> be generated, user can click on Get License
       File, the license file will be generated.</p>
@@ -4581,8 +4581,8 @@ word-wrap:break-word'>
       a GUI will open as shown below. Select Config Services and name the
       service name, in this case it named as Autodesk Network License Manager.
       Give the license file path where we placed it <span class=GramE>and also</span>
-      fill the other paths as shown here. Now tick mark the ‘Start Server at
-      Power Up’ at bottom and select ‘Save Service’ button and then follow the
+      fill the other paths as shown here. Now tick mark the Â‘Start Server at
+      Power UpÂ’ at bottom and select Â‘Save ServiceÂ’ button and then follow the
       automatic messages which will pop up. </p>
       <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
       line-height:normal'><span style='mso-fareast-language:EN-IN;mso-no-proof:
@@ -4610,7 +4610,7 @@ word-wrap:break-word'>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'>Now select the Start/Stop/Reread button from the top
       ribbon and then select Start Server as shown in the figure below. The
-      service name – ‘Autodesk Network License Manager’ should be seen under
+      service name Â– Â‘Autodesk Network License ManagerÂ’ should be seen under
       blue colour.</p>
       <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
       line-height:normal'><span style='mso-fareast-language:EN-IN;mso-no-proof:
@@ -4628,7 +4628,7 @@ word-wrap:break-word'>
       src="vred_files/image036.jpg" v:shapes="Picture_x0020_29"><![endif]></span></p>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'>Once user clicks on start server, the below GUI
-      should show up with service name “Autodesk Network License Manager”. Now
+      should show up with service name Â“Autodesk Network License ManagerÂ”. Now
       the License Manager installation is complete. User can start downloading
       the VRED application and install it in the same Virtual Machine</p>
       <p class=MsoNormal align=center style='margin-bottom:0cm;text-align:center;
@@ -4725,7 +4725,7 @@ word-wrap:break-word'>
       Autodesk VRED, which was previously limited to CPU, now leverages GPU
       technology to support the high demands of consumers and provide interactive
       ray tracing and AI-powered Denoising. This allows users to gain immediate
-      visual feedback to see how a vehicle’s aesthetics will interact with
+      visual feedback to see how a vehicleÂ’s aesthetics will interact with
       different environments in real time</p>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'>Autodesk VRED enables users to create digital
@@ -4745,7 +4745,7 @@ word-wrap:break-word'>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'>The term rendering defines the automatic process
       of&nbsp;generating digital images from three-dimensional models, by means
-      of a special software. These images simulate project or 3D model’s photorealistic
+      of a special software. These images simulate project or 3D modelÂ’s photorealistic
       environments, materials, <span class=GramE>lights</span> and objects.</p>
       <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
       line-height:normal'><o:p>&nbsp;</o:p></p>
@@ -5048,7 +5048,7 @@ word-wrap:break-word'>
         </v:shape><![endif]--><![if !vml]><img border=0 width=421 height=281
         src="vred_files/image057.png" v:shapes="_x0000_i1031"><![endif]></span><span
         style='color:#2F5496;mso-themecolor:accent1;mso-themeshade:191'><span
-        style='mso-spacerun:yes'> </span><o:p></o:p></span></b></p>
+        style='mso-spacerun:yes'>Â </span><o:p></o:p></span></b></p>
         <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
         line-height:normal'><b style='mso-bidi-font-weight:normal'><span
         style='color:#2F5496;mso-themecolor:accent1;mso-themeshade:191'>Relative
@@ -5119,7 +5119,7 @@ word-wrap:break-word'>
          <w:borderright type="single" width="6"/>
         </v:shape><![endif]--><![if !vml]><img border=0 width=436 height=281
         src="vred_files/image065.png" v:shapes="Picture_x0020_1"><![endif]></span><span
-        style='mso-spacerun:yes'> </span></p>
+        style='mso-spacerun:yes'>Â </span></p>
         <p class=MsoNormal style='margin-bottom:0cm;text-align:justify;
         line-height:normal'>Note: GPU Rendering with 1 GPU settings on NVv3
         VMs, application produced an error while rendering with 4K and higher
@@ -5898,7 +5898,7 @@ word-wrap:break-word'>
         style='mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin'><span
         style='mso-list:Ignore'>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </span></span></span><![endif]>For NVv3 VM, it was observed that there
-        isn’t much improvement in GPU rendering times compared to CPU rendering
+        isnÂ’t much improvement in GPU rendering times compared to CPU rendering
         time.</p>
         </td>
        </tr>
